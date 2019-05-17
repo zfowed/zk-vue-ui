@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "serve": "vue-cli-service serve --port 9000",
+    "build": "npm run build:docs && npm run build:packages",
+    "build:lib": "vue-cli-service build --target lib --name zk-vue-ui packages/index.js",
+    "pub": "npm run build && npm publish",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
