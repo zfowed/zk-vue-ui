@@ -8,13 +8,18 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
 
-  <!-- inject css file -->
   <link rel="stylesheet" href="./public/libs/zk-vue-ui/zk-vue-ui.css">
-  <link rel="stylesheet" href="//unpkg.com/vuep/dist/vuep.css">
 </head>
 <body>
   <div id="app" data-app>加载中</div>
+  <script src="//unpkg.com/vue/dist/vue.js"></script>
+  <script src="//unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script src="./public/libs/zk-vue-ui/zk-vue-ui.umd.js"></script>
+  <script src="//unpkg.com/docsify-demo-box-vue/dist/docsify-demo-box-vue.min.js"></script>
   <script>
+    var jsResources = '<scr' + 'ipt src="//unpkg.com/vue/dist/vue.js"></scr' + 'ipt>'
+    var cssResources = '@import url("//cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css");'
+    var bootCode = ''
     window.$docsify = {
       el: '#app',
       name: '挣客 VUE UI',
@@ -24,13 +29,12 @@
       auto2top: true,
       homepage: 'README.md',
       basePath: '/',
+      smartypants: true,
+      plugins: [
+        DemoBoxVue.create(jsResources, cssResources, bootCode)
+      ]
     }
   </script>
-  <!-- or use the compressed files -->
-  <script src="//unpkg.com/vue/dist/vue.min.js"></script>
-  <script src="./public/libs/zk-vue-ui/zk-vue-ui.umd.js"></script>
-  <script src="//unpkg.com/vuep/dist/vuep.min.js"></script>
-  <script src="//unpkg.com/babel-standalone/babel.min.js"></script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
 </body>
 </html>

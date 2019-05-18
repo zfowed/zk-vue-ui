@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --port 9000",
-    "build": "npm run build:docs && npm run build:packages",
-    "build:lib": "vue-cli-service build --target lib --name zk-vue-ui packages/index.js",
+    "build": "npm run build:docs && npm run build:dist",
+    "build:docs": "vue-cli-service build --target lib --name zk-vue-ui packages/index.js --dest docs/public/libs/zk-vue-ui",
+    "build:dist": "vue-cli-service build --target lib --name zk-vue-ui packages/index.js --dest dist",
     "pub": "npm run build && npm publish",
     "lint": "vue-cli-service lint"
   },
