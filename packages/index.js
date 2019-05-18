@@ -1,10 +1,17 @@
-import { Row, Col } from './components/global'
+import { Row, Col, Table, TableHead, TableBody, TableTr, TableTh, TableTd, TextLine } from './components/global'
 import { TransferDom } from './directives'
 import utils from './utils'
 
 const installs = [
   Row,
-  Col
+  Col,
+  Table,
+  TableHead,
+  TableBody,
+  TableTr,
+  TableTh,
+  TableTd,
+  TextLine
 ]
 
 const install = function (Vue, opts = {}) {
@@ -23,5 +30,5 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
 }
 
-export { Row, Col }
-export default { install, Row, Col }
+export { Row, Col, Table, TableHead, TableBody, TableTr, TableTh, TableTd, TextLine }
+export default { install, Row, Col, Table, TableHead, TableBody, TableTr, TableTh, TableTd, TextLine }
