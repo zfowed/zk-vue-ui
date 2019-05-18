@@ -1,9 +1,9 @@
 <template>
   <td v-if="selectionAll" class="zk-table-td">
-    <input v-model="selectionValue" @change="onSelectionAllChange" type="checkbox">
+    <zk-checkbox v-model="selectionValue" @change="onSelectionAllChange"></zk-checkbox>
   </td>
   <td v-else-if="selection" class="zk-table-td">
-    <input v-model="selectionValue" @change="onSelectionChange" type="checkbox">
+    <zk-checkbox v-model="selectionValue" @change="onSelectionChange"></zk-checkbox>
   </td>
   <td
     v-else

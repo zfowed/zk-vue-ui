@@ -62,6 +62,10 @@
 <script>
   export default {}
 </script>
+
+<desc>
+  参数为：`stripe`
+</desc>
 ```
 
 ### 带边框表格
@@ -91,6 +95,10 @@
 <script>
   export default {}
 </script>
+
+<desc>
+  参数为：`border`
+</desc>
 ```
 
 ### 多选

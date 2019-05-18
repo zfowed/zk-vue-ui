@@ -1,4 +1,5 @@
-import { Row, Col, Table, TableHead, TableBody, TableTr, TableTh, TableTd, TextLine } from './components/global'
+import { Row, Col, Table, TableHead, TableBody, TableTr, TableTh, TableTd, TextLine, Checkbox } from './components/global'
+import { Form, FormItem } from './components/pc'
 import { TransferDom } from './directives'
 import utils from './utils'
 
@@ -11,7 +12,11 @@ const installs = [
   TableTr,
   TableTh,
   TableTd,
-  TextLine
+  TextLine,
+  Checkbox,
+
+  Form,
+  FormItem
 ]
 
 const install = function (Vue, opts = {}) {
@@ -30,5 +35,33 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
 }
 
-export { Row, Col, Table, TableHead, TableBody, TableTr, TableTh, TableTd, TextLine }
-export default { install, Row, Col, Table, TableHead, TableBody, TableTr, TableTh, TableTd, TextLine }
+export {
+  Row,
+  Col,
+  Table,
+  TableHead,
+  TableBody,
+  TableTr,
+  TableTh,
+  TableTd,
+  TextLine,
+
+  Form,
+  FormItem
+}
+export default {
+  install,
+  Row,
+  Col,
+  Table,
+  TableHead,
+  TableBody,
+  TableTr,
+  TableTh,
+  TableTd,
+  TextLine,
+  Checkbox,
+
+  Form,
+  FormItem
+}

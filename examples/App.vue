@@ -1,37 +1,58 @@
 <template>
   <div id="app">
-    <zk-table stripe border selection>
-      <zk-table-head>
-        <zk-table-tr>
-          <zk-table-th selection-all></zk-table-th>
-          <zk-table-th sortable>规格</zk-table-th>
-          <zk-table-th sortable>成本价</zk-table-th>
-          <zk-table-th>批发价</zk-table-th>
-          <zk-table-th>售价</zk-table-th>
-        </zk-table-tr>
-      </zk-table-head>
-      <zk-table-body>
-        <zk-table-tr v-for="i in 10" :key="i">
-          <zk-table-td selection :selection-data="i"></zk-table-td>
-          <zk-table-td>123123123</zk-table-td>
-          <zk-table-td>
-            <zk-text-line :width="200" :clamp="2">1加OnePlus-6（一加6）6+64G亮瓷黑 幻夜黑 三网(5.5寸)灰</zk-text-line>
-          </zk-table-td>
-          <zk-table-td>阿萨德</zk-table-td>
-          <zk-table-td>阿萨德阿萨德阿萨德阿萨德阿萨德阿萨德阿萨德阿萨德阿萨德阿萨德阿萨德阿萨德阿萨德阿萨德</zk-table-td>
-        </zk-table-tr>
-      </zk-table-body>
-    </zk-table>
+    <zk-form ref="form" :model="form" :rules="rules">
+      <zk-form-item label="asdsa" prop="phone">
+        <template slot-scope="{ validate, clearValidate }">
+          <input v-model="form.phone" type="text" @focus="clearValidate()" @blur="validate()">
+        </template>
+      </zk-form-item>
+      <zk-form-item label="asdsa" prop="phone2">
+        <template slot-scope="{ validate, clearValidate }">
+          <input v-model="form.phone2" type="text" @focus="clearValidate()" @blur="validate()">
+        </template>
+      </zk-form-item>
+    </zk-form>
   </div>
 </template>
 
 <script>
 export default {
   name: 'app',
+  data () {
+    return {
+      form: {
+        phone: '',
+        phone2: ''
+      },
+      rules: {
+        phone: [{
+          type: 'string',
+          message: '手机号码不允许为空',
+          required: true,
+          whitespace: true
+        }, {
+          message: '请输入正确的手机号码',
+          pattern: /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/
+        }],
+        phone2: [{
+          type: 'string',
+          message: '手机号码不允许为空',
+          required: true,
+          whitespace: true
+        }, {
+          message: '请输入正确的手机号码',
+          pattern: /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/
+        }]
+      }
+    }
+  },
   methods: {
     handleSelectionChange () {
       console.log(arguments)
     }
+  },
+  mounted () {
+    window.form = this.$refs.form
   }
 }
 </script>
