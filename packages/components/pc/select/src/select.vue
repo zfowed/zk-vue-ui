@@ -1,12 +1,13 @@
 <template>
   <div class="zk-select">
-    <zk-popover v-model="visible" placement="bottom-start">
+    <zk-popover v-model="visible" :disabled="currentDisabled" placement="bottom-start">
       <zk-input
         ref="input"
         slot="reference"
         readonly
-        :value="currentLabel"
+        :value="label"
         :placeholder="placeholder"
+        :disabled="currentDisabled"
         v-bind="$attrs">
         <img :class="['zk-select-icon', { 'is-reverse': visible }]" slot="suffix-icon" src="../assets/icon.png">
       </zk-input>
@@ -28,7 +29,26 @@ export default {
     'zk-popover': Popover,
     'zk-input': Input
   },
-  mixins: [Select]
+  mixins: [Select],
+  data () {
+    return {
+      currentWidth: 200
+    }
+  },
+  watch: {
+    visible () {
+      if (!this.visible) return
+      this.handlePopoverUpdate()
+    }
+  },
+  methods: {
+    handlePopoverUpdate () {
+      this.currentWidth = this.$refs.input.$el.clientWidth
+    }
+  },
+  mounted () {
+    this.handlePopoverUpdate()
+  }
 }
 </script>
 

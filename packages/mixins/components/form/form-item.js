@@ -1,3 +1,7 @@
+// 接收的参数 label prop rules required
+// 可处理的参数 validateState validateMessage
+// 需要处理的方法
+// 可使用的方法 validate clearValidate
 
 import { get, validate } from '../../../utils'
 import emitter from '../../emitter'

@@ -1,3 +1,8 @@
+// 接收的参数 value resize disabled type autosize autocomplete
+// 可处理的参数 currentValue currentDisabled isFocus isOnComposition textareaStyle
+// 需要处理的方法 handleComposition handleInput handleFocus handleBlur handleChange handleIconClick
+// 可使用的方法 resizeTextarea
+
 import emitter from '../../emitter'
 import calcTextareaHeight from './utils/calcTextareaHeight'
 
@@ -13,11 +18,8 @@ export default {
   },
   props: {
     value: [String, Number],
-    size: String,
     resize: String,
-    form: String,
     disabled: Boolean,
-    readonly: Boolean,
     type: {
       type: String,
       default: 'text'
@@ -30,13 +32,6 @@ export default {
       type: String,
       default: 'off'
     },
-    validateEvent: {
-      type: Boolean,
-      default: true
-    },
-    suffixIcon: String,
-    prefixIcon: String,
-    label: String,
     clearable: {
       type: Boolean,
       default: false

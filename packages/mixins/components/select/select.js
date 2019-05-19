@@ -1,6 +1,19 @@
 
+// 接收的参数 value placeholder disabled
+// 可处理的参数 currentValue currentDisabled options option label
+// 需要处理的方法
+// 可使用的方法
+
 export default {
   componentName: 'ZkSelect',
+  inject: {
+    zkForm: {
+      default: undefined
+    },
+    zkFormItem: {
+      default: undefined
+    }
+  },
   props: {
     value: {
       type: [String, Number, Object]
@@ -8,6 +21,10 @@ export default {
     placeholder: {
       type: String,
       default: '请选择'
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   provide () {
@@ -19,11 +36,13 @@ export default {
     return {
       currentValue: this.value,
       visible: false,
-      currentWidth: 200,
       optionInstance: []
     }
   },
   computed: {
+    currentDisabled () {
+      return this.disabled || (this.zkForm || {}).disabled
+    },
     options () {
       return this.optionInstance.map(instance => {
         return {
@@ -33,19 +52,15 @@ export default {
         }
       })
     },
-    currentOption () {
+    option () {
       return this.options.find(option => option.value === this.currentValue)
     },
-    currentLabel () {
-      if (!this.currentOption) return ''
-      return this.currentOption.label
+    label () {
+      if (!this.option) return ''
+      return this.option.label
     }
   },
   watch: {
-    visible () {
-      if (!this.visible) return
-      this.handlePopoverUpdate()
-    },
     value () {
       this.currentValue = this.value
     },
@@ -54,9 +69,6 @@ export default {
     }
   },
   methods: {
-    handlePopoverUpdate () {
-      this.currentWidth = this.$refs.input.$el.clientWidth
-    },
     onAddOptionInstance (instance) {
       this.optionInstance.push(instance)
     },
@@ -69,9 +81,6 @@ export default {
       this.currentValue = value
       this.visible = false
     }
-  },
-  mounted () {
-    this.handlePopoverUpdate()
   },
   created () {
     this.$on('zk.select.addOptionInstance', this.onAddOptionInstance)

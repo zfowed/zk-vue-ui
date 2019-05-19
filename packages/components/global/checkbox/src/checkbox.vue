@@ -6,7 +6,9 @@
     <input
       v-model="currentChecked"
       class="checkbox-input"
-      type="checkbox" />
+      type="checkbox"
+      :disabled="currentDisabled"
+      v-bind="$attrs" />
   </label>
 </template>
 

@@ -1,3 +1,7 @@
+// 接收的参数 model rules disabled
+// 可处理的参数
+// 需要处理的方法
+// 可使用的方法 validate clearValidate
 
 export default {
   componentName: 'ZkForm',
@@ -8,7 +12,7 @@ export default {
     rules: {
       type: Object
     },
-    inline: {
+    disabled: {
       type: Boolean,
       default: false
     }

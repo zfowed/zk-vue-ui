@@ -1,5 +1,4 @@
 
-
 <template>
   <span class="zk-popover">
     <div
@@ -103,29 +102,33 @@ export default {
     }
   },
   methods: {
+    setCurrentValue (value) {
+      if (this.disabled && value) return
+      this.currentValue = value
+    },
     handleClick () {
       if (this.trigger === 'click') {
-        this.currentValue = !this.currentValue
+        this.setCurrentValue(!this.currentValue)
       }
     },
     handleMouseenter () {
       if (this.trigger === 'hover') {
-        this.currentValue = true
+        this.setCurrentValue(true)
       }
     },
     handleMouseleave () {
       if (this.trigger === 'hover') {
-        this.currentValue = false
+        this.setCurrentValue(false)
       }
     },
     handleMousedown () {
       if (this.trigger === 'focus') {
-        this.currentValue = true
+        this.setCurrentValue(true)
       }
     },
     handleMouseup () {
       if (this.trigger === 'focus') {
-        this.currentValue = false
+        this.setCurrentValue(false)
       }
     },
     handleHide (event) {
@@ -134,8 +137,7 @@ export default {
       const { reference, popper } = this.$refs
       const path = event.path || (event.composedPath && event.composedPath())
       if (path.indexOf(reference) < 0 && path.indexOf(popper) < 0) {
-
-        this.currentValue = false
+        this.setCurrentValue(false)
       }
     }
   },
@@ -176,4 +178,3 @@ export default {
   display: none;
 }
 </style>
-
