@@ -8,6 +8,8 @@
     <zk-pagination :total="100"></zk-pagination>
     <zk-radio v-model="radio" label="123"></zk-radio>
     <zk-radio v-model="radio" label="1232"></zk-radio>
+    <zk-checkbox v-model="checkbox" true-label="123">备选项</zk-checkbox>
+    <zk-checkbox v-model="checkbox" true-label="1232">备选项</zk-checkbox>
   </div>
 </template>
 
