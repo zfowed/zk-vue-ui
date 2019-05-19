@@ -8,6 +8,7 @@
   * [悬浮框](/zh-cn/component/global/popover)
   * [弹出层](/zh-cn/component/global/popup-layer)
   * [Toast](/zh-cn/component/global/toast)
+  * [内容触摸滑动](/zh-cn/component/global/swiper)
 * ------------------ 电脑端 ------------------
   * [表单](/zh-cn/component/pc/form)
   * [输入框](/zh-cn/component/pc/input)
@@ -19,4 +20,5 @@
   * [消息提示](/zh-cn/component/pc/message)
   * [弹框](/zh-cn/component/pc/message-box)
   * [图片预览](/zh-cn/component/pc/image-view)
+  * [图片上传](/zh-cn/component/pc/image-upload)
 * ------------------ 移动端 ------------------

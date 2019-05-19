@@ -53,6 +53,17 @@
       <span slot="label">哈哈</span>
       <span slot="select-label">重新选择</span>
     </zk-image-upload>
+    <zk-swiper class="banner-swiper" :options="{ }">
+      <zk-swiper-slide class="banner-swiper-slide">
+        <img src="http://www.zfowed.com/static/img/avatar.jpg">
+      </zk-swiper-slide>
+      <zk-swiper-slide class="banner-swiper-slide">
+        <img src="http://www.zfowed.com/static/img/25025.jpg">
+      </zk-swiper-slide>
+      <div class="swiper-button-prev" slot="button-prev"></div>
+      <div class="swiper-button-next" slot="button-next"></div>
+      <div class="swiper-pagination" slot="pagination"></div>
+    </zk-swiper>
   </div>
 </template>
 

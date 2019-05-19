@@ -12,6 +12,8 @@ import Radio from './radio'
 import Popover from './popover'
 import PopupLayer from './popup-layer'
 import Toast from './toast'
+import Swiper from './swiper'
+import SwiperSlide from './swiper-slide'
 
 export {
   Row,
@@ -27,5 +29,7 @@ export {
   Radio,
   Popover,
   PopupLayer,
-  Toast
+  Toast,
+  Swiper,
+  SwiperSlide
 }
