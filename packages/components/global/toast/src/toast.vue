@@ -1,6 +1,12 @@
 <template>
-  <zk-popup-layer :visible="visible" :modal="false" :append-to-body="false" @transitionend="handleTransitionend">
-    <div class="zk-toast">
+  <zk-popup-layer
+    :placement="placement"
+    :prop-up="true"
+    :modal="false"
+    :append-to-body="false"
+    :visible="visible"
+    @transitionend="handleTransitionend">
+    <div :class="['zk-toast', `zk-toast-${placement}`, toastClass]" :style="toastStyle">
       <span class="zk-toast-text">{{ message }}</span>
     </div>
   </zk-popup-layer>
@@ -10,7 +16,7 @@
 import PopupLayer from '../../popup-layer'
 
 export default {
-  name: 'Toast',
+  name: 'ZkToast',
   components: {
     'zk-popup-layer': PopupLayer
   },
@@ -22,7 +28,13 @@ export default {
     visible: {
       type: Boolean,
       default: true
-    }
+    },
+    placement: {
+      type: String,
+      default: 'center'
+    },
+    toastClass: {},
+    toastStyle: {},
   },
   methods: {
     handleTransitionend (event) {
@@ -34,17 +46,14 @@ export default {
 
 <style lang="scss" scoped>
 .zk-toast {
-  // max-width: 80%;
   border-radius: 5px;
   background: rgba(0,0,0,.7);
   color: #fff;
   box-sizing: border-box;
   text-align: center;
-  // transition: opacity .3s linear;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%,-50%);
   padding: 10px;
+  min-width: 120px;
+  margin: 20px;
   .zk-toast-text {
     font-size: 14px;
     display: block;

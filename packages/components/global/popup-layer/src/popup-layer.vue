@@ -13,7 +13,10 @@
         <div
           v-show="currentVisible"
           ref="slot"
-          :class="['zk-popup-slot', { [`zk-popup-slot--${placement}`]: placement }]"
+          :class="['zk-popup-slot', {
+            'zk-popup-slot--propup': propUp,
+            [`zk-popup-slot--${placement}`]: placement
+          }]"
           :style="{ 'z-index': zIndex }"
           @transitionend="handleTransitionend">
           <slot></slot>
@@ -39,10 +42,6 @@ export default {
       type: Boolean,
       default: false
     },
-    appendToBody: {
-      type: Boolean,
-      default: true
-    },
     // 是否需要遮罩层
     modal: {
       type: Boolean,
@@ -51,6 +50,16 @@ export default {
     placement: {
       type: String,
       default: 'center'
+    },
+    // 容器为 propUp 模式
+    propUp: {
+      type: Boolean,
+      default: false
+    },
+    // 是否插入到 body
+    appendToBody: {
+      type: Boolean,
+      default: true
     },
     // 是否可以通过点击 modal 关闭 Dialog
     closeOnClickModal: {
@@ -87,65 +96,52 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.zk-popup {
-  .zk-popup-mask {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    display: block;
-    width: 100%;
-    height: 100%;
-    z-index: 2000;
-    background-color: rgba(0, 0, 0, .5);
-    opacity: 1;
-    transition: opacity .2s;
-  }
-  .zk-popup-slot {
-    position: fixed;
-    z-index: 2001;
-    opacity: 1;
-    transition: all .2s;
-  }
-  .zk-popup-slot--center {
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .zk-popup-slot--top {
-    top: 0;
-    left: 0;
-    right: 0;
-    &-start { @extend .zk-popup-slot--top; right: auto; }
-    &-end { @extend .zk-popup-slot--top; left: auto; }
-  }
-  .zk-popup-slot--bottom {
-    bottom: 0;
-    left: 0;
-    right: 0;
-    &-start { @extend .zk-popup-slot--bottom; right: auto; }
-    &-end { @extend .zk-popup-slot--bottom; left: auto; }
-  }
-  .zk-popup-slot--left {
-    left: 0;
-    top: 0;
-    bottom: 0;
-    &-start { @extend .zk-popup-slot--left; bottom: auto; }
-    &-end { @extend .zk-popup-slot--left; top: auto; }
-  }
-  .zk-popup-slot--right {
-    right: 0;
-    top: 0;
-    bottom: 0;
-    &-start { @extend .zk-popup-slot--right; bottom: auto; }
-    &-end { @extend .zk-popup-slot--right; top: auto; }
-  }
+.zk-popup-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 2000;
+  background-color: rgba(0, 0, 0, .5);
+  opacity: 1;
+  transition: opacity .2s;
 }
+
+.zk-popup-slot {
+  position: fixed;
+  z-index: 2001;
+  opacity: 1;
+  transition: all .15s;
+  &.zk-popup-slot--center { left: 50%; top: 50%; transform: translate(-50%, -50%); }
+  &.zk-popup-slot--top { top: 0; left: 0; right: 0; }
+  &.zk-popup-slot--top-start { top: 0; left: 0; }
+  &.zk-popup-slot--top-end { top: 0; right: 0; }
+  &.zk-popup-slot--bottom { bottom: 0; left: 0; right: 0; }
+  &.zk-popup-slot--bottom-start { bottom: 0; left: 0; }
+  &.zk-popup-slot--bottom-end { bottom: 0; right: 0; }
+  &.zk-popup-slot--left { left: 0; top: 0; bottom: 0; }
+  &.zk-popup-slot--left-start { left: 0; top: 0; }
+  &.zk-popup-slot--left-end { left: 0; bottom: 0; }
+  &.zk-popup-slot--right { right: 0; top: 0; bottom: 0; }
+  &.zk-popup-slot--right-start { right: 0; top: 0; }
+  &.zk-popup-slot--right-end { right: 0; bottom: 0; }
+}
+
+.zk-popup-slot--propup {
+  &.zk-popup-slot--top { left: 50%; right: auto; transform: translateX(-50%); }
+  &.zk-popup-slot--bottom { left: 50%; right: auto; transform: translateX(-50%); }
+  &.zk-popup-slot--left { top: 50%; bottom: auto; transform: translateY(-50%); }
+  &.zk-popup-slot--right { top: 50%; bottom: auto; transform: translateY(-50%); }
+}
+
 .zk-popup-fade-center-enter,
 .zk-popup-fade-center-leave-active,
 .zk-popup-fade-center-enter,
 .zk-popup-fade-center-leave-active {
-  opacity: 0 !important;
+  opacity: 0;
 }
 
 .zk-popup-fade-top-enter,
@@ -160,7 +156,8 @@ export default {
 .zk-popup-fade-top-end-leave-active,
 .zk-popup-fade-top-end-leave,
 .zk-popup-fade-top-end-leave-active {
-  transform: translateY(-100%)
+  opacity: 0;
+  transform: translateY(-100%);
 }
 
 .zk-popup-fade-right-enter,
@@ -175,7 +172,8 @@ export default {
 .zk-popup-fade-right-end-leave-active,
 .zk-popup-fade-right-end-leave,
 .zk-popup-fade-right-end-leave-active {
-  transform: translateX(100%)
+  opacity: 0;
+  transform: translateX(100%);
 }
 
 .zk-popup-fade-bottom-enter,
@@ -190,7 +188,8 @@ export default {
 .zk-popup-fade-bottom-end-leave-active,
 .zk-popup-fade-bottom-end-leave,
 .zk-popup-fade-bottom-end-leave-active {
-  transform: translateY(100%)
+  opacity: 0;
+  transform: translateY(100%);
 }
 
 .zk-popup-fade-left-enter,
@@ -205,6 +204,7 @@ export default {
 .zk-popup-fade-left-end-leave-active,
 .zk-popup-fade-left-end-leave,
 .zk-popup-fade-left-end-leave-active {
-  transform: translateX(-100%)
+  opacity: 0;
+  transform: translateX(-100%);
 }
 </style>
