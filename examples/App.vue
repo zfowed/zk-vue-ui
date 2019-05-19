@@ -2,10 +2,16 @@
   <div id="app">
     <zk-form ref="form" :model="form" :rules="rules">
       <zk-form-item label="asdsa" prop="phone">
-        <zk-input type="textarea" v-model="form.phone"></zk-input>
+        <zk-input type="textarea" v-model="form.phone">
+          <img slot="prefix-icon" src="http://www.zfowed.com/static/img/avatar.jpg" alt="" srcset="">
+          <img slot="suffix-icon" src="http://www.zfowed.com/static/img/avatar.jpg" alt="" srcset="">
+        </zk-input>
       </zk-form-item>
       <zk-form-item label="asdsa" prop="phone">
-        <zk-input v-model="form.phone2"></zk-input>
+        <zk-input v-model="form.phone2">
+          <img slot="prefix-icon" src="http://www.zfowed.com/static/img/avatar.jpg" alt="" srcset="">
+          <img slot="suffix-icon" src="http://www.zfowed.com/static/img/avatar.jpg" alt="" srcset="">
+        </zk-input>
       </zk-form-item>
     </zk-form>
   </div>
