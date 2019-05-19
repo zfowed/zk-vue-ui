@@ -9,7 +9,7 @@
           @click="onClickModal">
         </div>
       </transition>
-      <transition name="zk-popup-fade">
+      <transition :name="`zk-popup-fade-${placement}`">
         <div
           v-if="currentVisible"
           :class="['zk-popup-slot', { [`zk-popup-slot--${placement}`]: placement }]"
@@ -96,7 +96,7 @@ export default {
     position: fixed;
     z-index: 2001;
     opacity: 1;
-    transition: opacity .2s;
+    transition: all .2s;
   }
   .zk-popup-slot--center {
     left: 50%;
@@ -107,33 +107,93 @@ export default {
     top: 0;
     left: 0;
     right: 0;
-    &-start { right: auto; }
-    &-end { left: auto; }
+    &-start { @extend .zk-popup-slot--top; right: auto; }
+    &-end { @extend .zk-popup-slot--top; left: auto; }
   }
   .zk-popup-slot--bottom {
     bottom: 0;
     left: 0;
     right: 0;
-    &-start { right: auto; }
-    &-end { left: auto; }
+    &-start { @extend .zk-popup-slot--bottom; right: auto; }
+    &-end { @extend .zk-popup-slot--bottom; left: auto; }
   }
   .zk-popup-slot--left {
     left: 0;
     top: 0;
     bottom: 0;
-    &-start { bottom: auto; }
-    &-end { top: auto; }
+    &-start { @extend .zk-popup-slot--left; bottom: auto; }
+    &-end { @extend .zk-popup-slot--left; top: auto; }
   }
   .zk-popup-slot--right {
     right: 0;
     top: 0;
     bottom: 0;
-    &-start { bottom: auto; }
-    &-end { top: auto; }
+    &-start { @extend .zk-popup-slot--right; bottom: auto; }
+    &-end { @extend .zk-popup-slot--right; top: auto; }
   }
 }
 .zk-popup-fade-enter,
 .zk-popup-fade-leave-active {
   opacity: 0 !important;
+}
+
+.zk-popup-fade-top-enter,
+.zk-popup-fade-top-leave-active,
+.zk-popup-fade-top-leave,
+.zk-popup-fade-top-leave-active,
+.zk-popup-fade-top-start-enter,
+.zk-popup-fade-top-start-leave-active,
+.zk-popup-fade-top-start-leave,
+.zk-popup-fade-top-start-leave-active,
+.zk-popup-fade-top-end-enter,
+.zk-popup-fade-top-end-leave-active,
+.zk-popup-fade-top-end-leave,
+.zk-popup-fade-top-end-leave-active {
+  transform: translateY(-100%)
+}
+
+.zk-popup-fade-right-enter,
+.zk-popup-fade-right-leave-active,
+.zk-popup-fade-right-leave,
+.zk-popup-fade-right-leave-active,
+.zk-popup-fade-right-start-enter,
+.zk-popup-fade-right-start-leave-active,
+.zk-popup-fade-right-start-leave,
+.zk-popup-fade-right-start-leave-active,
+.zk-popup-fade-right-end-enter,
+.zk-popup-fade-right-end-leave-active,
+.zk-popup-fade-right-end-leave,
+.zk-popup-fade-right-end-leave-active {
+  transform: translateX(100%)
+}
+
+.zk-popup-fade-bottom-enter,
+.zk-popup-fade-bottom-leave-active,
+.zk-popup-fade-bottom-leave,
+.zk-popup-fade-bottom-leave-active,
+.zk-popup-fade-bottom-start-enter,
+.zk-popup-fade-bottom-start-leave-active,
+.zk-popup-fade-bottom-start-leave,
+.zk-popup-fade-bottom-start-leave-active,
+.zk-popup-fade-bottom-end-enter,
+.zk-popup-fade-bottom-end-leave-active,
+.zk-popup-fade-bottom-end-leave,
+.zk-popup-fade-bottom-end-leave-active {
+  transform: translateY(100%)
+}
+
+.zk-popup-fade-left-enter,
+.zk-popup-fade-left-leave-active,
+.zk-popup-fade-left-leave,
+.zk-popup-fade-left-leave-active,
+.zk-popup-fade-left-start-enter,
+.zk-popup-fade-left-start-leave-active,
+.zk-popup-fade-left-start-leave,
+.zk-popup-fade-left-start-leave-active,
+.zk-popup-fade-left-end-enter,
+.zk-popup-fade-left-end-leave-active,
+.zk-popup-fade-left-end-leave,
+.zk-popup-fade-left-end-leave-active {
+  transform: translateX(-100%)
 }
 </style>

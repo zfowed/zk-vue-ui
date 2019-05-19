@@ -3,15 +3,15 @@
     <div>asdasd</div>
     <zk-date-picker >
     </zk-date-picker>
-    <zk-button border>s</zk-button>
+    <zk-button border @click="layer = !layer">s</zk-button>
     <zk-link disabled>四十多岁的</zk-link>
     <zk-pagination :total="100"></zk-pagination>
     <zk-radio v-model="radio" label="123"></zk-radio>
     <zk-radio v-model="radio" label="1232"></zk-radio>
     <zk-checkbox v-model="checkbox" true-label="123">备选项</zk-checkbox>
     <zk-checkbox v-model="checkbox" true-label="1232">备选项</zk-checkbox>
-    <zk-popup-layer :visible="true" placement="left">
-      <div>备选项</div>
+    <zk-popup-layer :visible.sync="layer" placement="bottom">
+      <div style=" height: 100px; width: 100%; background: #fff; box-shadow: 0 0 5px #f55;">备选项</div>
     </zk-popup-layer>
   </div>
 </template>
@@ -21,6 +21,7 @@ export default {
   name: 'app',
   data () {
     return {
+      layer: false,
       radio: '123',
       checkbox: '123',
       form: {
