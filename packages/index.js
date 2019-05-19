@@ -1,4 +1,4 @@
-import { Row, Col, Table, TableHead, TableBody, TableTr, TableTh, TableTd, TextLine, Checkbox } from './components/global'
+import { Row, Col, Table, TableHead, TableBody, TableTr, TableTh, TableTd, TextLine, Checkbox, Popover } from './components/global'
 import { Form, FormItem, Input } from './components/pc'
 import { TransferDom } from './directives'
 import utils from './utils'
@@ -14,6 +14,7 @@ const installs = [
   TableTd,
   TextLine,
   Checkbox,
+  Popover,
 
   Form,
   FormItem,
@@ -46,6 +47,8 @@ export {
   TableTh,
   TableTd,
   TextLine,
+  Checkbox,
+  Popover,
 
   Form,
   FormItem,
@@ -63,6 +66,7 @@ export default {
   TableTd,
   TextLine,
   Checkbox,
+  Popover,
 
   Form,
   FormItem,

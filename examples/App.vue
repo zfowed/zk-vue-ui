@@ -1,19 +1,29 @@
 <template>
   <div id="app">
-    <zk-form ref="form" :model="form" :rules="rules">
-      <zk-form-item label="asdsa" prop="phone">
-        <zk-input type="textarea" v-model="form.phone">
-          <img slot="prefix-icon" src="http://www.zfowed.com/static/img/avatar.jpg" alt="" srcset="">
-          <img slot="suffix-icon" src="http://www.zfowed.com/static/img/avatar.jpg" alt="" srcset="">
-        </zk-input>
-      </zk-form-item>
-      <zk-form-item label="asdsa" prop="phone">
-        <zk-input v-model="form.phone2">
-          <img slot="prefix-icon" src="http://www.zfowed.com/static/img/avatar.jpg" alt="" srcset="">
-          <img slot="suffix-icon" src="http://www.zfowed.com/static/img/avatar.jpg" alt="" srcset="">
-        </zk-input>
-      </zk-form-item>
-    </zk-form>
+    <zk-table>
+      <zk-table-head>
+        <zk-table-tr>
+          <zk-table-th>日期</zk-table-th>
+          <zk-table-th>姓名</zk-table-th>
+          <zk-table-th>地址</zk-table-th>
+        </zk-table-tr>
+        </zk-table-head>
+      <zk-table-body>
+        <zk-table-tr v-for="i in 3" :key="i">
+          <zk-table-td>2019-05-08</zk-table-td>
+          <zk-table-td>
+            <zk-popover trigger="focus">
+              <span slot="reference">不瞭望的怪人</span>
+              <zk-input>
+                <img slot="prefix-icon" src="http://www.zfowed.com/static/img/avatar.jpg" alt="" srcset="">
+                <img slot="suffix-icon" src="http://www.zfowed.com/static/img/avatar.jpg" alt="" srcset="">
+              </zk-input>
+            </zk-popover>
+          </zk-table-td>
+          <zk-table-td>你猜不到~猜不到~</zk-table-td>
+        </zk-table-tr>
+      </zk-table-body>
+    </zk-table>
   </div>
 </template>
 
