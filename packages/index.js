@@ -1,5 +1,5 @@
 import { Row, Col, Table, TableHead, TableBody, TableTr, TableTh, TableTd, TextLine, Checkbox, Popover } from './components/global'
-import { Form, FormItem, Input, Select, Option } from './components/pc'
+import { Form, FormItem, Input, Select, Option, DatePicker } from './components/pc'
 import { TransferDom } from './directives'
 import utils from './utils'
 
@@ -20,7 +20,8 @@ const installs = [
   FormItem,
   Input,
   Select,
-  Option
+  Option,
+  DatePicker
 ]
 
 const install = function (Vue, opts = {}) {
@@ -56,7 +57,8 @@ export {
   FormItem,
   Input,
   Select,
-  Option
+  Option,
+  DatePicker
 }
 export default {
   install,
@@ -76,5 +78,6 @@ export default {
   FormItem,
   Input,
   Select,
-  Option
+  Option,
+  DatePicker
 }

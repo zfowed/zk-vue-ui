@@ -1,14 +1,8 @@
 <template>
   <div id="app">
     <div>asdasd</div>
-    <zk-select >
-      <zk-option label="黄金糕" value="选项1">
-        <span style="float: left">黄金糕</span>
-        <span style="float: right">选项1</span>
-      </zk-option>
-      <zk-option label="双皮奶" value="选项2"></zk-option>
-      <zk-option label="蚵仔煎" value="选项3"></zk-option>
-    </zk-select>
+    <zk-date-picker >
+    </zk-date-picker>
     asd
   </div>
 </template>
