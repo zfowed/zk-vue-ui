@@ -35,7 +35,7 @@ export default {
 
 <style lang="scss" scoped>
 .zk-button {
-  width: 100px;
+  min-width: 100px;
   display: inline-block;
   line-height: 1;
   white-space: nowrap;

@@ -8,6 +8,8 @@
     <zk-button border @click="toast = !toast">toast</zk-button>
     <zk-button border @click="$message('哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈')">$message</zk-button>
     <zk-button border @click="dialog = !dialog">dialog</zk-button>
+    <zk-button border @click="$msgbox.alert('asd')">$msgbox.alert</zk-button>
+    <zk-button border @click="$msgbox.confirm('asd')">$msgbox.confirm</zk-button>
     <zk-link disabled>四十多岁的</zk-link>
     <zk-pagination :total="100"></zk-pagination>
     <zk-radio v-model="radio" label="123"></zk-radio>

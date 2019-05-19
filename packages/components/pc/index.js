@@ -9,5 +9,6 @@ import Link from './link'
 import Pagination from './pagination'
 import Message from './message'
 import Dialog from './dialog'
+import MessageBox from './message-box'
 
-export { Form, FormItem, Input, Select, Option, DatePicker, Button, Link, Pagination, Message, Dialog }
+export { Form, FormItem, Input, Select, Option, DatePicker, Button, Link, Pagination, Message, Dialog, MessageBox }

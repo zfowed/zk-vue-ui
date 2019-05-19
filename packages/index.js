@@ -1,5 +1,5 @@
 import { Row, Col, Table, TableHead, TableBody, TableTr, TableTh, TableTd, TextLine, Checkbox, Radio, Popover, PopupLayer, Toast } from './components/global'
-import { Form, FormItem, Input, Select, Option, DatePicker, Button, Link, Pagination, Message, Dialog } from './components/pc'
+import { Form, FormItem, Input, Select, Option, DatePicker, Button, Link, Pagination, Message, Dialog, MessageBox } from './components/pc'
 import { TransferDom } from './directives'
 import utils from './utils'
 
@@ -29,7 +29,8 @@ const installs = [
   Link,
   Pagination,
   Message,
-  Dialog
+  Dialog,
+  MessageBox
 ]
 
 const install = function (Vue, opts = {}) {
@@ -42,6 +43,10 @@ const install = function (Vue, opts = {}) {
   Vue.prototype.$utils = utils
   Vue.prototype.$toast = Toast.toast
   Vue.prototype.$message = Message.message
+  Vue.prototype.$msgbox = MessageBox.msgbox
+  Vue.prototype.$confirm = MessageBox.confirm
+  Vue.prototype.$prompt = MessageBox.prompt
+  Vue.prototype.$close = MessageBox.close
 
   Vue.directive('transfer-dom', TransferDom)
 }
@@ -76,7 +81,8 @@ export {
   Link,
   Pagination,
   Message,
-  Dialog
+  Dialog,
+  MessageBox
 }
 export default {
   install,
@@ -105,5 +111,6 @@ export default {
   Link,
   Pagination,
   Message,
-  Dialog
+  Dialog,
+  MessageBox
 }

@@ -2,13 +2,14 @@
   <zk-popup-layer
     :visible.sync="currentVisible"
     :modal="modal"
-    :close-on-click-modal="closeOnClickModal">
+    :close-on-click-modal="closeOnClickModal"
+    @transitionend="handleTransitionend">
     <div :class="['zk-dialog', { 'is-scrollbar': scrollbar }, customClass]" :style="{ width }">
       <div class="zk-dialog-title">
         <div class="zk-dialog-title-text">
           <slot name="title">{{ title }}</slot>
         </div>
-        <div v-if="showClose" class="zk-dialog-title-close" @click="onClickClose">
+        <div v-if="showClose" class="zk-dialog-title-close" @click="handleClickClose">
           <span class="zk-dialog-title-close-icon"></span>
         </div>
       </div>
@@ -105,7 +106,10 @@ export default {
     }
   },
   methods: {
-    onClickClose () {
+    handleTransitionend (event) {
+      this.$emit('transitionend', event)
+    },
+    handleClickClose () {
       this.currentVisible = false
     }
   }
