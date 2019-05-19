@@ -14,6 +14,7 @@ import PopupLayer from './popup-layer'
 import Toast from './toast'
 import Swiper from './swiper'
 import SwiperSlide from './swiper-slide'
+import Countdown from './countdown'
 
 export {
   Row,
@@ -31,5 +32,6 @@ export {
   PopupLayer,
   Toast,
   Swiper,
-  SwiperSlide
+  SwiperSlide,
+  Countdown
 }

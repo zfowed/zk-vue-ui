@@ -14,7 +14,8 @@ import {
   PopupLayer,
   Toast,
   Swiper,
-  SwiperSlide
+  SwiperSlide,
+  Countdown
 } from './components/global'
 import {
   Button,
@@ -53,6 +54,7 @@ const installs = [
   Toast,
   Swiper,
   SwiperSlide,
+  Countdown,
 
   Button,
   Link,
@@ -110,6 +112,7 @@ export {
   Toast,
   Swiper,
   SwiperSlide,
+  Countdown,
 
   Button,
   Link,
@@ -146,6 +149,7 @@ export default {
   Toast,
   Swiper,
   SwiperSlide,
+  Countdown,
 
   Button,
   Link,

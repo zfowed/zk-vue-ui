@@ -9,6 +9,7 @@
   * [弹出层](/zh-cn/component/global/popup-layer)
   * [Toast](/zh-cn/component/global/toast)
   * [内容触摸滑动](/zh-cn/component/global/swiper)
+  * [倒计时](/zh-cn/component/global/countdown)
 * ------------------ 电脑端 ------------------
   * [表单](/zh-cn/component/pc/form)
   * [输入框](/zh-cn/component/pc/input)

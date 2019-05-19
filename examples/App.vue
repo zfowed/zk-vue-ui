@@ -53,6 +53,7 @@
       <span slot="label">哈哈</span>
       <span slot="select-label">重新选择</span>
     </zk-image-upload>
+    <zk-countdown date="2019-12-15"></zk-countdown>
     <zk-swiper class="banner-swiper" :options="{ }">
       <zk-swiper-slide class="banner-swiper-slide">
         <img src="http://www.zfowed.com/static/img/avatar.jpg">
@@ -143,4 +144,7 @@ export default {
 </script>
 
 <style lang="scss">
+img {
+  max-width: 100%;
+}
 </style>
