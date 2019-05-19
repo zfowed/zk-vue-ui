@@ -5,7 +5,8 @@
   * [多行文本](/zh-cn/component/global/text-line)
   * [复选框](/zh-cn/component/global/checkbox)
   * [单选框](/zh-cn/component/global/radio)
-  * [弹出框](/zh-cn/component/global/popover)
+  * [悬浮框](/zh-cn/component/global/popover)
+  * [弹出层](/zh-cn/component/global/popup-layer)
 * 电脑端
   * [表单](/zh-cn/component/pc/form)
   * [输入框](/zh-cn/component/pc/input)

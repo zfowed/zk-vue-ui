@@ -1,4 +1,4 @@
-import { Row, Col, Table, TableHead, TableBody, TableTr, TableTh, TableTd, TextLine, Checkbox, Radio, Popover, PopupLayer } from './components/global'
+import { Row, Col, Table, TableHead, TableBody, TableTr, TableTh, TableTd, TextLine, Checkbox, Radio, Popover, PopupLayer, Toast } from './components/global'
 import { Form, FormItem, Input, Select, Option, DatePicker, Button, Link, Pagination } from './components/pc'
 import { TransferDom } from './directives'
 import utils from './utils'
@@ -17,6 +17,7 @@ const installs = [
   Radio,
   Popover,
   PopupLayer,
+  Toast,
 
   Form,
   FormItem,
@@ -36,7 +37,8 @@ const install = function (Vue, opts = {}) {
     }
   })
 
-  Vue.$utils = utils
+  Vue.prototype.$utils = utils
+  Vue.prototype.$toast = Toast.toast
 
   Vue.directive('transfer-dom', TransferDom)
 }
@@ -59,6 +61,7 @@ export {
   Radio,
   Popover,
   PopupLayer,
+  Toast,
 
   Form,
   FormItem,
@@ -85,6 +88,7 @@ export default {
   Radio,
   Popover,
   PopupLayer,
+  Toast,
 
   Form,
   FormItem,

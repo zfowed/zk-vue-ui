@@ -11,5 +11,21 @@ import Checkbox from './checkbox'
 import Radio from './radio'
 import Popover from './popover'
 import PopupLayer from './popup-layer'
+import Toast from './toast'
 
-export { Row, Col, Table, TableHead, TableBody, TableTr, TableTh, TableTd, TextLine, Checkbox, Radio, Popover, PopupLayer }
+export {
+  Row,
+  Col,
+  Table,
+  TableHead,
+  TableBody,
+  TableTr,
+  TableTh,
+  TableTd,
+  TextLine,
+  Checkbox,
+  Radio,
+  Popover,
+  PopupLayer,
+  Toast
+}

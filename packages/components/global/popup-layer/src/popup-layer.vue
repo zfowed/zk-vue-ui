@@ -1,19 +1,21 @@
 <template>
   <span>
-    <div v-transfer-dom class="zk-popup">
+    <div v-transfer-dom="appendToBody" class="zk-popup">
       <transition name="zk-popup-fade">
         <div
-          v-if="currentVisible && modal"
+          v-show="currentVisible && modal"
           class="zk-popup-mask"
           :style="{ 'z-index': zIndex }"
-          @click="onClickModal">
+          @click="handleClickModal">
         </div>
       </transition>
       <transition :name="`zk-popup-fade-${placement}`">
         <div
-          v-if="currentVisible"
+          v-show="currentVisible"
+          ref="slot"
           :class="['zk-popup-slot', { [`zk-popup-slot--${placement}`]: placement }]"
-          :style="{ 'z-index': zIndex }">
+          :style="{ 'z-index': zIndex }"
+          @transitionend="handleTransitionend">
           <slot></slot>
         </div>
       </transition>
@@ -36,6 +38,10 @@ export default {
     visible: {
       type: Boolean,
       default: false
+    },
+    appendToBody: {
+      type: Boolean,
+      default: true
     },
     // 是否需要遮罩层
     modal: {
@@ -68,10 +74,13 @@ export default {
     }
   },
   methods: {
-    onClickModal () {
+    handleClickModal () {
       if (this.closeOnClickModal) {
         this.currentVisible = false
       }
+    },
+    handleTransitionend (event) {
+      this.$emit('transitionend', event)
     }
   }
 }
@@ -132,8 +141,10 @@ export default {
     &-end { @extend .zk-popup-slot--right; top: auto; }
   }
 }
-.zk-popup-fade-enter,
-.zk-popup-fade-leave-active {
+.zk-popup-fade-center-enter,
+.zk-popup-fade-center-leave-active,
+.zk-popup-fade-center-enter,
+.zk-popup-fade-center-leave-active {
   opacity: 0 !important;
 }
 
