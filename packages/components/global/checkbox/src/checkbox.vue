@@ -11,11 +11,10 @@
 </template>
 
 <script>
-import checkbox from '../../../../mixins/components/checkbox'
+import Checkbox from '../../../../mixins/components/checkbox'
 export default {
   name: 'ZkCheckbox',
-  componentName: 'ZkCheckbox',
-  mixins: [checkbox]
+  mixins: [Checkbox]
 }
 </script>
 

@@ -1,7 +1,8 @@
+import emitter from '../../emitter'
 
 export default {
-  name: 'ZkCheckbox',
   componentName: 'ZkCheckbox',
+  mixins: [emitter],
   props: {
     value: {},
     label: {},
@@ -39,6 +40,7 @@ export default {
     currentValue () {
       this.$emit('input', this.currentValue)
       this.$emit('change', this.currentValue)
+      this.dispatch('ZkFormItem', 'zk.form.change', [this.currentValue])
     }
   }
 }
