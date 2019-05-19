@@ -2,7 +2,7 @@
 
 <template>
   <span class="zk-popover">
-    <span
+    <div
       ref="reference"
       class="zk-popover-reference"
       :tabindex="tabindex"
@@ -12,8 +12,8 @@
       @mousedown="handleMousedown"
       @mouseup="handleMouseup">
       <slot name="reference"></slot>
-    </span>
-    <span v-transfer-dom>
+    </div>
+    <div v-transfer-dom>
       <transition name="fade">
         <div
           v-show="currentValue"
@@ -27,7 +27,7 @@
           </slot>
         </div>
       </transition>
-    </span>
+    </div>
   </span>
 </template>
 
@@ -129,10 +129,12 @@ export default {
       }
     },
     handleHide (event) {
+      if (this.trigger === 'manual') return
       event = window.event || event
       const { reference, popper } = this.$refs
       const path = event.path || (event.composedPath && event.composedPath())
       if (path.indexOf(reference) < 0 && path.indexOf(popper) < 0) {
+
         this.currentValue = false
       }
     }
@@ -141,7 +143,7 @@ export default {
     const { reference, popper } = this.$refs
     this.popper = new Popper(reference, popper, Object.assign({}, this.popperOptions, {
       placement: this.placement,
-      offsets: this.offset,
+      // offsets: this.offset,
       removeOnDestroy: true
     }))
     setTimeout(() => window.addEventListener('click', this.handleHide, false), 0)
@@ -156,8 +158,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.zk-popover-reference {
-  outline: none;
+.zk-popover {
+  display: inline;
+  .zk-popover-reference {
+    outline: none;
+  }
 }
 .fade-enter {
   opacity: 0;

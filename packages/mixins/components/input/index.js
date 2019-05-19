@@ -108,6 +108,12 @@ export default {
     handleChange (event) {
       this.$emit('change', event.target.value)
     },
+    handleIconClick (event) {
+      const input = this.getInput()
+      if (input && input.focus) {
+        input.focus()
+      }
+    },
     resizeTextarea () {
       const { autosize, type } = this
       if (type !== 'textarea') return
