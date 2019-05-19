@@ -17,4 +17,5 @@
   * [链接](/zh-cn/component/pc/link)
   * [分页](/zh-cn/component/pc/pagination)
   * [消息提示](/zh-cn/component/pc/message)
+  * [弹框](/zh-cn/component/pc/message-box)
 * ------------------ 移动端 ------------------

@@ -231,3 +231,57 @@
   export default {}
 </script>
 ```
+
+### 单元格嵌套
+
+```html
+/*vue*/
+
+<template>
+  <zk-table>
+    <zk-table-head>
+      <zk-table-tr>
+        <zk-table-th>日期</zk-table-th>
+        <zk-table-th>商品名称</zk-table-th>
+        <zk-table-th>价格</zk-table-th>
+        <zk-table-th>库存</zk-table-th>
+      </zk-table-tr>
+      </zk-table-head>
+    <zk-table-body>
+      <template v-for="i in 4" :key="i">
+        <zk-table-tr>
+          <zk-table-td>2019-05-08</zk-table-td>
+          <zk-table-td>可爱的洋娃娃</zk-table-td>
+          <zk-table-td>100块起</zk-table-td>
+          <zk-table-td>忘记惹！</zk-table-td>
+        </zk-table-tr>
+        <zk-table-tr>
+          <zk-table-td :colspan="1"></zk-table-td>
+          <zk-table-td :colspan="3">
+            <zk-table>
+              <zk-table-head>
+                <zk-table-tr>
+                  <zk-table-th>规格</zk-table-th>
+                  <zk-table-th>价格</zk-table-th>
+                  <zk-table-th>库存</zk-table-th>
+                </zk-table-tr>
+                </zk-table-head>
+              <zk-table-body>
+                <zk-table-tr v-for="j in 2" :key="j">
+                  <zk-table-td>巴拉巴拉小魔仙</zk-table-td>
+                  <zk-table-td>110块</zk-table-td>
+                  <zk-table-td>好多件</zk-table-td>
+                </zk-table-tr>
+              </zk-table-body>
+            </zk-table>
+          </zk-table-td>
+        </zk-table-tr>
+      </template>
+    </zk-table-body>
+  </zk-table>
+</template>
+
+<script>
+  export default {}
+</script>
+```
