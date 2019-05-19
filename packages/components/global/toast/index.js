@@ -19,40 +19,36 @@ const ToastConstructor = Vue.extend({
   },
   data () {
     return {
-      title: '提示',
-      message: '这是一条信息',
       visible: false,
+      message: '这是一条信息',
       duration: 3000,
-      timer: null,
-      closed: false
-    }
-  },
-  watch: {
-    closed (newVal) {
-      if (newVal) {
-        this.visible = false
-      }
+      timer: null
     }
   },
   methods: {
     handleTransitionend () {
-      if (this.closed) {
+      if (!this.visible) {
         this.destroyElement()
       }
+    },
+    handleClose () {
+      this.visible = false
     },
     destroyElement () {
       this.$destroy(true)
       this.$el.parentNode.removeChild(this.$el)
-    },
-    close () {
-      this.closed = true
     }
   },
   mounted () {
     this.visible = true
     if (this.duration > 0) {
-      this.timer = setTimeout(this.close, this.duration)
+      this.timer = setTimeout(this.handleClose, this.duration)
     }
+    setTimeout(() => window.addEventListener('click', this.handleClose, false), 0)
+  },
+  destroyed () {
+    clearTimeout(this.timer)
+    window.removeEventListener('click', this.handleClose)
   }
 })
 

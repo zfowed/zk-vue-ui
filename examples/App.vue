@@ -6,6 +6,7 @@
     <zk-button border @click="layer = !layer">s</zk-button>
     <zk-button border @click="$toast('asd')">$toast</zk-button>
     <zk-button border @click="toast = !toast">toast</zk-button>
+    <zk-button border @click="$message('哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈')">$message</zk-button>
     <zk-link disabled>四十多岁的</zk-link>
     <zk-pagination :total="100"></zk-pagination>
     <zk-radio v-model="radio" label="123"></zk-radio>

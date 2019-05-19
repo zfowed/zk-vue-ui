@@ -1,5 +1,5 @@
 import { Row, Col, Table, TableHead, TableBody, TableTr, TableTh, TableTd, TextLine, Checkbox, Radio, Popover, PopupLayer, Toast } from './components/global'
-import { Form, FormItem, Input, Select, Option, DatePicker, Button, Link, Pagination } from './components/pc'
+import { Form, FormItem, Input, Select, Option, DatePicker, Button, Link, Pagination, Message } from './components/pc'
 import { TransferDom } from './directives'
 import utils from './utils'
 
@@ -27,7 +27,8 @@ const installs = [
   DatePicker,
   Button,
   Link,
-  Pagination
+  Pagination,
+  Message
 ]
 
 const install = function (Vue, opts = {}) {
@@ -39,6 +40,7 @@ const install = function (Vue, opts = {}) {
 
   Vue.prototype.$utils = utils
   Vue.prototype.$toast = Toast.toast
+  Vue.prototype.$message = Message.message
 
   Vue.directive('transfer-dom', TransferDom)
 }
@@ -71,7 +73,8 @@ export {
   DatePicker,
   Button,
   Link,
-  Pagination
+  Pagination,
+  Message
 }
 export default {
   install,
@@ -98,5 +101,6 @@ export default {
   DatePicker,
   Button,
   Link,
-  Pagination
+  Pagination,
+  Message
 }

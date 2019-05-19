@@ -7,5 +7,6 @@ import DatePicker from './date-picker'
 import Button from './button'
 import Link from './link'
 import Pagination from './pagination'
+import Message from './message'
 
-export { Form, FormItem, Input, Select, Option, DatePicker, Button, Link, Pagination }
+export { Form, FormItem, Input, Select, Option, DatePicker, Button, Link, Pagination, Message }
