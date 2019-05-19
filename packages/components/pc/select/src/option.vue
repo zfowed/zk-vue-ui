@@ -4,7 +4,9 @@
       'is-selected': isSelected
     }]"
     @click="handleClick">
-    <span>{{ currentLabel }}</span>
+    <slot :is-selected="isSelected">
+      <span>{{ currentLabel }}</span>
+    </slot>
   </div>
 </template>
 
@@ -23,6 +25,12 @@ export default {
   padding: 10px 18px;
   transition: background-color .2s;
   line-height: 1.2em;
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+    width: 100%;
+  }
   cursor: pointer;
   &:hover {
     background-color: #F3F9FF;

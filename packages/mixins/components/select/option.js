@@ -7,7 +7,6 @@
 import emitter from '../../emitter'
 
 export default {
-  name: 'ZkOption',
   componentName: 'ZkOption',
   mixins: [emitter],
   inject: {

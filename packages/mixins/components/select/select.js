@@ -4,8 +4,11 @@
 // 需要处理的方法
 // 可使用的方法
 
+import emitter from '../../emitter'
+
 export default {
   componentName: 'ZkSelect',
+  mixins: [emitter],
   inject: {
     zkForm: {
       default: undefined
@@ -66,6 +69,7 @@ export default {
     },
     currentValue () {
       this.$emit('input', this.currentValue)
+      return this.dispatch('ZkFormItem', 'zk.form.change', [this.currentValue])
     }
   },
   methods: {
