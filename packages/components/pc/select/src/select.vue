@@ -4,6 +4,7 @@
       <zk-input
         ref="input"
         slot="reference"
+        class="zk-select-input"
         readonly
         :value="label"
         :placeholder="placeholder"
@@ -55,6 +56,12 @@ export default {
 <style lang="scss" scoped>
 .zk-select {
   display: inline-block;
+}
+.zk-select-input {
+  cursor: pointer;
+  /deep/ input {
+    cursor: pointer;
+  }
 }
 .zk-select-ul {
   padding: 6px 0;

@@ -104,6 +104,7 @@ export default {
       this.$emit('change', event.target.value)
     },
     handleIconClick (event) {
+      if (this.isFocus) return
       const input = this.getInput()
       if (input && input.focus) {
         input.focus()
