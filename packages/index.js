@@ -1,4 +1,4 @@
-import { Row, Col, Table, TableHead, TableBody, TableTr, TableTh, TableTd, TextLine, Checkbox, Radio, Popover } from './components/global'
+import { Row, Col, Table, TableHead, TableBody, TableTr, TableTh, TableTd, TextLine, Checkbox, Radio, Popover, PopupLayer } from './components/global'
 import { Form, FormItem, Input, Select, Option, DatePicker, Button, Link, Pagination } from './components/pc'
 import { TransferDom } from './directives'
 import utils from './utils'
@@ -16,6 +16,7 @@ const installs = [
   Checkbox,
   Radio,
   Popover,
+  PopupLayer,
 
   Form,
   FormItem,
@@ -57,6 +58,7 @@ export {
   Checkbox,
   Radio,
   Popover,
+  PopupLayer,
 
   Form,
   FormItem,
@@ -82,6 +84,7 @@ export default {
   Checkbox,
   Radio,
   Popover,
+  PopupLayer,
 
   Form,
   FormItem,

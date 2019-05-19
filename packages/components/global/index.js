@@ -10,5 +10,6 @@ import TextLine from './text-line'
 import Checkbox from './checkbox'
 import Radio from './radio'
 import Popover from './popover'
+import PopupLayer from './popup-layer'
 
-export { Row, Col, Table, TableHead, TableBody, TableTr, TableTh, TableTd, TextLine, Checkbox, Radio, Popover }
+export { Row, Col, Table, TableHead, TableBody, TableTr, TableTh, TableTd, TextLine, Checkbox, Radio, Popover, PopupLayer }

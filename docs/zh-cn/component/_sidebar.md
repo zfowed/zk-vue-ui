@@ -4,6 +4,7 @@
   * [表格](/zh-cn/component/global/table)
   * [多行文本](/zh-cn/component/global/text-line)
   * [复选框](/zh-cn/component/global/checkbox)
+  * [单选框](/zh-cn/component/global/radio)
   * [弹出框](/zh-cn/component/global/popover)
 * 电脑端
   * [表单](/zh-cn/component/pc/form)

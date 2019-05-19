@@ -10,6 +10,9 @@
     <zk-radio v-model="radio" label="1232"></zk-radio>
     <zk-checkbox v-model="checkbox" true-label="123">备选项</zk-checkbox>
     <zk-checkbox v-model="checkbox" true-label="1232">备选项</zk-checkbox>
+    <zk-popup-layer :visible="true" placement="left">
+      <div>备选项</div>
+    </zk-popup-layer>
   </div>
 </template>
 
