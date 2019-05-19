@@ -11,4 +11,6 @@
   * [下拉框](/zh-cn/component/pc/select)
   * [按钮](/zh-cn/component/pc/button)
   * [时间选择器](/zh-cn/component/pc/date-picker)
+  * [链接](/zh-cn/component/pc/link)
+  * [分页](/zh-cn/component/pc/pagination)
 * 移动端

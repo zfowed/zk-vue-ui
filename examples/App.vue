@@ -5,6 +5,7 @@
     </zk-date-picker>
     <zk-button border>s</zk-button>
     <zk-link disabled>四十多岁的</zk-link>
+    <zk-pagination :total="100"></zk-pagination>
     asd
   </div>
 </template>
