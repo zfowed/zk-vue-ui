@@ -137,6 +137,10 @@ export default {
   &.zk-popup-slot--right { top: 50%; bottom: auto; transform: translateY(-50%); }
 }
 
+.zk-popup-fade-enter,
+.zk-popup-fade-leave-active,
+.zk-popup-fade-enter,
+.zk-popup-fade-leave-active,
 .zk-popup-fade-center-enter,
 .zk-popup-fade-center-leave-active,
 .zk-popup-fade-center-enter,

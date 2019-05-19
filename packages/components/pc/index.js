@@ -8,5 +8,6 @@ import Button from './button'
 import Link from './link'
 import Pagination from './pagination'
 import Message from './message'
+import Dialog from './dialog'
 
-export { Form, FormItem, Input, Select, Option, DatePicker, Button, Link, Pagination, Message }
+export { Form, FormItem, Input, Select, Option, DatePicker, Button, Link, Pagination, Message, Dialog }
