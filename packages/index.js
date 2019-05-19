@@ -1,5 +1,5 @@
 import { Row, Col, Table, TableHead, TableBody, TableTr, TableTh, TableTd, TextLine, Checkbox, Radio, Popover, PopupLayer, Toast } from './components/global'
-import { Form, FormItem, Input, Select, Option, DatePicker, Button, Link, Pagination, Message, Dialog, MessageBox, ImageView } from './components/pc'
+import { Form, FormItem, Input, Select, Option, DatePicker, Button, Link, Pagination, Message, Dialog, MessageBox, ImageView, ImageSelect, ImageUpload } from './components/pc'
 import { TransferDom } from './directives'
 import utils from './utils'
 
@@ -31,7 +31,9 @@ const installs = [
   Message,
   Dialog,
   MessageBox,
-  ImageView
+  ImageView,
+  ImageSelect,
+  ImageUpload
 ]
 
 const install = function (Vue, opts = {}) {
@@ -84,7 +86,9 @@ export {
   Message,
   Dialog,
   MessageBox,
-  ImageView
+  ImageView,
+  ImageSelect,
+  ImageUpload
 }
 export default {
   install,
@@ -115,5 +119,7 @@ export default {
   Message,
   Dialog,
   MessageBox,
-  ImageView
+  ImageView,
+  ImageSelect,
+  ImageUpload
 }

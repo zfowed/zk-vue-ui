@@ -34,7 +34,7 @@ export default {
       default: 'center'
     },
     toastClass: {},
-    toastStyle: {},
+    toastStyle: {}
   },
   methods: {
     handleTransitionend (event) {

@@ -71,7 +71,7 @@ export default {
     },
     customStyle: {
       default: () => ({})
-    },
+    }
   },
   data () {
     return {

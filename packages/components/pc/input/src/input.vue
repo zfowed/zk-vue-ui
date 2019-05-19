@@ -70,7 +70,7 @@ export default {
     height: 100%;
     display: flex;
     align-items: center;
-    justify-items: center;
+    justify-content: center;
     img {
       max-width: 80%;
       max-height: 80%;

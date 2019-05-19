@@ -84,7 +84,7 @@ export default {
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  justify-items: center;
+  justify-content: center;
   .image-view-close {
     position: absolute;
     top: 74px;

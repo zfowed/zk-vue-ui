@@ -45,10 +45,20 @@
         'http://www.zfowed.com/static/img/25025.jpg'
       ]">
     </zk-image-view>
+    <zk-image-select>
+      <span slot="label">哈哈</span>
+      <span slot="select-label">重新选择</span>
+    </zk-image-select>
+    <zk-image-upload :http-request="httpRequest">
+      <span slot="label">哈哈</span>
+      <span slot="select-label">重新选择</span>
+    </zk-image-upload>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'app',
   data () {
@@ -73,6 +83,40 @@ export default {
           message: '请输入正确的手机号码',
           pattern: /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/
         }]
+      },
+      httpRequest ({ data, onProgress, onSuccess, onError }) {
+        function formDataAppend (formData, key, value) {
+          if (Array.isArray(value)) {
+            for (const item of value) {
+              formDataAppend(formData, `${key}[]`, item)
+            }
+          } else if (typeof value === 'object' && !(value instanceof File) && !(value instanceof Blob)) {
+            for (const itemKey of Object.keys(value)) {
+              formDataAppend(formData, `${key}[${itemKey}]`, value[itemKey])
+            }
+          } else {
+            formData.append(key, value)
+          }
+        }
+        function objectToFormData (data) {
+          const formData = new FormData()
+          for (const key of Object.keys(data)) {
+            formDataAppend(formData, key, data[key])
+          }
+          return formData
+        }
+        axios({
+          url: '/api-user/store/uploadContactQr',
+          method: 'post',
+          baseURL: 'https://apitest.znnkee.com/v1',
+          responseType: 'json',
+          data: objectToFormData(Object.assign({}, data, {
+            token: 'eyJleHBpcmVUaW1lIjoxNTU4NzY3MjYxMDQ0LCJyb2xlSWQiOjAsImFjY291bnRJbmZvSWQiOjI4LCJzdG9yZUlkIjoyOCwidXNlcklkIjoyOH0.GaEohlz7qAdp3bGMuqVRJlrccP6VP_BdpP280o_c54I'
+          })),
+          onUploadProgress: onProgress
+        }).then(result => {
+          return onSuccess(result.data.data.url)
+        }, error => onError(error))
       }
     }
   },
