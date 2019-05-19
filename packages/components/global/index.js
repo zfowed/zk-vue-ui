@@ -8,6 +8,7 @@ import TableTh from './table-th'
 import TableTd from './table-td'
 import TextLine from './text-line'
 import Checkbox from './checkbox'
+import Radio from './radio'
 import Popover from './popover'
 
-export { Row, Col, Table, TableHead, TableBody, TableTr, TableTh, TableTd, TextLine, Checkbox, Popover }
+export { Row, Col, Table, TableHead, TableBody, TableTr, TableTh, TableTd, TextLine, Checkbox, Radio, Popover }

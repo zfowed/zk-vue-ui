@@ -6,7 +6,8 @@
     <zk-button border>s</zk-button>
     <zk-link disabled>四十多岁的</zk-link>
     <zk-pagination :total="100"></zk-pagination>
-    asd
+    <zk-radio v-model="radio" label="123"></zk-radio>
+    <zk-radio v-model="radio" label="1232"></zk-radio>
   </div>
 </template>
 
@@ -15,6 +16,8 @@ export default {
   name: 'app',
   data () {
     return {
+      radio: '123',
+      checkbox: '123',
       form: {
         phone: '',
         phone2: ''

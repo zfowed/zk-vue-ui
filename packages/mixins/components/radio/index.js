@@ -6,24 +6,16 @@
 import { FormItemSlot } from '../form'
 
 export default {
-  componentName: 'ZkCheckbox',
+  componentName: 'ZkRadio',
   mixins: [FormItemSlot],
   props: {
-    trueLabel: {
+    label: {
       default: true
-    },
-    falseLabel: {
-      default: false
     }
   },
   computed: {
-    currentChecked: {
-      get () {
-        return this.currentValue === this.trueLabel
-      },
-      set (value) {
-        this.currentValue = value ? this.trueLabel : this.falseLabel
-      }
+    currentChecked () {
+      return this.currentValue === this.label
     }
   },
   watch: {
