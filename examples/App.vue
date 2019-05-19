@@ -53,6 +53,12 @@
       <span slot="label">哈哈</span>
       <span slot="select-label">重新选择</span>
     </zk-image-upload>
+    <zk-notice :delay="3000" :row="2" :duration="600">
+      <zk-notice-item>一一一一一一一一一</zk-notice-item>
+      <zk-notice-item>二二二二二二二二二</zk-notice-item>
+      <zk-notice-item>三三三三三三三三三</zk-notice-item>
+      <zk-notice-item>四四四四四四四四四</zk-notice-item>
+    </zk-notice>
     <zk-html-image>
       <zk-table>
         <zk-table-head>

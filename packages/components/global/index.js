@@ -16,6 +16,8 @@ import Swiper from './swiper'
 import SwiperSlide from './swiper-slide'
 import Countdown from './countdown'
 import HtmlImage from './html-image'
+import Notice from './notice'
+import NoticeItem from './notice-item'
 
 export {
   Row,
@@ -35,5 +37,7 @@ export {
   Swiper,
   SwiperSlide,
   Countdown,
-  HtmlImage
+  HtmlImage,
+  Notice,
+  NoticeItem
 }

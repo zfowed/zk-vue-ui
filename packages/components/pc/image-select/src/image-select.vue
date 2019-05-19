@@ -173,7 +173,6 @@ export default {
   position: relative;
   box-sizing: border-box;
   display: inline-block;
-  vertical-align: top;
   text-align: center;
   outline: none;
   background-color: #F8F8F8;

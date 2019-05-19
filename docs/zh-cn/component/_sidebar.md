@@ -11,9 +11,12 @@
   * [内容触摸滑动](/zh-cn/component/global/swiper)
   * [倒计时](/zh-cn/component/global/countdown)
   * [HTML生成图片](/zh-cn/component/global/html-image)
+  * [垂直公告无缝滚动](/zh-cn/component/global/notice)
 * ------------------ 电脑端 ------------------
   * [表单](/zh-cn/component/pc/form)
   * [输入框](/zh-cn/component/pc/input)
+  * [数字计数器 （没有做）](/zh-cn/component/pc/input-number)
+  * [面包屑 （没有做）](/zh-cn/component/pc/breadcrumb)
   * [下拉框](/zh-cn/component/pc/select)
   * [按钮](/zh-cn/component/pc/button)
   * [时间选择器](/zh-cn/component/pc/date-picker)

@@ -16,7 +16,9 @@ import {
   Swiper,
   SwiperSlide,
   Countdown,
-  HtmlImage
+  HtmlImage,
+  Notice,
+  NoticeItem
 } from './components/global'
 import {
   Button,
@@ -57,6 +59,8 @@ const installs = [
   SwiperSlide,
   Countdown,
   HtmlImage,
+  Notice,
+  NoticeItem,
 
   Button,
   Link,
@@ -116,6 +120,8 @@ export {
   SwiperSlide,
   Countdown,
   HtmlImage,
+  Notice,
+  NoticeItem,
 
   Button,
   Link,
@@ -154,6 +160,8 @@ export default {
   SwiperSlide,
   Countdown,
   HtmlImage,
+  Notice,
+  NoticeItem,
 
   Button,
   Link,

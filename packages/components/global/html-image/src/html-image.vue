@@ -23,15 +23,15 @@ function canvasToBata64 (canvas) {
 }
 
 function bata64ToBlob (bata64) {
-	var arr = bata64.split(',')
-	var mime = arr[0].match(/:(.*?);/)[1]
-	var bstr = atob(arr[1])
-	var n = bstr.length
-	var u8arr = new Uint8Array(n)
-	while(n--){
-		u8arr[n] = bstr.charCodeAt(n)
-	}
-	return new Blob([u8arr], {type:mime})
+  var arr = bata64.split(',')
+  var mime = arr[0].match(/:(.*?);/)[1]
+  var bstr = atob(arr[1])
+  var n = bstr.length
+  var u8arr = new Uint8Array(n)
+  while (n--) {
+    u8arr[n] = bstr.charCodeAt(n)
+  }
+  return new Blob([u8arr], { type: mime })
 }
 
 function blobToUrl (blob) {
