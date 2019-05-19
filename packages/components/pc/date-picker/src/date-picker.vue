@@ -3,6 +3,7 @@
     v-model="currentValue"
     :placeholder="placeholder"
     :value-format="valueFormat"
+    :disabled="currentDisabled"
     v-bind="$attrs"
     @change="emit.bind(this, 'change')"
     @blur="emit.bind(this, 'blur')"
@@ -12,17 +13,16 @@
 </template>
 
 <script>
-import emitter from '../../../../mixins/emitter'
+import { FormItemSlot } from '../../../../mixins/components/form'
 import DatePicker from 'element-ui/lib/date-picker'
 
 export default {
   name: 'ZkDatePicker',
-  mixins: [emitter],
+  mixins: [FormItemSlot],
   components: {
     'el-date-picker': DatePicker
   },
   props: {
-    value: {},
     valueFormat: {
       default: 'timestamp'
     },
@@ -31,18 +31,9 @@ export default {
       default: '请选择'
     }
   },
-  data () {
-    return {
-      currentValue: this.value,
-    }
-  },
   watch: {
-    value () {
-      this.currentValue = this.value
-    },
     currentValue () {
-      this.$emit('input', this.currentValue)
-      return this.dispatch('ZkFormItem', 'zk.form.change', [this.currentValue])
+      this.$emit('change', this.currentValue)
     }
   },
   methods: {

@@ -3,23 +3,14 @@
 // 需要处理的方法 handleComposition handleInput handleFocus handleBlur handleChange handleIconClick
 // 可使用的方法 resizeTextarea
 
-import emitter from '../../emitter'
+import { FormItemSlot } from '../form'
 import calcTextareaHeight from './utils/calcTextareaHeight'
 
 export default {
-  mixins: [emitter],
-  inject: {
-    zkForm: {
-      default: undefined
-    },
-    zkFormItem: {
-      default: undefined
-    }
-  },
+  mixins: [FormItemSlot],
   props: {
     value: [String, Number],
     resize: String,
-    disabled: Boolean,
     type: {
       type: String,
       default: 'text'
@@ -45,17 +36,6 @@ export default {
     }
   },
   computed: {
-    currentValue: {
-      get () {
-        return this.value || ''
-      },
-      set (value) {
-        return this.$emit('input', value)
-      }
-    },
-    currentDisabled () {
-      return this.disabled || (this.zkForm || {}).disabled
-    },
     textareaStyle () {
       return Object.assign({}, this.textareaCalcStyle, { resize: this.resize })
     }
@@ -63,7 +43,6 @@ export default {
   watch: {
     currentValue () {
       this.$nextTick(this.resizeTextarea)
-      return this.dispatch('ZkFormItem', 'zk.form.change', [this.currentValue])
     }
   },
   methods: {
@@ -78,27 +57,17 @@ export default {
     },
     handleInput (event) {
       if (this.isOnComposition) return
-
-      if (event.target.value === this.currentValue) return
-
-      this.$emit('input', event.target.value)
-
-      if (typeof this.value === 'string') {
-        this.$nextTick(() => {
-          let input = this.getInput()
-          input.value = this.value
-        })
-      }
+      this.currentValue = event.target.value
     },
     handleFocus (event) {
       this.isFocus = true
       this.$emit('focus', event)
-      this.dispatch('ZkFormItem', 'zk.form.focus', [this.currentValue])
+      this.handleFormFocus()
     },
     handleBlur (event) {
       this.isFocus = false
       this.$emit('blur', event)
-      this.dispatch('ZkFormItem', 'zk.form.blur', [this.currentValue])
+      this.handleFormBlur()
     },
     handleChange (event) {
       this.$emit('change', event.target.value)

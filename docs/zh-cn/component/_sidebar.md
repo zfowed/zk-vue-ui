@@ -9,4 +9,6 @@
   * [表单](/zh-cn/component/pc/form)
   * [输入框](/zh-cn/component/pc/input)
   * [下拉框](/zh-cn/component/pc/select)
+  * [按钮](/zh-cn/component/pc/button)
+  * [时间选择器](/zh-cn/component/pc/date-picker)
 * 移动端

@@ -1,22 +1,14 @@
 
 // 接收的参数 value placeholder disabled
-// 可处理的参数 currentValue currentDisabled options option label
+// 可处理的参数 currentValue currentDisabled isFocus options option label
 // 需要处理的方法
 // 可使用的方法
 
-import emitter from '../../emitter'
+import { FormItemSlot } from '../form'
 
 export default {
   componentName: 'ZkSelect',
-  mixins: [emitter],
-  inject: {
-    zkForm: {
-      default: undefined
-    },
-    zkFormItem: {
-      default: undefined
-    }
-  },
+  mixins: [FormItemSlot],
   props: {
     value: {
       type: [String, Number, Object]
@@ -24,10 +16,6 @@ export default {
     placeholder: {
       type: String,
       default: '请选择'
-    },
-    disabled: {
-      type: Boolean,
-      default: false
     }
   },
   provide () {
@@ -37,15 +25,12 @@ export default {
   },
   data () {
     return {
-      currentValue: this.value,
       visible: false,
+      isFocus: false,
       optionInstance: []
     }
   },
   computed: {
-    currentDisabled () {
-      return this.disabled || (this.zkForm || {}).disabled
-    },
     options () {
       return this.optionInstance.map(instance => {
         return {
@@ -64,12 +49,8 @@ export default {
     }
   },
   watch: {
-    value () {
-      this.currentValue = this.value
-    },
     currentValue () {
-      this.$emit('input', this.currentValue)
-      return this.dispatch('ZkFormItem', 'zk.form.change', [this.currentValue])
+      this.$emit('change', this.currentValue)
     }
   },
   methods: {

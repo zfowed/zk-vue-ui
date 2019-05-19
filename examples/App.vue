@@ -3,6 +3,8 @@
     <div>asdasd</div>
     <zk-date-picker >
     </zk-date-picker>
+    <zk-button border>s</zk-button>
+    <zk-link disabled>四十多岁的</zk-link>
     asd
   </div>
 </template>
