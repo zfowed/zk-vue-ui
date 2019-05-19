@@ -16,8 +16,8 @@
           :class="['zk-popup-slot', {
             'zk-popup-slot--propup': propUp,
             [`zk-popup-slot--${placement}`]: placement
-          }]"
-          :style="{ 'z-index': zIndex }"
+          }, customClass]"
+          :style="{ 'z-index': zIndex, ...customStyle }"
           @transitionend="handleTransitionend">
           <slot></slot>
         </div>
@@ -65,7 +65,13 @@ export default {
     closeOnClickModal: {
       type: Boolean,
       default: true
-    }
+    },
+    customClass: {
+      default: ''
+    },
+    customStyle: {
+      default: () => ({})
+    },
   },
   data () {
     return {

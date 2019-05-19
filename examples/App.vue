@@ -10,6 +10,7 @@
     <zk-button border @click="dialog = !dialog">dialog</zk-button>
     <zk-button border @click="$msgbox.alert('asd')">$msgbox.alert</zk-button>
     <zk-button border @click="$msgbox.confirm('asd')">$msgbox.confirm</zk-button>
+    <zk-button border @click="imageview = !imageview">imageview</zk-button>
     <zk-link disabled>四十多岁的</zk-link>
     <zk-pagination :total="100"></zk-pagination>
     <zk-radio v-model="radio" label="123"></zk-radio>
@@ -36,6 +37,14 @@
       <p>啊实打实</p>
       <p>啊实打实</p>
     </zk-dialog>
+    <zk-image-view
+      :visible.sync="imageview"
+      src="http://www.zfowed.com/static/img/avatar.jpg"
+      :src-list="[
+        'http://www.zfowed.com/static/img/avatar.jpg',
+        'http://www.zfowed.com/static/img/25025.jpg'
+      ]">
+    </zk-image-view>
   </div>
 </template>
 
@@ -47,6 +56,7 @@ export default {
       layer: false,
       toast: false,
       dialog: false,
+      imageview: false,
       radio: '123',
       checkbox: '123',
       form: {
