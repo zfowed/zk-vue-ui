@@ -12,7 +12,7 @@
         <zk-table-tr v-for="i in 3" :key="i">
           <zk-table-td>2019-05-08</zk-table-td>
           <zk-table-td>
-            <zk-popover trigger="focus">
+            <zk-popover>
               <span slot="reference">不瞭望的怪人</span>
               <zk-input>
                 <img slot="prefix-icon" src="http://www.zfowed.com/static/img/avatar.jpg" alt="" srcset="">

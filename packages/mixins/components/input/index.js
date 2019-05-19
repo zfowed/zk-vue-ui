@@ -66,9 +66,9 @@ export default {
     }
   },
   watch: {
-    value () {
+    currentValue () {
       this.$nextTick(this.resizeTextarea)
-      return this.dispatch('ZkFormItem', 'zk.form.change', [this.value])
+      return this.dispatch('ZkFormItem', 'zk.form.change', [this.currentValue])
     }
   },
   methods: {
@@ -88,20 +88,22 @@ export default {
 
       this.$emit('input', event.target.value)
 
-      this.$nextTick(() => {
-        let input = this.getInput()
-        input.value = this.value
-      })
+      if (typeof this.value === 'string') {
+        this.$nextTick(() => {
+          let input = this.getInput()
+          input.value = this.value
+        })
+      }
     },
     handleFocus (event) {
       this.isFocus = true
       this.$emit('focus', event)
-      this.dispatch('ZkFormItem', 'zk.form.focus', [this.value])
+      this.dispatch('ZkFormItem', 'zk.form.focus', [this.currentValue])
     },
     handleBlur (event) {
       this.isFocus = false
       this.$emit('blur', event)
-      this.dispatch('ZkFormItem', 'zk.form.blur', [this.value])
+      this.dispatch('ZkFormItem', 'zk.form.blur', [this.currentValue])
     },
     handleChange (event) {
       this.$emit('change', event.target.value)
