@@ -1,5 +1,6 @@
 <template>
   <el-date-picker
+    class="zk-date-picker"
     v-model="currentValue"
     :placeholder="placeholder"
     :value-format="valueFormat"
@@ -48,16 +49,18 @@ export default {
 $--font-path: '~element-ui/lib/theme-chalk/fonts';
 @import "~element-ui/packages/theme-chalk/src/icon";
 @import "~element-ui/packages/theme-chalk/src/date-picker";
-.el-date-editor {
-  .el-input__inner {
-    border-radius: 0;
-    border-color: #EAEAEA;
-    &::placeholder {
-      color: #AAAAAA;
-    }
-    &:focus {
-      outline: none;
-      border-color: #0B7AFB;
+.zk-date-picker.el-date-editor {
+  /deep/ {
+    .el-input__inner {
+      border-radius: 0;
+      border-color: #EAEAEA;
+      &::placeholder {
+        color: #AAAAAA;
+      }
+      &:focus {
+        outline: none;
+        border-color: #0B7AFB;
+      }
     }
   }
 }
