@@ -15,6 +15,7 @@ import Toast from './toast'
 import Swiper from './swiper'
 import SwiperSlide from './swiper-slide'
 import Countdown from './countdown'
+import HtmlImage from './html-image'
 
 export {
   Row,
@@ -33,5 +34,6 @@ export {
   Toast,
   Swiper,
   SwiperSlide,
-  Countdown
+  Countdown,
+  HtmlImage
 }

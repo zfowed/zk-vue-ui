@@ -53,6 +53,24 @@
       <span slot="label">哈哈</span>
       <span slot="select-label">重新选择</span>
     </zk-image-upload>
+    <zk-html-image>
+      <zk-table>
+        <zk-table-head>
+          <zk-table-tr>
+            <zk-table-th>日期</zk-table-th>
+            <zk-table-th>姓名</zk-table-th>
+            <zk-table-th>地址</zk-table-th>
+          </zk-table-tr>
+          </zk-table-head>
+        <zk-table-body>
+          <zk-table-tr v-for="i in 3" :key="i">
+            <zk-table-td>2019-05-08</zk-table-td>
+            <zk-table-td>不瞭望的怪人</zk-table-td>
+            <zk-table-td>你猜不到~猜不到~</zk-table-td>
+          </zk-table-tr>
+        </zk-table-body>
+      </zk-table>
+    </zk-html-image>
     <zk-countdown date="2019-12-15"></zk-countdown>
     <zk-swiper class="banner-swiper" :options="{ }">
       <zk-swiper-slide class="banner-swiper-slide">

@@ -15,7 +15,8 @@ import {
   Toast,
   Swiper,
   SwiperSlide,
-  Countdown
+  Countdown,
+  HtmlImage
 } from './components/global'
 import {
   Button,
@@ -55,6 +56,7 @@ const installs = [
   Swiper,
   SwiperSlide,
   Countdown,
+  HtmlImage,
 
   Button,
   Link,
@@ -113,6 +115,7 @@ export {
   Swiper,
   SwiperSlide,
   Countdown,
+  HtmlImage,
 
   Button,
   Link,
@@ -150,6 +153,7 @@ export default {
   Swiper,
   SwiperSlide,
   Countdown,
+  HtmlImage,
 
   Button,
   Link,
