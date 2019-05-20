@@ -39,7 +39,7 @@ import {
   ImageView,
   ImageSelect,
   ImageUpload
-} from './components/pc'
+} from './components/web'
 import { TransferDom } from './directives'
 import utils from './utils'
 

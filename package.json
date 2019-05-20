@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --port 9000",
+    "docsify": "docsify serve docs",
     "build": "npm run build:docs && npm run build:dist",
     "build:docs": "vue-cli-service build --target lib --name zk-vue-ui packages/index.js --dest docs/public/libs/zk-vue-ui",
     "build:dist": "vue-cli-service build --target lib --name zk-vue-ui packages/index.js --dest dist",
