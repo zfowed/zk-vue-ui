@@ -98,7 +98,7 @@ export default {
     },
     updateChildConfig () {
       if (!this.$refs.slot1 || !this.$refs.slot2) return
-      this.slotsLength = (this.$slots.default && this.$slots.default.length) || 0
+      this.slotsLength = (this.$refs.slot1.children && this.$refs.slot1.children.length) || 0
       this.childConfig = [
         ...this.$refs.slot1.children,
         ...this.$refs.slot2.children
