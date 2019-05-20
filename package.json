@@ -11,10 +11,25 @@
     "pub": "npm run build && npm publish",
     "lint": "vue-cli-service lint"
   },
+  "main": "dist/zk-vue-ui.umd.min.js",
+  "files": [
+    "dist",
+    "packages",
+    "package.json"
+  ],
+  "author": "zfowed <zfowed@qq.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zfowed/zk-vue-ui/issues"
+  },
+  "homepage": "https://zfowed.github.io/zk-vue-ui",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zfowed/zk-vue-ui.git"
+  },
   "dependencies": {
     "@zfowed/utils": "^1.0.22",
     "async-validator": "^1.11.2",
-    "axios": "^0.18.0",
     "clipboard": "^2.0.4",
     "core-js": "^2.6.5",
     "element-ui": "^2.8.2",
@@ -36,6 +51,7 @@
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.5.21",
+    "ypkgfiles": "^1.6.0"
   }
 }
