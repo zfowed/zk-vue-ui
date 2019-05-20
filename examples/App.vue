@@ -53,6 +53,7 @@
       <span slot="label">哈哈</span>
       <span slot="select-label">重新选择</span>
     </zk-image-upload>
+    <zk-image-container width="100px" height="100px" thumbnail src="http://www.zfowed.com/static/img/25025.jpg"></zk-image-container>
     <zk-notice :delay="3000" :row="2" :duration="600">
       <zk-notice-item>一一一一一一一一一</zk-notice-item>
       <zk-notice-item>二二二二二二二二二</zk-notice-item>

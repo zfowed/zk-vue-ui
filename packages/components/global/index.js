@@ -18,6 +18,7 @@ import Countdown from './countdown'
 import HtmlImage from './html-image'
 import Notice from './notice'
 import NoticeItem from './notice-item'
+import ImageContainer from './image-container'
 
 export {
   Row,
@@ -39,5 +40,6 @@ export {
   Countdown,
   HtmlImage,
   Notice,
-  NoticeItem
+  NoticeItem,
+  ImageContainer
 }

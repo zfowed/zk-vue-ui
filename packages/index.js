@@ -18,7 +18,8 @@ import {
   Countdown,
   HtmlImage,
   Notice,
-  NoticeItem
+  NoticeItem,
+  ImageContainer
 } from './components/global'
 import {
   Button,
@@ -61,6 +62,7 @@ const installs = [
   HtmlImage,
   Notice,
   NoticeItem,
+  ImageContainer,
 
   Button,
   Link,
@@ -122,6 +124,7 @@ export {
   HtmlImage,
   Notice,
   NoticeItem,
+  ImageContainer,
 
   Button,
   Link,
@@ -162,6 +165,7 @@ export default {
   HtmlImage,
   Notice,
   NoticeItem,
+  ImageContainer,
 
   Button,
   Link,
