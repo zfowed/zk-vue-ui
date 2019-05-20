@@ -40,6 +40,8 @@ export default {
   methods: {
     emit (event, ...args) {
       this.$emit(event, ...args)
+      if (event === 'focus') this.handleFormFocus()
+      if (event === 'blur') this.handleFormBlur()
     }
   }
 }

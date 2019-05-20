@@ -43,7 +43,7 @@ export default {
       this.dispatch('ZkFormItem', 'zk.form.focus', [this.currentValue])
     },
     handleFormBlur (event) {
-      this.dispatch('ZkFormItem', 'zk.form.focus', [this.currentValue])
+      this.dispatch('ZkFormItem', 'zk.form.blur', [this.currentValue])
     }
   }
 }

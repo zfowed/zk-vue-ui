@@ -87,8 +87,8 @@ export default {
       background: #0061D1;
     }
   }
-  &[disabled],
-  &.is-disabled {
+  &.is-disabled,
+  &.is-disabled.is-border {
     cursor: not-allowed;
     color: #FFFFFF;
     border-color: #656565;

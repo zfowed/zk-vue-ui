@@ -1,6 +1,6 @@
 
 <template>
-  <span class="zk-popover">
+  <span :class="['zk-popover', { 'is-block': block }]">
     <div
       ref="reference"
       class="zk-popover-reference"
@@ -13,7 +13,7 @@
       <slot name="reference"></slot>
     </div>
     <div v-transfer-dom>
-      <transition name="fade">
+      <transition :name="transition ? 'fade' : 'none'">
         <div
           v-show="currentValue"
           ref="popper"
@@ -51,11 +51,19 @@ export default {
       type: String,
       default: 'top'
     },
+    block: {
+      type: Boolean,
+      default: false
+    },
     disabled: {
       type: Boolean,
       default: false
     },
     value: {
+      type: Boolean,
+      default: false
+    },
+    transition: {
       type: Boolean,
       default: false
     },
@@ -161,12 +169,21 @@ export default {
 
 <style lang="scss" scoped>
 .zk-popover {
+  display: block;
   display: inline;
   display: inline-block;
   .zk-popover-reference {
     display: inline;
     display: inline-block;
     outline: none;
+  }
+  &.is-block {
+    display: block;
+    width: 100%;
+    .zk-popover-reference {
+      display: block;
+      width: 100%;
+    }
   }
 }
 .fade-enter {

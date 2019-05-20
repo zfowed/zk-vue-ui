@@ -2,8 +2,8 @@
   <div :class="['zk-image-upload', { 'zk-image-upload-loading': isUpload }]">
     <zk-image-select v-model="src" :view-src-list="viewSrcList" :options="currentOptions" :readonly="readonly" :cover="cover" @change-file="changeFile">
       <slot name="label" slot="label"></slot>
-      <slot v-if="$slots['select-label']" slot="select-label">重新上传</slot>
-      <slot v-else name="select-label" slot="select-label"></slot>
+      <slot v-if="!$slots['upload-label']" slot="select-label">重新上传</slot>
+      <slot v-else name="upload-label" slot="select-label"></slot>
     </zk-image-select>
     <div class="zk-image-upload-progress">
       <div class="zk-progress" :style="`padding-top: ${ uploadProgress }%;`">
@@ -70,6 +70,18 @@ export default {
   },
   methods: {
     changeFile (file) {
+
+      function a (f, d, c) {
+        return () => setTimeout(() => f(c), d)
+      }
+
+      function b () {}
+
+      a(b, 200, {})
+
+
+
+
       if (!file) {
         this.currentValue = ''
         return

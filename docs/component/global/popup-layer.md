@@ -93,12 +93,7 @@
     data () {
       return {
         placement: 'top',
-        visible: false,
-        center: false,
-        top: false,
-        right: false,
-        bottom: false,
-        left: false,
+        visible: false
       }
     },
     methods: {

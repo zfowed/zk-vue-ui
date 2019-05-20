@@ -9,7 +9,9 @@
       <div class="zk-message-box">
         <div class="zk-message-icon"></div>
         <div v-if="dangerouslyUseHTMLString" v-html="message" class="zk-message-text"></div>
-        <div v-else class="zk-message-text">{{ message }}</div>
+        <div v-else class="zk-message-text">
+          <slot>{{ message }}</slot>
+        </div>
       </div>
     </div>
   </zk-popup-layer>

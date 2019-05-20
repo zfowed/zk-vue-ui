@@ -12,8 +12,10 @@
     :beforeClose="beforeClose"
     @transitionend="handleTransitionend">
     <div :class="['dialog-container', { 'is-center': center }]">
-      <div v-if="dangerouslyUseHTMLString" v-html="message"></div>
-      <div v-else-if="message">{{ message }}</div>
+      <slot>
+        <div v-if="dangerouslyUseHTMLString" v-html="message"></div>
+        <div v-else-if="message">{{ message }}</div>
+      </slot>
     </div>
     <div class="dialog-footer">
       <button

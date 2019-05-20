@@ -96,9 +96,10 @@ const install = function (Vue, opts = {}) {
   Vue.prototype.$toast = Toast.toast
   Vue.prototype.$message = Message.message
   Vue.prototype.$msgbox = MessageBox.msgbox
-  Vue.prototype.$confirm = MessageBox.confirm
-  Vue.prototype.$prompt = MessageBox.prompt
-  Vue.prototype.$close = MessageBox.close
+  Vue.prototype.$alert = MessageBox.msgbox.alert
+  Vue.prototype.$confirm = MessageBox.msgbox.confirm
+  Vue.prototype.$prompt = MessageBox.msgbox.prompt
+  Vue.prototype.$close = MessageBox.msgbox.close
 
   Vue.directive('transfer-dom', TransferDom)
 }

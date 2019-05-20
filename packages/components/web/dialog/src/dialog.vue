@@ -151,6 +151,9 @@ body.zk-dialog--hidden {
       margin: auto 0;
       cursor: pointer;
       border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       &-icon {
         display: block;
         padding: 6px;

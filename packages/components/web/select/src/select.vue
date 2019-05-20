@@ -1,6 +1,12 @@
 <template>
   <div class="zk-select">
-    <zk-popover v-model="visible" :disabled="currentDisabled" placement="bottom-start">
+    <zk-popover
+      class="zk-popover"
+      block
+      v-model="visible"
+      :transition="false"
+      placement="bottom-start"
+      :disabled="currentDisabled">
       <zk-input
         ref="input"
         slot="reference"
@@ -55,6 +61,7 @@ export default {
 
 <style lang="scss" scoped>
 .zk-select {
+  width: 100%;
   display: inline-block;
 }
 .zk-select-input {

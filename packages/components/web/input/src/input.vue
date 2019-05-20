@@ -61,6 +61,7 @@ export default {
   position: relative;
   display: inline-block;
   width: 100%;
+  vertical-align: bottom;
   .zk-input__prefix-icon,
   .zk-input__suffix-icon {
     position: absolute;

@@ -106,11 +106,11 @@ export default {
       this.validateMessage = ''
     },
     // 下边是触发校验
+    onFieldFocus () {
+      // return this.validate('focus')
+    },
     onFieldBlur () {
       return this.validate('blur')
-    },
-    onFieldFocus () {
-      return this.validate('focus')
     },
     onFieldChange () {
       return this.validate('change')

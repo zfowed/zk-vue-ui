@@ -27,5 +27,6 @@
   * [消息提示](/component/web/message)
   * [弹框](/component/web/message-box)
   * [图片预览](/component/web/image-view)
-  * [图片上传](/component/web/image-upload)
+  * [图片选择器](/component/web/image-select)
+  * [图片上传器](/component/web/image-upload)
 * 移动端
