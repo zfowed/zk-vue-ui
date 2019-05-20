@@ -7,7 +7,9 @@
     :visible="visible"
     @transitionend="handleTransitionend">
     <div :class="['zk-toast', `zk-toast-${placement}`, toastClass]" :style="toastStyle">
-      <span class="zk-toast-text">{{ message }}</span>
+      <span class="zk-toast-text">
+        <slot>{{ message }}</slot>
+      </span>
     </div>
   </zk-popup-layer>
 </template>

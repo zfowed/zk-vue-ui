@@ -2,9 +2,9 @@
   <span class="zk-countdown">
     <slot
       :days="days"
-      :hours="hours | pad0"
-      :minutes="minutes | pad0"
-      :second="second | pad0">
+      :hours="hours"
+      :minutes="minutes"
+      :second="second">
       <span>{{ days }}</span>
       <span>天</span>
       <span>{{ hours | pad0 }}</span>

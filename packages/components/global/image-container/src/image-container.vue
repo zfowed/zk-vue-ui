@@ -19,7 +19,7 @@ export default {
   props: {
     src: { type: String },
     alt: {},
-    thumbnail: { type: Boolean, default: false },
+    thumbnail: { type: Boolean, default: true },
     width: { type: [Number, String] },
     height: { type: [Number, String] }
   },

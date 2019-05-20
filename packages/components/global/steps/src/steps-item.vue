@@ -20,6 +20,7 @@
 <script>
 export default {
   name: 'ZkStepsItem',
+  componentName: 'ZkStepsItem',
   inject: {
     zkSteps: {
       default: undefined

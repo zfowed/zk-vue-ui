@@ -5,7 +5,7 @@
     </div>
     <div class="zk-steps-marks">
       <div
-        v-for="(slot, i) in $slots.default"
+        v-for="(slot, i) in values"
         :key="i"
         :class="['zk-steps-marks-item', {
           complete: i < currentIndex,
@@ -44,8 +44,9 @@ export default {
   },
   methods: {
     updateValues () {
-      this.values = this.$slots.default.map((slot, index) => {
-        if (!slot.componentInstance) return
+      this.values = this.$slots.default.filter(slot => {
+        return !!slot.componentInstance
+      }).map(slot => {
         return slot.componentInstance.value
       })
     }

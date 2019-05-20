@@ -116,7 +116,7 @@ export default {
         this.parentWidth = this.$refs.html.parentNode.clientWidth
         this.parentHeight = this.$refs.html.parentNode.clientHeight
         return html2canvas(this.$refs.html, {
-          backgroundColor: '#F7F8FA',
+          backgroundColor: '#FFFFFF',
           allowTaint: false,
           useCORS: true,
           logging: false

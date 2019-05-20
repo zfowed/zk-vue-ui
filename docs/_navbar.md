@@ -1,4 +1,4 @@
 
-* [开发指南](zh-cn/)
-* [组件](zh-cn/component/global/grid)
-* [工具方法](zh-cn/utils/)
+* [开发指南]()
+* [组件](component/)
+* [工具方法](utils/)

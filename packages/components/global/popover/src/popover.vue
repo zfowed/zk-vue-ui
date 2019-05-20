@@ -162,7 +162,10 @@ export default {
 <style lang="scss" scoped>
 .zk-popover {
   display: inline;
+  display: inline-block;
   .zk-popover-reference {
+    display: inline;
+    display: inline-block;
     outline: none;
   }
 }
