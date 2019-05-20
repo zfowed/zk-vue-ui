@@ -1,4 +1,5 @@
 const path = require('path')
+const CompressionWebpackPlugin = require('compression-webpack-plugin')
 
 module.exports = {
   // 修改 src 为 examples
@@ -28,5 +29,12 @@ module.exports = {
     //     // 修改它的选项...
     //     return options
     //   })
+  },
+  configureWebpack (config) {
+    if (process.env.NODE_ENV === 'production') {
+      config.plugins.push(new CompressionWebpackPlugin({
+        test: new RegExp('\\.(js|css)$')
+      }))
+    }
   }
 }
