@@ -248,14 +248,14 @@
       </zk-table-tr>
       </zk-table-head>
     <zk-table-body>
-      <template v-for="i in 4" :key="i">
-        <zk-table-tr>
+      <template v-for="i in 4">
+        <zk-table-tr :key="`${i}-1`">
           <zk-table-td>2019-05-08</zk-table-td>
           <zk-table-td>可爱的洋娃娃</zk-table-td>
           <zk-table-td>100块起</zk-table-td>
           <zk-table-td>忘记惹！</zk-table-td>
         </zk-table-tr>
-        <zk-table-tr>
+        <zk-table-tr :key="`${i}-2`">
           <zk-table-td :colspan="1"></zk-table-td>
           <zk-table-td :colspan="3">
             <zk-table>
