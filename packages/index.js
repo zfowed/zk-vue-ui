@@ -19,7 +19,9 @@ import {
   HtmlImage,
   Notice,
   NoticeItem,
-  ImageContainer
+  ImageContainer,
+  Steps,
+  StepsItem
 } from './components/global'
 import {
   Button,
@@ -63,6 +65,8 @@ const installs = [
   Notice,
   NoticeItem,
   ImageContainer,
+  Steps,
+  StepsItem,
 
   Button,
   Link,
@@ -125,6 +129,8 @@ export {
   Notice,
   NoticeItem,
   ImageContainer,
+  Steps,
+  StepsItem,
 
   Button,
   Link,
@@ -166,6 +172,8 @@ export default {
   Notice,
   NoticeItem,
   ImageContainer,
+  Steps,
+  StepsItem,
 
   Button,
   Link,

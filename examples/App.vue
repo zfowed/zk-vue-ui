@@ -45,6 +45,13 @@
         'http://www.zfowed.com/static/img/25025.jpg'
       ]">
     </zk-image-view>
+    <zk-steps value="4">
+      <zk-steps-item value="1">转发求购</zk-steps-item>
+      <zk-steps-item value="2">云商报价</zk-steps-item>
+      <zk-steps-item value="3">择优向客户报价</zk-steps-item>
+      <zk-steps-item value="4">客户下单</zk-steps-item>
+      <zk-steps-item value="5">赚差价</zk-steps-item>
+    </zk-steps>
     <zk-image-select>
       <span slot="label">哈哈</span>
       <span slot="select-label">重新选择</span>

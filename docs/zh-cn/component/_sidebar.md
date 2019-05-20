@@ -13,6 +13,7 @@
   * [HTML生成图片](/zh-cn/component/global/html-image)
   * [垂直公告无缝滚动](/zh-cn/component/global/notice)
   * [图片容器](/zh-cn/component/global/image-container)
+  * [步骤条](/zh-cn/component/global/steps)
 * ------------------ 电脑端 ------------------
   * [表单](/zh-cn/component/pc/form)
   * [输入框](/zh-cn/component/pc/input)

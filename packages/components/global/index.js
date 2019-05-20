@@ -19,6 +19,8 @@ import HtmlImage from './html-image'
 import Notice from './notice'
 import NoticeItem from './notice-item'
 import ImageContainer from './image-container'
+import Steps from './steps'
+import StepsItem from './steps-item'
 
 export {
   Row,
@@ -41,5 +43,7 @@ export {
   HtmlImage,
   Notice,
   NoticeItem,
-  ImageContainer
+  ImageContainer,
+  Steps,
+  StepsItem
 }
