@@ -1,18 +1,26 @@
 <template>
-  <div :class="['zk-form-item', {
-    [`zk-form-item--label-${labelPosition}`]: !zkFormItem && labelPosition,
-    [`zk-form-item--error-${errorPosition}`]: !zkFormItem && errorPosition,
-    [`zk-form-item--inline`]: inline
-  }]">
-    <div class="zk-form-item-label" :style="labelStyle">
-      <span v-if="label">{{ label }}：</span>
-    </div>
-    <div class="zk-form-item-container" :style="containerStyle">
-      <div class="zk-form-item-content">
-        <slot :validate="validate" :clear-validate="clearValidate"></slot>
-      </div>
-      <div v-if="validateState === 'error'" class="zk-form-item-error">
-        <span>*{{ validateMessage }}</span>
+  <div
+    :class="['zk-form-item', {
+      ['zk-form-item--nesting']: isNesting,
+      ['zk-form-item--inline']: currentInline,
+      ['zk-form-item--error-hide']: !currentShowMessage,
+      [`zk-form-item--error-inline`]: currentInlineMessage,
+      [`zk-form-item--label-${currentLabelPosition}`]: currentLabelPosition
+    }]">
+    <label
+      v-if="!isNesting && label"
+      class="zk-form-item__label"
+      :style="!currentInline && !isNesting && labelStyle">
+      <span>{{ label }}</span>
+    </label>
+    <div
+      class="zk-form-item__content"
+      :style="!currentInline && !isNesting && contentStyle">
+      <slot></slot>
+      <div
+        v-if="!isNesting && currentShowMessage && (validateMessage || error)"
+        class="zk-form-item__error">
+        <span>{{ validateMessage || error }}</span>
       </div>
     </div>
   </div>
@@ -24,12 +32,6 @@ import { FormItem } from '../../../../mixins/components/form'
 export default {
   name: 'ZkFormItem',
   mixins: [FormItem],
-  props: {
-    labelWidth: {
-      type: String,
-      default: ''
-    }
-  },
   inject: {
     zkForm: {
       default: undefined
@@ -38,31 +40,67 @@ export default {
       default: undefined
     }
   },
-  computed: {
-    errorPosition () {
-      return this.zkForm && this.zkForm.errorPosition
+  props: {
+    label: {
+      type: String,
+      default: ''
     },
-    labelPosition () {
-      return this.zkForm && this.zkForm.labelPosition
+    error: {
+      type: String,
+      default: ''
+    },
+    inline: {
+      type: Boolean,
+      default: false
+    },
+    labelWidth: {
+      type: String,
+      default: undefined
+    },
+    labelPosition: {
+      type: String,
+      default: undefined
+    },
+    inlineMessage: {
+      type: Boolean,
+      default: undefined
+    },
+    showMessage: {
+      type: Boolean,
+      default: undefined
+    }
+  },
+  computed: {
+    isNesting () {
+      return !!this.zkFormItem
+    },
+    currentInline () {
+      return this.inline || (this.zkForm && this.zkForm.inline)
+    },
+    currentShowMessage () {
+      if (typeof this.showMessage !== 'undefined') return this.showMessage
+      if (this.zkForm && typeof this.zkForm.showMessage !== 'undefined') return this.zkForm.showMessage
+      return true
+    },
+    currentInlineMessage () {
+      return this.inlineMessage || (this.zkForm && this.zkForm.inlineMessage)
     },
     currentLabelWidth () {
       return this.labelWidth || (this.zkForm && this.zkForm.labelWidth)
     },
-    inline () {
-      return this.zkForm && this.zkForm.inline
+    currentLabelPosition () {
+      return this.labelPosition || (this.zkForm && this.zkForm.labelPosition)
+    },
+    currentErrorWidth () {
+      return this.currentInlineMessage && this.currentLabelWidth
     },
     labelStyle () {
-      const condition = !this.zkFormItem && (this.errorPosition === 'left' || this.errorPosition === 'right')
-      if (!condition) return
-      return {
-        width: this.currentLabelWidth
-      }
+      return { width: this.currentLabelWidth }
     },
-    containerStyle () {
-      const condition = !this.zkFormItem && this.errorPosition === 'right'
-      if (!condition) return
+    contentStyle () {
       return {
-        'margin-right': this.currentLabelWidth
+        'margin-left': this.currentLabelWidth,
+        'margin-right': this.currentErrorWidth
       }
     }
   }
@@ -71,75 +109,93 @@ export default {
 
 <style lang="scss" scoped>
 .zk-form-item {
-  font-size: 14px;
-  line-height: 28px;
-  color: #656565;
-  width: 100%;
-  margin-bottom: 16px;
-  &:last-child {
+  margin-bottom: 22px;
+  clear: both;
+  &::after,
+  &::before {
+    display: table;
+    content: "";
+  }
+  .zk-form-item__label {
+    float: left;
+  }
+  .zk-form-item {
     margin-bottom: 0;
   }
-  .zk-form-item-label {
-    color: #656565;
-  }
-  .zk-form-item-container {
-    position: relative;
-  }
-  .zk-form-item-content {
-    width: 100%;
-    min-height: 40px;
-  }
-  .zk-form-item-error {
-    color: #FF5A00;
-    padding-left: 16px;
-    font-size: 12px;
-    line-height: 16px;
-    min-height: 16px;
-  }
-  &.zk-form-item--label-left,
-  &.zk-form-item--label-right {
+}
+.zk-form-item__label,
+.zk-form-item__content {
+  display: block;
+  position: relative;
+  line-height: 40px;
+  font-size: 14px;
+}
+.zk-form-item__label {
+  vertical-align: middle;
+  font-size: 14px;
+  line-height: 40px;
+  color: #606266;
+  box-sizing: border-box;
+  padding: 0 12px 0 0;
+}
+.zk-form-item__content {
+  &::after,
+  &::before {
     display: table;
-    table-layout: fixed;
-    .zk-form-item-label {
-      display: table-cell;
-      padding: 0;
-      vertical-align: top;
-      line-height: 40px;
-    }
-    .zk-form-item-content {
-      line-height: 40px;
-    }
+    content: "";
   }
-  &.zk-form-item--label-right {
-    .zk-form-item-label {
-      text-align: right;
-    }
+}
+.zk-form-item__error {
+  color: #FF5A00;
+  font-size: 12px;
+  line-height: 1;
+  padding-top: 4px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+.el-form-item--label-right {
+  .zk-form-item__label {
+    text-align: right;
   }
-  &.zk-form-item--error-right {
-    > .zk-form-item-container > .zk-form-item-error {
-      position: absolute;
-      left: 100%;
-      top: 0;
-      white-space: nowrap;
-      line-height: 40px;
-    }
+}
+.el-form-item--label-top {
+  .zk-form-item__label {
+    float: none;
+    width: 100%;
+    line-height: 2;
   }
-  &.zk-form-item--inline {
+  .zk-form-item__content {
+    margin-left: 0;
+  }
+}
+
+.zk-form-item--error-inline {
+  .zk-form-item__error {
+    top: 0;
+    left: 100%;
+    padding: 0;
+    padding-left: 12px;
+    line-height: 40px;
+    white-space: nowrap;
+  }
+}
+
+.zk-form-item--inline {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 10px;
+  &:last-child {
+    margin-right: 0;
+  }
+  .zk-form-item__label,
+  .zk-form-item__content {
     display: inline-block;
-    width: auto;
-    margin-right: 20px;
-    &:last-child {
-      margin-right: 0;
-    }
-    .zk-form-item-label,
-    .zk-form-item-container,
-    .zk-form-item-content {
-      display: inline-block;
-      line-height: 40px;
-      width: auto;
-      vertical-align: bottom;
-    }
-    .zk-form-item-error {
+  }
+
+  &.zk-form-item--error-inline {
+    .zk-form-item__error {
       display: none;
     }
   }

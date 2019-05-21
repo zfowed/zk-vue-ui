@@ -1,7 +1,12 @@
 
 <template>
   <div>
-    <zk-form ref="form" inline :model="form" :rules="formRules">
+    <zk-form ref="form"
+      label-width="80px"
+      label-position="top"
+      inline-message
+      :model="form"
+      :rules="formRules">
       <zk-form-item label="活动名称" prop="value1">
         <zk-input v-model="form.value1"></zk-input>
       </zk-form-item>
@@ -11,18 +16,14 @@
           <zk-option label="区域二" value="区域二"></zk-option>
         </zk-select>
       </zk-form-item>
-      <zk-form-item label="活动时间">
+      <zk-form-item label="活动时间" :props="['value3', 'value4']">
         <zk-row>
           <zk-col :span="11">
-            <zk-form-item prop="value3">
-              <zk-date-picker v-model="form.value3" style="width: 100%;"></zk-date-picker>
-            </zk-form-item>
+            <zk-date-picker v-model="form.value3" style="width: 100%;"></zk-date-picker>
           </zk-col>
           <zk-col :span="2" style="text-align: center;">-</zk-col>
           <zk-col :span="11">
-            <zk-form-item prop="value4">
-              <zk-date-picker v-model="form.value4" style="width: 100%;"></zk-date-picker>
-            </zk-form-item>
+            <zk-date-picker v-model="form.value4" style="width: 100%;"></zk-date-picker>
           </zk-col>
         </zk-row>
       </zk-form-item>
@@ -61,7 +62,12 @@ export default {
         value7: false,
         value8: false,
         value9: '1',
-        value10: ''
+        value10: '',
+        asd: {
+          asd: {
+            asd: ''
+          }
+        }
       },
       formRules: {
         value1: {

@@ -1,9 +1,9 @@
-// 接收的参数 label prop rules required
+// 接收的参数 prop rules required
 // 可处理的参数 validateState validateMessage
 // 需要处理的方法
 // 可使用的方法 validate clearValidate
 
-import { get, validate } from '../../../utils'
+import { get, set, validate } from '../../../utils'
 import emitter from '../../emitter'
 
 export default {
@@ -15,13 +15,12 @@ export default {
     }
   },
   props: {
-    label: {
-      type: String,
-      default: ''
-    },
     prop: {
       type: String,
       default: ''
+    },
+    props: {
+      type: Array
     },
     rules: {
       type: Object
@@ -43,61 +42,56 @@ export default {
     }
   },
   computed: {
-    fieldValue () {
-      if (!this.zkForm) return undefined
-      const model = this.zkForm.model
-      if (!model || !this.prop) return
-      return get(model, this.prop)
+    currentProps () {
+      return this.props || (this.prop && [this.prop]) || []
     }
   },
   methods: {
-    // 获取校验规则
-    getRules () {
-      if (!this.zkForm) return []
-      const formRules = this.zkForm.rules
-      const selfRules = this.rules
-      const requiredRule = this.required !== undefined ? { required: !!this.required } : []
-      const selfFormRules = formRules && this.prop ? get(formRules, this.prop) : {}
-      return [].concat(selfRules || selfFormRules || []).concat(requiredRule)
+    pathToArray (path) {
+      return Array.isArray(path) ? path : path.replace(/\[/g, '.').replace(/\]/g, '').split('.')
     },
-    // 获取筛选过后的校验规则
-    getFilteredRule (trigger) {
-      const rules = this.getRules()
-      return rules.filter(rule => {
-        if (!rule.trigger || !trigger) return true
-        if (Array.isArray(rule.trigger)) {
-          return rule.trigger.indexOf(trigger) > -1
-        } else {
-          return rule.trigger === trigger
+    // 获取校验参数
+    getValidateParams () {
+      let formModel = (this.zkForm && this.zkForm.model) || {}
+      let formDescriptor = (this.zkForm && this.zkForm.rules) || {}
+      let formRules = formDescriptor
+      let selfRules = this.rules
+      let requiredRule = this.required !== undefined ? { required: !!this.required } : []
+      let descriptor = {}
+      let model = {}
+      let props = this.currentProps
+      for (const prop of props) {
+        if (prop) {
+          let propPathArray = this.pathToArray(prop)
+          let __descriptor = descriptor
+          let __formRules = formRules
+          for (let i = 0; i < propPathArray.length; i++) {
+            const key = propPathArray[i]
+            if (__formRules) __formRules = __formRules[key] || null
+            if (i < propPathArray.length - 1) {
+              __descriptor[key] = { type: 'object', required: true, fields: {} }
+              __descriptor = __descriptor[key].fields
+            } else {
+              __descriptor[key] = [].concat(selfRules || __formRules || {}).concat(requiredRule)
+            }
+          }
+          set(model, prop, get(formModel, prop))
         }
-      }).map(rule => Object.assign({}, rule))
+      }
+      return { model, descriptor }
     },
     // 校验
     validate (trigger, callback) {
-      const fn = (resolve, reject) => {
-        const rules = this.getFilteredRule(trigger)
-        if ((!rules || rules.length === 0) && this.required === undefined) {
-          callback && callback()
-          return resolve(true)
-        }
-        this.validateState = 'validating'
-        const descriptor = {}
-        if (rules && rules.length > 0) {
-          rules.forEach(rule => {
-            delete rule.trigger
-          })
-        }
-        descriptor[this.prop] = rules
-        const model = {}
-        model[this.prop] = this.fieldValue
+      const fn = resolve => {
+        const { model, descriptor } = this.getValidateParams()
         validate(model, descriptor, {}, (errors, invalidFields) => {
           this.validateState = errors ? 'error' : 'success'
           this.validateMessage = (errors && errors[0] && errors[0].message) || ''
           callback && callback(this.validateMessage, invalidFields)
-          return resolve(!!errors)
+          return resolve && resolve(!!errors)
         })
       }
-      if (callback) return fn(() => null, () => null)
+      if (callback) return fn()
       return new Promise(fn)
     },
     // 清除校验
@@ -117,20 +111,15 @@ export default {
     }
   },
   mounted () {
-    if (this.prop) {
+    if (this.currentProps.length) {
       this.dispatch('ZkForm', 'zk.form.addFieldInstance', [this])
-
-      const rules = this.getRules()
-
-      if (rules.length || this.required !== undefined) {
-        this.$on('zk.form.blur', this.onFieldBlur)
-        this.$on('zk.form.focus', this.onFieldFocus)
-        this.$on('zk.form.change', this.onFieldChange)
-      }
+      this.$on('zk.form.blur', this.onFieldBlur)
+      this.$on('zk.form.focus', this.onFieldFocus)
+      this.$on('zk.form.change', this.onFieldChange)
     }
   },
   beforeDestroy () {
-    if (this.prop) {
+    if (this.currentProps.length) {
       this.dispatch('ZkForm', 'zk.form.removeFieldInstance', [this])
     }
   }

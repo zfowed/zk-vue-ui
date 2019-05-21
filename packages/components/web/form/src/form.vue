@@ -6,6 +6,7 @@
 
 <script>
 import { Form } from '../../../../mixins/components/form'
+
 export default {
   name: 'ZkForm',
   mixins: [Form],
@@ -19,44 +20,25 @@ export default {
       type: Boolean,
       default: false
     },
-    errorPosition: {
+    labelWidth: {
       type: String,
-      default: 'button'
+      default: undefined
     },
     labelPosition: {
       type: String,
-      default: 'left'
+      default: undefined
     },
-    labelWidth: {
-      type: String
+    inlineMessage: {
+      type: Boolean,
+      default: undefined
+    },
+    showMessage: {
+      type: Boolean,
+      default: undefined
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.zk-form.zk-form-inline {
-  /deep/ {
-    .zk-form-item {
-      margin-right: 38px;
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-    .zk-form-item,
-    .zk-form-item-label,
-    .zk-form-item-content {
-      display: inline-block;
-      * {
-        vertical-align: middle;
-      }
-    }
-    .zk-form-item-error {
-      display: none;
-    }
-    .zk-input {
-      width: 244px;
-    }
-  }
-}
 </style>
