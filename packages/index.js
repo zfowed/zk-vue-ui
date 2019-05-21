@@ -38,7 +38,8 @@ import {
   MessageBox,
   ImageView,
   ImageSelect,
-  ImageUpload
+  ImageUpload,
+  Alert
 } from './components/web'
 import { TransferDom } from './directives'
 import utils from './utils'
@@ -82,7 +83,8 @@ const installs = [
   MessageBox,
   ImageView,
   ImageSelect,
-  ImageUpload
+  ImageUpload,
+  Alert
 ]
 
 const install = function (Vue, opts = {}) {
@@ -147,7 +149,8 @@ export {
   MessageBox,
   ImageView,
   ImageSelect,
-  ImageUpload
+  ImageUpload,
+  Alert
 }
 export default {
   install,
@@ -190,5 +193,6 @@ export default {
   MessageBox,
   ImageView,
   ImageSelect,
-  ImageUpload
+  ImageUpload,
+  Alert
 }

@@ -1,5 +1,5 @@
 <template>
-  <div :class="['zk-form', { 'zk-form-inline': inline }]">
+  <div class="zk-form">
     <slot></slot>
   </div>
 </template>
@@ -8,7 +8,29 @@
 import { Form } from '../../../../mixins/components/form'
 export default {
   name: 'ZkForm',
-  mixins: [Form]
+  mixins: [Form],
+  provide () {
+    return {
+      zkForm: this
+    }
+  },
+  props: {
+    inline: {
+      type: Boolean,
+      default: false
+    },
+    errorPosition: {
+      type: String,
+      default: 'button'
+    },
+    labelPosition: {
+      type: String,
+      default: 'left'
+    },
+    labelWidth: {
+      type: String
+    }
+  }
 }
 </script>
 

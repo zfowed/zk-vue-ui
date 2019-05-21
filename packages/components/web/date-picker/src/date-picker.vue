@@ -52,6 +52,8 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 @import "~element-ui/packages/theme-chalk/src/icon";
 @import "~element-ui/packages/theme-chalk/src/date-picker";
 .zk-date-picker.el-date-editor {
+  width: 100%;
+  display: inline-block;
   /deep/ {
     .el-input__inner {
       border-radius: 0;

@@ -13,5 +13,23 @@ import MessageBox from './message-box'
 import ImageView from './image-view'
 import ImageSelect from './image-select'
 import ImageUpload from './image-upload'
+import Alert from './alert'
 
-export { Form, FormItem, Input, Select, Option, DatePicker, Button, Link, Pagination, Message, Dialog, MessageBox, ImageView, ImageSelect, ImageUpload }
+export {
+  Form,
+  FormItem,
+  Input,
+  Select,
+  Option,
+  DatePicker,
+  Button,
+  Link,
+  Pagination,
+  Message,
+  Dialog,
+  MessageBox,
+  ImageView,
+  ImageSelect,
+  ImageUpload,
+  Alert
+}
