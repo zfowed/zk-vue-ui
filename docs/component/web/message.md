@@ -25,9 +25,9 @@ message.error('弹出一个错误的 Message')
 
 <template>
   <div>
-    <zk-button @click="show('success')">成功</zk-button>
-    <zk-button @click="show('warning')">警告</zk-button>
-    <zk-button @click="show('error')">错误</zk-button>
+    <zk-button type="primary" @click="show('success')">成功</zk-button>
+    <zk-button type="primary" @click="show('warning')">警告</zk-button>
+    <zk-button type="primary" @click="show('error')">错误</zk-button>
     <zk-message :type="type" :visible.sync="visible">
       这是一段内容,这是一段内容,这是一段内容,这是一段内容。
     </zk-message>
@@ -63,9 +63,9 @@ message.error('弹出一个错误的 Message')
 
 <template>
   <div>
-    <zk-button @click="show('success')">成功</zk-button>
-    <zk-button @click="show('warning')">警告</zk-button>
-    <zk-button @click="show('error')">错误</zk-button>
+    <zk-button type="primary" @click="show('success')">成功</zk-button>
+    <zk-button type="primary" @click="show('warning')">警告</zk-button>
+    <zk-button type="primary" @click="show('error')">错误</zk-button>
   </div>
 </template>
 

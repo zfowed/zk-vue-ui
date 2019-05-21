@@ -13,7 +13,7 @@ import PopupLayer from 'zk-vue-ul/packages/components/global/popup-layer'
 
 <template>
   <div>
-    <zk-button @click="visible = !visible">点击我</zk-button>
+    <zk-button type="primary" @click="visible = !visible">点击我</zk-button>
     <zk-popup-layer :visible.sync="visible">
       <div class="popup">
         这是一段内容,这是一段内容,这是一段内容,这是一段内容。
@@ -46,7 +46,7 @@ import PopupLayer from 'zk-vue-ul/packages/components/global/popup-layer'
 
 <template>
   <div>
-    <zk-button @click="visible = !visible">点击我</zk-button>
+    <zk-button type="primary" @click="visible = !visible">点击我</zk-button>
     <zk-popup-layer :visible.sync="visible" :modal="false">
       <div class="popup">
         这是一段内容,这是一段内容,这是一段内容,这是一段内容。
@@ -79,11 +79,11 @@ import PopupLayer from 'zk-vue-ul/packages/components/global/popup-layer'
 
 <template>
   <div>
-    <zk-button @click="show('center')">居中</zk-button>
-    <zk-button @click="show('top')">上</zk-button>
-    <zk-button @click="show('right')">右</zk-button>
-    <zk-button @click="show('bottom')">下</zk-button>
-    <zk-button @click="show('left')">左</zk-button>
+    <zk-button type="primary" @click="show('center')">居中</zk-button>
+    <zk-button type="primary" @click="show('top')">上</zk-button>
+    <zk-button type="primary" @click="show('right')">右</zk-button>
+    <zk-button type="primary" @click="show('bottom')">下</zk-button>
+    <zk-button type="primary" @click="show('left')">左</zk-button>
 
     <zk-popup-layer :visible.sync="visible" :placement="placement">
       <div :class="`popup popup-${placement}`">

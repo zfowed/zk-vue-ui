@@ -4,7 +4,7 @@
       'zk-button',
       {
         'is-disabled': currentDisabled,
-        'is-border': border,
+        'is-plain': plain,
         [`zk-button--${type}`]: type,
       }
     ]"
@@ -23,9 +23,9 @@ export default {
   props: {
     type: {
       type: String,
-      default: 'primary'
+      default: 'default'
     },
-    border: {
+    plain: {
       type: Boolean,
       default: false
     }
@@ -45,36 +45,37 @@ export default {
   box-sizing: border-box;
   outline: none;
   margin: 0;
+  padding: 12px 16px;
   transition: .1s;
   font-weight: 500;
   user-select: none;
-  // padding: 13px 13px;
   font-size: 14px;
-  color: #656565;
   height: 40px;
+  color: #656565;
+  border: solid 1px #EAEAEA;
   background: #FFFFFF;
-  border: solid 1px #AAAAAA;
   & + .zk-button {
     margin-left: 8px;
   }
   &:hover {
-    color: #FFFFFF;
-    border-color: #1E86FF;
-    background: #1E86FF;
+    color: #656565;
+    border-color: #AAAAAA;
+    background: #FFFFFF;
   }
   &:active {
-    color: #FFFFFF;
-    border-color: #0061D1;
-    background: #0061D1;
+    color: #656565;
+    border-color: #656565;
+    background: #FFFFFF;
   }
+
   &.zk-button--primary {
     color: #FFFFFF;
     border-color: #0B7AFB;
     background: #0B7AFB;
-    &.is-border {
-      background: none;
+    &.is-plain {
       color: #0B7AFB;
       border-color: #0B7AFB;
+      background: #FFFFFF;
     }
     &:hover {
       color: #FFFFFF;
@@ -87,22 +88,12 @@ export default {
       background: #0061D1;
     }
   }
-  &.is-disabled,
-  &.is-disabled.is-border {
+  &.is-disabled {
     cursor: not-allowed;
-    color: #FFFFFF;
-    border-color: #656565;
-    background: #656565;
-    &:hover {
-      color: #FFFFFF;
-      border-color: #656565;
-      background: #656565;
-    }
-    &:active {
-      color: #FFFFFF;
-      border-color: #656565;
-      background: #656565;
-    }
+    color: #FFFFFF !important;
+    border-color: #656565 !important;
+    background: #656565 !important;
   }
+
 }
 </style>

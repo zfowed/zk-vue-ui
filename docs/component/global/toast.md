@@ -21,7 +21,7 @@ toast('弹出一个 Toast')
 
 <template>
   <div>
-    <zk-button @click="visible = !visible">点击我</zk-button>
+    <zk-button type="primary" @click="visible = !visible">点击我</zk-button>
     <zk-toast  :visible.sync="visible">
       这是一段内容,这是一段内容,这是一段内容,这是一段内容。
     </zk-toast>
@@ -46,7 +46,7 @@ toast('弹出一个 Toast')
 
 <template>
   <div>
-    <zk-button @click="showToast">点击我</zk-button>
+    <zk-button type="primary" @click="showToast">点击我</zk-button>
   </div>
 </template>
 

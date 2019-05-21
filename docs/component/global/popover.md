@@ -14,19 +14,19 @@ import Popover from 'zk-vue-ul/packages/components/global/popover'
 <template>
   <div>
     <zk-popover trigger="hover" placement="top-start" width="200">
-      <zk-button slot="reference">hover 激活</zk-button>
+      <zk-button type="primary" slot="reference">hover 激活</zk-button>
       <div class="popover">这是一段内容,这是一段内容,这是一段内容,这是一段内容。</div>
     </zk-popover>
     <zk-popover trigger="click" placement="bottom" width="200">
-      <zk-button slot="reference">click 激活</zk-button>
+      <zk-button type="primary" slot="reference">click 激活</zk-button>
       <div class="popover">这是一段内容,这是一段内容,这是一段内容,这是一段内容。</div>
     </zk-popover>
     <zk-popover trigger="focus" placement="right" width="200">
-      <zk-button slot="reference">focus 激活</zk-button>
+      <zk-button type="primary" slot="reference">focus 激活</zk-button>
       <div class="popover">这是一段内容,这是一段内容,这是一段内容,这是一段内容。</div>
     </zk-popover>
     <zk-popover v-model="visible" trigger="manual" placement="bottom" width="200">
-      <zk-button slot="reference" @click="visible = !visible">手动激活</zk-button>
+      <zk-button type="primary" slot="reference" @click="visible = !visible">手动激活</zk-button>
       <div class="popover">这是一段内容,这是一段内容,这是一段内容,这是一段内容。</div>
     </zk-popover>
   </div>

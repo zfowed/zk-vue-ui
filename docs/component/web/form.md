@@ -53,8 +53,8 @@ import FormItem from 'zk-vue-ul/packages/components/global/form-item'
         <zk-input v-model="form.value10" type="textarea"></zk-input>
       </zk-form-item>
       <zk-form-item>
-        <zk-button @click="$refs.form.validate()">提交</zk-button>
-        <zk-button border>返回</zk-button>
+        <zk-button type="primary" @click="$refs.form.validate()">提交</zk-button>
+        <zk-button>返回</zk-button>
       </zk-form-item>
     </zk-form>
   </div>

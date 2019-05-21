@@ -22,7 +22,7 @@ msgbox.confirm('弹出一个 Confirm')
 
 <template>
   <div>
-    <zk-button @click="visible = true">点击我</zk-button>
+    <zk-button type="primary" @click="visible = true">点击我</zk-button>
     <zk-message-box :visible.sync="visible" title="标题">
       这是一段内容,这是一段内容,这是一段内容,这是一段内容。
     </zk-message-box>
@@ -47,8 +47,8 @@ msgbox.confirm('弹出一个 Confirm')
 
 <template>
   <div>
-    <zk-button @click="alert">alert</zk-button>
-    <zk-button @click="confirm">confirm</zk-button>
+    <zk-button type="primary" @click="alert">alert</zk-button>
+    <zk-button type="primary" @click="confirm">confirm</zk-button>
   </div>
 </template>
 

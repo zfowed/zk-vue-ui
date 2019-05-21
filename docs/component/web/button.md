@@ -13,8 +13,14 @@ import Button from 'zk-vue-ul/packages/components/global/button'
 
 <template>
   <div>
-    <zk-button>按钮</zk-button>
-    <zk-button border>按钮</zk-button>
+    <p>
+      <zk-button>默认按钮</zk-button>
+      <zk-button type="primary">主要按钮</zk-button>
+    </p>
+    <p>
+      <zk-button plain>朴素按钮</zk-button>
+      <zk-button plain type="primary">主要按钮</zk-button>
+    </p>
   </div>
 </template>
 
@@ -31,7 +37,6 @@ import Button from 'zk-vue-ul/packages/components/global/button'
 <template>
   <div>
     <zk-button disabled>按钮</zk-button>
-    <zk-button disabled border>按钮</zk-button>
   </div>
 </template>
 

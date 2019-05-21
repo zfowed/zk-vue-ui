@@ -70,7 +70,6 @@ export default {
   },
   methods: {
     changeFile (file) {
-
       function a (f, d, c) {
         return () => setTimeout(() => f(c), d)
       }
@@ -78,9 +77,6 @@ export default {
       function b () {}
 
       a(b, 200, {})
-
-
-
 
       if (!file) {
         this.currentValue = ''
