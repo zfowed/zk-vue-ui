@@ -24,7 +24,7 @@ import FormItem from 'zk-vue-ul/packages/components/global/form-item'
           <zk-option label="区域二" value="区域二"></zk-option>
         </zk-select>
       </zk-form-item>
-      <zk-form-item label="活动时间" :props="['value3': 'value4']">
+      <zk-form-item label="活动时间" :props="['value3', 'value4']">
         <zk-row>
           <zk-col :span="11">
             <zk-date-picker v-model="form.value3" style="width: 100%;"></zk-date-picker>
@@ -127,7 +127,7 @@ import FormItem from 'zk-vue-ul/packages/components/global/form-item'
           <zk-option label="区域二" value="区域二"></zk-option>
         </zk-select>
       </zk-form-item>
-      <zk-form-item label="活动时间" :props="['value3': 'value4']">
+      <zk-form-item label="活动时间" :props="['value3', 'value4']">
         <zk-row>
           <zk-col :span="11">
             <zk-date-picker v-model="form.value3" style="width: 100%;"></zk-date-picker>
@@ -230,7 +230,7 @@ import FormItem from 'zk-vue-ul/packages/components/global/form-item'
           <zk-option label="区域二" value="区域二"></zk-option>
         </zk-select>
       </zk-form-item>
-      <zk-form-item label="活动时间" :props="['value3': 'value4']">
+      <zk-form-item label="活动时间" :props="['value3', 'value4']">
         <zk-row>
           <zk-col :span="11">
             <zk-date-picker v-model="form.value3" style="width: 100%;"></zk-date-picker>
@@ -333,7 +333,7 @@ import FormItem from 'zk-vue-ul/packages/components/global/form-item'
           <zk-option label="区域二" value="区域二"></zk-option>
         </zk-select>
       </zk-form-item>
-      <zk-form-item label="活动时间" :props="['value3': 'value4']">
+      <zk-form-item label="活动时间" :props="['value3', 'value4']">
         <zk-row>
           <zk-col :span="11">
             <zk-date-picker v-model="form.value3" style="width: 100%;"></zk-date-picker>
