@@ -3,8 +3,6 @@
   <div>
     <zk-form ref="form"
       label-width="80px"
-      label-position="top"
-      inline-message
       :model="form"
       :rules="formRules">
       <zk-form-item label="活动名称" prop="value1">

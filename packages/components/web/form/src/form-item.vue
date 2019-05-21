@@ -10,12 +10,12 @@
     <label
       v-if="!isNesting && label"
       class="zk-form-item__label"
-      :style="!currentInline && !isNesting && labelStyle">
+      :style="!currentInline && !isNesting && currentLabelPosition !== 'top' && labelStyle">
       <span>{{ label }}</span>
     </label>
     <div
       class="zk-form-item__content"
-      :style="!currentInline && !isNesting && contentStyle">
+      :style="!currentInline && !isNesting && currentLabelPosition !== 'top' && contentStyle">
       <slot></slot>
       <div
         v-if="!isNesting && currentShowMessage && (validateMessage || error)"
@@ -155,12 +155,12 @@ export default {
   left: 0;
 }
 
-.el-form-item--label-right {
+.zk-form-item--label-right {
   .zk-form-item__label {
     text-align: right;
   }
 }
-.el-form-item--label-top {
+.zk-form-item--label-top {
   .zk-form-item__label {
     float: none;
     width: 100%;
