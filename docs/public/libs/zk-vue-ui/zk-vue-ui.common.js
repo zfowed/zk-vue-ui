@@ -36388,7 +36388,6 @@ var FileSelection_default = /*#__PURE__*/__webpack_require__.n(FileSelection);
         }
       }
 
-      console.log(descriptor);
       return {
         model: model,
         descriptor: descriptor
