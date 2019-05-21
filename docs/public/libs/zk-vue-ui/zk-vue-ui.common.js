@@ -36366,7 +36366,7 @@ var FileSelection_default = /*#__PURE__*/__webpack_require__.n(FileSelection);
                 };
                 __descriptor = __descriptor[key].fields;
               } else {
-                __descriptor[key] = [].concat(selfRules || __formRules || {}).concat(requiredRule);
+                __descriptor[key] = [].concat(selfRules || __formRules || []).concat(requiredRule);
               }
             }
 
@@ -36388,6 +36388,7 @@ var FileSelection_default = /*#__PURE__*/__webpack_require__.n(FileSelection);
         }
       }
 
+      console.log(descriptor);
       return {
         model: model,
         descriptor: descriptor
