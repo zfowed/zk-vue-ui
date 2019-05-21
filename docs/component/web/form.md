@@ -14,7 +14,7 @@ import FormItem from 'zk-vue-ul/packages/components/global/form-item'
 
 <template>
   <div>
-    <zk-form ref="form" :model="form" label-width="80px" :rules="formRules">
+    <zk-form ref="form" :model="form" :rules="formRules" label-width="80px">
       <zk-form-item label="活动名称" prop="value1">
         <zk-input v-model="form.value1"></zk-input>
       </zk-form-item>
