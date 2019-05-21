@@ -1,5 +1,19 @@
 ## Toast
 
+### 引入组件
+
+```javascript
+import Toast from 'zk-vue-ul/packages/components/global/toast'
+```
+
+服务模式
+
+```javascript
+const { toast } = Toast
+
+toast('弹出一个 Toast')
+```
+
 ### 组件模式
 
 ```html

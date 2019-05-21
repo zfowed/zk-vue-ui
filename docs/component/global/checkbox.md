@@ -1,5 +1,11 @@
 ## Checkbox 复选框
 
+### 引入组件
+
+```javascript
+import Checkbox from 'zk-vue-ul/packages/components/global/checkbox'
+```
+
 ### 基本使用
 
 ```html

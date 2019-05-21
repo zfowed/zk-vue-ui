@@ -1,5 +1,12 @@
 ## Form 表单
 
+### 引入组件
+
+```javascript
+import Form from 'zk-vue-ul/packages/components/global/form'
+import FormItem from 'zk-vue-ul/packages/components/global/form-item'
+```
+
 ### 基本使用
 
 ```html

@@ -1,5 +1,11 @@
 ## ImageUpload 图片上传
 
+### 引入组件
+
+```javascript
+import ImageUpload from 'zk-vue-ul/packages/components/global/image-upload'
+```
+
 ### 基本使用
 
 ```html

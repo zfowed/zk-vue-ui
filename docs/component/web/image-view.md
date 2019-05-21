@@ -1,5 +1,11 @@
 ## ImageView 图片预览
 
+### 引入组件
+
+```javascript
+import ImageView from 'zk-vue-ul/packages/components/global/image-view'
+```
+
 ### 基本使用
 
 ```html

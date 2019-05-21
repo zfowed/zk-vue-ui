@@ -1,5 +1,20 @@
 ## MessageBox 弹框
 
+### 引入组件
+
+```javascript
+import MessageBox from 'zk-vue-ul/packages/components/global/message-box'
+```
+
+服务模式
+
+```javascript
+const { msgbox } = MessageBox
+
+msgbox.alert('弹出一个 Alert')
+msgbox.confirm('弹出一个 Confirm')
+```
+
 ### 组件模式
 
 ```html

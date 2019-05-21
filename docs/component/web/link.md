@@ -1,4 +1,10 @@
-## Button 按钮
+## Link 链接
+
+### 引入组件
+
+```javascript
+import Link from 'zk-vue-ul/packages/components/global/link'
+```
 
 ### 基本使用
 

@@ -1,5 +1,12 @@
 ## Swiper 触摸滑动
 
+### 引入组件
+
+```javascript
+import Swiper from 'zk-vue-ul/packages/components/global/swiper'
+import SwiperSlide from 'zk-vue-ul/packages/components/global/swiper-slide'
+```
+
 ### 轮播图
 
 基础使用

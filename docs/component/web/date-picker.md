@@ -1,5 +1,11 @@
 ## DatePicker 时间选择器
 
+### 引入组件
+
+```javascript
+import DatePicker from 'zk-vue-ul/packages/components/global/date-picker'
+```
+
 ### 基本使用
 
 ```html

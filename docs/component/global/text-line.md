@@ -2,6 +2,12 @@
 
 用于文本移除出现省略号。
 
+### 引入组件
+
+```javascript
+import TextLine from 'zk-vue-ul/packages/components/global/text-line'
+```
+
 ### 使用方式
 
 ```html

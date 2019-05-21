@@ -1,4 +1,10 @@
-## Popover 悬浮框
+## PopupLayer 弹出层
+
+### 引入组件
+
+```javascript
+import PopupLayer from 'zk-vue-ul/packages/components/global/popup-layer'
+```
 
 ### 基本使用
 

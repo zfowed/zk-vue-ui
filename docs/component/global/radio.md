@@ -1,5 +1,11 @@
 ## Radio 单选框
 
+### 引入组件
+
+```javascript
+import Radio from 'zk-vue-ul/packages/components/global/radio'
+```
+
 ### 基本使用
 
 ```html

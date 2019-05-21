@@ -2,6 +2,17 @@
 
 用于展示多条结构类似的数据。
 
+### 引入组件
+
+```javascript
+import Table from 'zk-vue-ul/packages/components/global/table'
+import TableHead from 'zk-vue-ul/packages/components/global/table-head'
+import TableBody from 'zk-vue-ul/packages/components/global/table-body'
+import TableTr from 'zk-vue-ul/packages/components/global/table-tr'
+import TableTh from 'zk-vue-ul/packages/components/global/table-th'
+import TableTd from 'zk-vue-ul/packages/components/global/table-td'
+```
+
 ### 基础表格
 
 基础的表格展示用法。

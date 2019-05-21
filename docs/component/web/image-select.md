@@ -1,5 +1,11 @@
 ## ImageSelect 图片选择器
 
+### 引入组件
+
+```javascript
+import ImageSelect from 'zk-vue-ul/packages/components/global/image-select'
+```
+
 ### 基本使用
 
 ```html

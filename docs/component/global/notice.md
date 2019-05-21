@@ -1,5 +1,12 @@
 ## Notice 垂直公告无缝滚动
 
+### 引入组件
+
+```javascript
+import Notice from 'zk-vue-ul/packages/components/global/notice'
+import NoticeItem from 'zk-vue-ul/packages/components/global/notice-item'
+```
+
 ### 使用方式
 
 ```html

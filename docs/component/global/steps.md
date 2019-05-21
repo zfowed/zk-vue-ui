@@ -1,5 +1,12 @@
 ## Steps 步骤条
 
+### 引入组件
+
+```javascript
+import Steps from 'zk-vue-ul/packages/components/global/steps'
+import StepsItem from 'zk-vue-ul/packages/components/global/steps-item'
+```
+
 ### 基本使用
 
 ```html

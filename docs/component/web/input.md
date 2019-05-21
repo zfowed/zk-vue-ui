@@ -1,5 +1,11 @@
 ## Input 输入框
 
+### 引入组件
+
+```javascript
+import Input from 'zk-vue-ul/packages/components/global/input'
+```
+
 ### 基本使用
 
 ```html

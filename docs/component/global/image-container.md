@@ -2,6 +2,12 @@
 
 用于控制图片在容器中，并使其居中图片
 
+### 引入组件
+
+```javascript
+import ImageContainer from 'zk-vue-ul/packages/components/global/image-container'
+```
+
 ### 使用方式
 
 ```html

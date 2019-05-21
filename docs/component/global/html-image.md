@@ -1,5 +1,11 @@
 # HtmlImage HTML生成图片
 
+### 引入组件
+
+```javascript
+import HtmlImage from 'zk-vue-ul/packages/components/global/html-image'
+```
+
 !> 注意！生成的图片可能会与效果图有些许差异，原因是应为 canvas 不支持一些 css 样式和 字体的原因，最好固定容器的大小。
 
 ### 使用方式

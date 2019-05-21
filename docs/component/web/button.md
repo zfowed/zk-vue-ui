@@ -1,5 +1,11 @@
 ## Button 按钮
 
+### 引入组件
+
+```javascript
+import Button from 'zk-vue-ul/packages/components/global/button'
+```
+
 ### 基本使用
 
 ```html

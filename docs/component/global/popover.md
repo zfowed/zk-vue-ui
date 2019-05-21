@@ -1,5 +1,11 @@
 ## Popover 悬浮框
 
+### 引入组件
+
+```javascript
+import Popover from 'zk-vue-ul/packages/components/global/popover'
+```
+
 ### 基本使用
 
 ```html

@@ -1,5 +1,12 @@
 ## Select 选择框
 
+### 引入组件
+
+```javascript
+import Select from 'zk-vue-ul/packages/components/global/select'
+import Option from 'zk-vue-ul/packages/components/global/option'
+```
+
 ### 基本使用
 
 ```html

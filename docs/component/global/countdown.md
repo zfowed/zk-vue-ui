@@ -1,5 +1,11 @@
 ## Countdown 倒计时
 
+### 引入组件
+
+```javascript
+import Countdown from 'zk-vue-ul/packages/components/global/countdown'
+```
+
 ### 使用方式
 
 ```html

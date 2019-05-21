@@ -1,5 +1,12 @@
 ## Grid 栅格化布局
 
+### 引入组件
+
+```javascript
+import Row from 'zk-vue-ul/packages/components/global/row'
+import Col from 'zk-vue-ul/packages/components/global/col'
+```
+
 ### 基础布局
 
 使用单一分栏创建基础的栅格布局。

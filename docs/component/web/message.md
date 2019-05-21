@@ -1,5 +1,23 @@
 ## Message 消息提示
 
+### 引入组件
+
+```javascript
+import Message from 'zk-vue-ul/packages/components/global/message'
+```
+
+服务模式
+
+```javascript
+const { message } = MessageBox
+
+message('弹出一个成功的 Message')
+message.success('弹出一个成功的 Message')
+message.warning('弹出一个警告的 Message')
+message.error('弹出一个错误的 Message')
+```
+
+
 ### 组件模式
 
 ```html
