@@ -78,7 +78,6 @@ export default {
           set(model, prop, get(formModel, prop))
         }
       }
-      console.log(descriptor)
       return { model, descriptor }
     },
     // 校验
