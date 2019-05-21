@@ -72,12 +72,13 @@ export default {
               __descriptor[key] = { type: 'object', required: true, fields: {} }
               __descriptor = __descriptor[key].fields
             } else {
-              __descriptor[key] = [].concat(selfRules || __formRules || {}).concat(requiredRule)
+              __descriptor[key] = [].concat(selfRules || __formRules || []).concat(requiredRule)
             }
           }
           set(model, prop, get(formModel, prop))
         }
       }
+      console.log(descriptor)
       return { model, descriptor }
     },
     // 校验
