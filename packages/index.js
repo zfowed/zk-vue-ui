@@ -4,6 +4,9 @@ import WebComponents from './components/web/async'
 import { TransferDom } from './directives'
 import utils from './utils'
 
+export * from './components/global/async'
+export * from './components/web/async'
+
 const install = function (Vue, opts = {}) {
   Vue.GlobalComponents = GlobalComponents
   Vue.WebComponents = WebComponents
@@ -20,13 +23,8 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
 }
 
-module.exports = {
+export default {
   ...GlobalComponents,
   ...WebComponents,
   install
-}
-
-module.exports.default = {
-  ...GlobalComponents,
-  ...WebComponents
 }
