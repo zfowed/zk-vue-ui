@@ -47,3 +47,45 @@ export {
   Steps,
   StepsItem
 }
+
+const Components = [
+  Row,
+  Col,
+  Table,
+  TableHead,
+  TableBody,
+  TableTr,
+  TableTh,
+  TableTd,
+  TextLine,
+  Checkbox,
+  Radio,
+  Popover,
+  PopupLayer,
+  Toast,
+  Swiper,
+  SwiperSlide,
+  Countdown,
+  HtmlImage,
+  Notice,
+  NoticeItem,
+  ImageContainer,
+  Steps,
+  StepsItem
+]
+
+const install = function (Vue, opts = {}) {
+  for (const Component of Components) {
+    Vue.use(Component)
+  }
+  Vue.$toast = Toast.toast
+}
+
+if (typeof window !== 'undefined' && window.Vue) {
+  install(window.Vue)
+}
+
+export default {
+  install,
+  ...Components
+}

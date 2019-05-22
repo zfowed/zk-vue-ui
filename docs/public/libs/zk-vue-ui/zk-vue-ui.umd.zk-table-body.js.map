@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://zk-vue-ui/./packages/components/global/table-body/index.js"],"names":["TableBody"],"mappings":";;;;;;AAAA;AAAA;AAAA;AAEeA,+GAAf,E","file":"zk-vue-ui.umd.zk-table-body.js","sourcesContent":["import { TableBody } from '../table'\r\n\r\nexport default TableBody\r\n"],"sourceRoot":""}

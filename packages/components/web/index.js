@@ -33,3 +33,42 @@ export {
   ImageUpload,
   Alert
 }
+
+const Components = [
+  Form,
+  FormItem,
+  Input,
+  Select,
+  Option,
+  DatePicker,
+  Button,
+  Link,
+  Pagination,
+  Message,
+  Dialog,
+  MessageBox,
+  ImageView,
+  ImageSelect,
+  ImageUpload,
+  Alert
+]
+
+const install = function (Vue, opts = {}) {
+  for (const Component of Components) {
+    Vue.use(Component)
+  }
+  Vue.prototype.$message = Message.message
+  Vue.prototype.$msgbox = MessageBox.msgbox
+  Vue.prototype.$alert = MessageBox.msgbox.alert
+  Vue.prototype.$confirm = MessageBox.msgbox.confirm
+  Vue.prototype.$prompt = MessageBox.msgbox.prompt
+}
+
+if (typeof window !== 'undefined' && window.Vue) {
+  install(window.Vue)
+}
+
+export default {
+  install,
+  ...Components
+}
