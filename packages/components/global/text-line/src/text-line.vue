@@ -47,6 +47,7 @@ export default {
   overflow: hidden;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  max-width: 100%;
 }
 .zk-text-line--ellipsis {
   text-overflow: ellipsis;

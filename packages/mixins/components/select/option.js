@@ -17,7 +17,7 @@ export default {
   props: {
     value: {
       type: [String, Number, Object],
-      required: true
+      default: undefined
     },
     label: {
       type: [String, Number]
@@ -29,7 +29,7 @@ export default {
   },
   computed: {
     isSelected () {
-      if (!this.zkSelect) return
+      if (!this.zkSelect) return false
       return this.zkSelect.currentValue === this.value
     },
     currentLabel () {

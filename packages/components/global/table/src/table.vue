@@ -79,6 +79,10 @@ export default {
     },
     // 全选
     onSelectionAllChange (instance) {
+      if (this.__allSelectionValueIsChange) {
+        this.__allSelectionValueIsChange = false
+        return
+      }
       const all = instance.selectionValue
       for (const _instance of [...this.selectionInstanceList, ...this.selectionAllInstanceList]) {
         if (instance === _instance) continue
@@ -94,6 +98,7 @@ export default {
       })
       for (const _instance of this.selectionAllInstanceList) {
         if (_instance.selectionValue === all) continue
+        this.__allSelectionValueIsChange = true
         _instance.selectionValue = all
       }
       this.$emit('selection-change', this.selectionDataList)
@@ -140,6 +145,12 @@ export default {
     .zk-table-tr {
       border: none;
       background: #ffffff;
+      &:last-child {
+        .zk-table-th,
+        .zk-table-td {
+          border-bottom: none;
+        }
+      }
     }
     .zk-table-th {
       font-weight: normal;

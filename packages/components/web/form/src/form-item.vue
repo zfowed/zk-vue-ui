@@ -18,7 +18,7 @@
       :style="!currentInline && !isNesting && currentLabelPosition !== 'top' && contentStyle">
       <slot></slot>
       <div
-        v-if="!isNesting && currentShowMessage && (validateMessage || error)"
+        v-if="!currentInline && currentShowMessage && (validateMessage || error)"
         class="zk-form-item__error">
         <span>{{ validateMessage || error }}</span>
       </div>
@@ -197,6 +197,16 @@ export default {
   &.zk-form-item--error-inline {
     .zk-form-item__error {
       display: none;
+    }
+  }
+  /deep/ {
+    .zk-select,
+    .zk-input {
+      width: 180px;
+      margin-right: 10px;
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 }

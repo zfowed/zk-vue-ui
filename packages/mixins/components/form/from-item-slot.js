@@ -21,7 +21,7 @@ export default {
   },
   data () {
     return {
-      currentValue: this.value || ''
+      currentValue: this.value
     }
   },
   computed: {
@@ -31,7 +31,7 @@ export default {
   },
   watch: {
     value () {
-      this.currentValue = this.value || ''
+      this.currentValue = this.value
     },
     currentValue () {
       this.$emit('input', this.currentValue)

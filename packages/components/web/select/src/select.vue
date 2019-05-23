@@ -4,7 +4,6 @@
       class="zk-popover"
       block
       v-model="visible"
-      :transition="false"
       placement="bottom-start"
       :disabled="currentDisabled">
       <zk-input

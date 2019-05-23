@@ -172,6 +172,7 @@ export default {
   width: 100%;
   position: relative;
   box-sizing: border-box;
+  vertical-align: top;
   display: inline-block;
   text-align: center;
   outline: none;
@@ -267,5 +268,4 @@ export default {
     height: 20px;
   }
 }
-
 </style>

@@ -9,7 +9,8 @@
       }
     ]"
     :disabled="currentDisabled"
-    v-on="$listeners" v-bind="$attrs">
+    v-bind="$attrs"
+    v-on="$listeners">
     <slot></slot>
   </button>
 </template>

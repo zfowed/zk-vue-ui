@@ -12,8 +12,8 @@
       @mouseup="handleMouseup">
       <slot name="reference"></slot>
     </div>
-    <div v-transfer-dom>
-      <transition :name="transition ? 'fade' : 'none'">
+    <div v-show="currentValue">
+      <div v-transfer-dom>
         <div
           v-show="currentValue"
           ref="popper"
@@ -25,7 +25,7 @@
             <span>{{ content }}</span>
           </slot>
         </div>
-      </transition>
+      </div>
     </div>
   </span>
 </template>
@@ -105,8 +105,7 @@ export default {
     },
     currentValue () {
       this.$emit('input', this.currentValue)
-      if (!this.popper) return
-      this.$nextTick(this.popper.update)
+      this.$nextTick(() => this.initPopper())
     }
   },
   methods: {
@@ -147,15 +146,19 @@ export default {
       if (path.indexOf(reference) < 0 && path.indexOf(popper) < 0) {
         this.setCurrentValue(false)
       }
+    },
+    initPopper () {
+      const { reference, popper } = this.$refs
+      if (!reference || !popper) return
+      this.popper = new Popper(reference, popper, Object.assign({}, this.popperOptions, {
+        placement: this.placement,
+        // offsets: this.offset,
+        removeOnDestroy: true
+      }))
     }
   },
   mounted () {
-    const { reference, popper } = this.$refs
-    this.popper = new Popper(reference, popper, Object.assign({}, this.popperOptions, {
-      placement: this.placement,
-      // offsets: this.offset,
-      removeOnDestroy: true
-    }))
+    this.initPopper()
     setTimeout(() => window.addEventListener('click', this.handleHide, false), 0)
   },
   beforeDestroy () {
@@ -185,16 +188,5 @@ export default {
       width: 100%;
     }
   }
-}
-.fade-enter {
-  opacity: 0;
-}
-.fade-enter-active {
-  transition: opacity .6s ease;
-}
-.fade-leave,
-.fade-leave-active,
-.fade-leave-to {
-  display: none;
 }
 </style>

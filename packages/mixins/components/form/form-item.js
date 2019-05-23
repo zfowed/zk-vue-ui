@@ -84,6 +84,7 @@ export default {
     validate (trigger, callback) {
       const fn = resolve => {
         const { model, descriptor } = this.getValidateParams()
+        console.log(model, descriptor)
         validate(model, descriptor, {}, (errors, invalidFields) => {
           this.validateState = errors ? 'error' : 'success'
           this.validateMessage = (errors && errors[0] && errors[0].message) || ''

@@ -87,7 +87,7 @@ export default {
   .zk-input__inner,
   .zk-textarea__inner {
     position: relative;
-    z-index: 1;
+    // z-index: 1;
     width: 100%;
     display: block;
     font-size: 14px;

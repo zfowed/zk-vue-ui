@@ -8,7 +8,8 @@
   <td
     v-else
     :class="['zk-table-td', {
-      'zk-table-td--border': border
+      'zk-table-td--border': border,
+      'zk-table-td--nowrap': nowrap
     }]">
     <slot></slot>
   </td>
@@ -24,6 +25,10 @@ export default {
   inject: ['zkTable'],
   props: {
     border: {
+      type: Boolean,
+      default: false
+    },
+    nowrap: {
       type: Boolean,
       default: false
     },
@@ -94,5 +99,8 @@ export default {
 <style lang="scss" scoped>
 .zk-table-td--border {
   border: solid 1px #F0F0F0 !important;
+}
+.zk-table-td--nowrap {
+  white-space: nowrap;
 }
 </style>

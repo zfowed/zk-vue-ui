@@ -812,6 +812,8 @@ var emitter = __webpack_require__("cb7e");
             model = _this$getValidatePara.model,
             descriptor = _this$getValidatePara.descriptor;
 
+        console.log(model, descriptor);
+
         Object(utils["e" /* validate */])(model, descriptor, {}, function (errors, invalidFields) {
           _this.validateState = errors ? 'error' : 'success';
           _this.validateMessage = errors && errors[0] && errors[0].message || '';
@@ -874,7 +876,7 @@ var emitter = __webpack_require__("cb7e");
   },
   data: function data() {
     return {
-      currentValue: this.value || ''
+      currentValue: this.value
     };
   },
   computed: {
@@ -884,7 +886,7 @@ var emitter = __webpack_require__("cb7e");
   },
   watch: {
     value: function value() {
-      this.currentValue = this.value || '';
+      this.currentValue = this.value;
     },
     currentValue: function currentValue() {
       this.$emit('input', this.currentValue);

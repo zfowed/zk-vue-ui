@@ -3,7 +3,7 @@
     :class="['zk-alert', {
       [`zk-alert--${type}`]: type
     }]">
-    <div class="zk-alert__icon">
+    <div v-if="showIcon" class="zk-alert__icon">
       <img class="zk-alert__img" v-if="type ==='success'" src="../assets/success.png">
       <img class="zk-alert__img" v-else-if="type ==='error'" src="../assets/error.png">
       <img class="zk-alert__img" v-else src="../assets/warning.png">
