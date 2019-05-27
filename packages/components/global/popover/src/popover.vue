@@ -75,7 +75,7 @@ export default {
         return {
           modifiers: {
             preventOverflow: { boundariesElement: 'body' },
-            // flip: { boundariesElement: 'body' },
+            flip: { boundariesElement: 'body' },
             computeStyle: { gpuAcceleration: false }
           }
         }
