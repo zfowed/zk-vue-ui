@@ -1,5 +1,7 @@
 <template>
   <a
+    :is="tag"
+    :to="to"
     :href="href"
     :class="['zk-link', {
       'is-disabled': currentDisabled,
@@ -28,9 +30,20 @@ export default {
       type: Boolean,
       default: true
     },
+    to: {},
     href: {
       type: String,
-      default: 'javascript:;'
+      default: ''
+    }
+  },
+  computed: {
+    tag () {
+      if (this.href) {
+        return 'a'
+      } else if (this.to) {
+        return 'router-link'
+      }
+      return 'span'
     }
   }
 }

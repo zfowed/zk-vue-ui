@@ -17,10 +17,5 @@ export default {
     currentChecked () {
       return this.currentValue === this.label
     }
-  },
-  watch: {
-    currentValue () {
-      this.$emit('change', this.currentValue)
-    }
   }
 }

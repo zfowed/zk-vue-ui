@@ -37,21 +37,25 @@ export default {
       this.fieldInstanceList.splice(index, 1)
     },
     validate (callback) {
-      const fn = (resolve, reject) => {
-        return Promise.all(this.fieldInstanceList.map(instance => {
-          return new Promise((resolve, reject) => {
-            instance.validate(undefined, (errorMessage, invalidFields) => {
-              return resolve([].concat(...Object.values(invalidFields || {})))
-            })
-          }).catch(() => null)
-        })).then(results => {
-          const errors = [].concat(...results)
-          callback && callback(errors)
-          if (errors.length) return Promise.reject(new Error(false))
-          return true
+      const instanceValidate = function (instance) {
+        return new Promise((resolve, reject) => {
+          return instance.validate(undefined, (errorMessage, invalidFields) => {
+            return resolve([].concat(...Object.values(invalidFields || {})))
+          })
         })
       }
-      if (callback) return fn(() => null, () => null)
+      const fn = (resolve, reject) => {
+        return Promise.all(this.fieldInstanceList.map(instance => {
+          return instanceValidate(instance)
+        })).then(results => {
+          const errors = [].concat(...results)
+          const error = !!errors.length
+          callback && callback(error, errors)
+          if (error) return reject && reject(error)
+          return resolve && resolve(error)
+        })
+      }
+      if (callback) return fn()
       return new Promise(fn)
     },
     clearValidate () {

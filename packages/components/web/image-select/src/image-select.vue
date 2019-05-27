@@ -33,17 +33,18 @@
 
 <script>
 import { FileSelection } from '../../../../utils'
+import { FormItemSlot } from '../../../../mixins/components/form'
 
 import ImageView from '../../image-view'
 import { message } from '../../message'
 
 export default {
   name: 'ZkImageSelect',
+  mixins: [FormItemSlot],
   components: {
     'zk-image-view': ImageView
   },
   props: {
-    value: String,
     options: Object,
     viewSrcList: {
       type: Array,
@@ -63,7 +64,6 @@ export default {
   },
   data () {
     return {
-      currentValue: this.value,
       imageViewVisible: false
     }
   },
@@ -144,7 +144,6 @@ export default {
       return this.fileSelection.select(result => {
         if (result[0]) {
           this.currentValue = result[0].base64 || undefined
-          this.$emit('input', this.currentValue)
           this.$emit('change-file', result[0].file)
         } else {
           this.deleteImage()
@@ -153,7 +152,6 @@ export default {
     },
     deleteImage () {
       this.currentValue = ''
-      this.$emit('input', '')
       this.$emit('change-file', undefined)
     },
     viewImage () {

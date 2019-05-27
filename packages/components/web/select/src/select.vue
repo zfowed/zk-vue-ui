@@ -12,6 +12,7 @@
         class="zk-select-input"
         readonly
         :value="label"
+        :disabled-form-validate="true"
         :placeholder="placeholder"
         :disabled="currentDisabled"
         v-bind="$attrs">

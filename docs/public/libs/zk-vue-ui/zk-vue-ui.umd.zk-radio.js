@@ -75,11 +75,6 @@ var components_form = __webpack_require__("8ccb");
     currentChecked: function currentChecked() {
       return this.currentValue === this.label;
     }
-  },
-  watch: {
-    currentValue: function currentValue() {
-      this.$emit('change', this.currentValue);
-    }
   }
 });
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/global/radio/src/radio.vue?vue&type=script&lang=js&
@@ -529,6 +524,15 @@ var es7_symbol_async_iterator = __webpack_require__("ac4d");
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.symbol.js
 var es6_symbol = __webpack_require__("8a81");
 
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.string.iterator.js
+var es6_string_iterator = __webpack_require__("5df3");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/web.dom.iterable.js
+var web_dom_iterable = __webpack_require__("ac6a");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.iterator.js
+var es6_array_iterator = __webpack_require__("cadf");
+
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es7.object.values.js
 var es7_object_values = __webpack_require__("8615");
 
@@ -537,15 +541,6 @@ var toConsumableArray = __webpack_require__("75fc");
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.promise.js
 var es6_promise = __webpack_require__("551c");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/web.dom.iterable.js
-var web_dom_iterable = __webpack_require__("ac6a");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.iterator.js
-var es6_array_iterator = __webpack_require__("cadf");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.string.iterator.js
-var es6_string_iterator = __webpack_require__("5df3");
 
 // CONCATENATED MODULE: ./packages/mixins/components/form/form.js
 
@@ -596,33 +591,32 @@ var es6_string_iterator = __webpack_require__("5df3");
     validate: function validate(callback) {
       var _this = this;
 
+      var instanceValidate = function instanceValidate(instance) {
+        return new Promise(function (resolve, reject) {
+          return instance.validate(undefined, function (errorMessage, invalidFields) {
+            var _ref;
+
+            return resolve((_ref = []).concat.apply(_ref, Object(toConsumableArray["a" /* default */])(Object.values(invalidFields || {}))));
+          });
+        });
+      };
+
       var fn = function fn(resolve, reject) {
         return Promise.all(_this.fieldInstanceList.map(function (instance) {
-          return new Promise(function (resolve, reject) {
-            instance.validate(undefined, function (errorMessage, invalidFields) {
-              var _ref;
-
-              return resolve((_ref = []).concat.apply(_ref, Object(toConsumableArray["a" /* default */])(Object.values(invalidFields || {}))));
-            });
-          }).catch(function () {
-            return null;
-          });
+          return instanceValidate(instance);
         })).then(function (results) {
           var _ref2;
 
           var errors = (_ref2 = []).concat.apply(_ref2, Object(toConsumableArray["a" /* default */])(results));
 
-          callback && callback(errors);
-          if (errors.length) return Promise.reject(new Error(false));
-          return true;
+          var error = !!errors.length;
+          callback && callback(error, errors);
+          if (error) return reject && reject(error);
+          return resolve && resolve(error);
         });
       };
 
-      if (callback) return fn(function () {
-        return null;
-      }, function () {
-        return null;
-      });
+      if (callback) return fn();
       return new Promise(fn);
     },
     clearValidate: function clearValidate() {
@@ -681,6 +675,7 @@ var emitter = __webpack_require__("cb7e");
 // 可使用的方法 validate clearValidate
 
 
+var defaultValue = Symbol('value');
 /* harmony default export */ var form_item = ({
   componentName: 'ZkFormItem',
   mixins: [emitter["a" /* default */]],
@@ -697,8 +692,11 @@ var emitter = __webpack_require__("cb7e");
     props: {
       type: Array
     },
+    value: {
+      default: defaultValue
+    },
     rules: {
-      type: Object
+      type: [Object, Array]
     },
     required: {
       type: Boolean,
@@ -713,11 +711,13 @@ var emitter = __webpack_require__("cb7e");
   data: function data() {
     return {
       validateState: '',
-      validateMessage: ''
+      validateMessage: '',
+      currentRequired: false
     };
   },
   computed: {
     currentProps: function currentProps() {
+      if (this.value !== defaultValue) return ['value'];
       return this.props || this.prop && [this.prop] || [];
     }
   },
@@ -727,7 +727,9 @@ var emitter = __webpack_require__("cb7e");
     },
     // 获取校验参数
     getValidateParams: function getValidateParams() {
-      var formModel = this.zkForm && this.zkForm.model || {};
+      var formModel = this.value !== defaultValue ? {
+        value: this.value
+      } : this.zkForm && this.zkForm.model || {};
       var formDescriptor = this.zkForm && this.zkForm.rules || {};
       var formRules = formDescriptor;
       var selfRules = this.rules;
@@ -735,8 +737,9 @@ var emitter = __webpack_require__("cb7e");
         required: !!this.required
       } : [];
       var descriptor = {};
-      var model = {};
       var props = this.currentProps;
+      var model = {};
+      this.currentRequired = false;
       var _iteratorNormalCompletion = true;
       var _didIteratorError = false;
       var _iteratorError = undefined;
@@ -762,7 +765,11 @@ var emitter = __webpack_require__("cb7e");
                 };
                 __descriptor = __descriptor[key].fields;
               } else {
-                __descriptor[key] = [].concat(selfRules || __formRules || []).concat(requiredRule);
+                var rules = [].concat(selfRules || __formRules || []).concat(requiredRule);
+                if (rules.length) __descriptor[key] = rules;
+                this.currentRequired = rules.some(function (rule) {
+                  return rule.required;
+                });
               }
             }
 
@@ -794,17 +801,17 @@ var emitter = __webpack_require__("cb7e");
       var _this = this;
 
       var fn = function fn(resolve) {
-        var _this$getValidatePara = _this.getValidateParams(),
-            model = _this$getValidatePara.model,
-            descriptor = _this$getValidatePara.descriptor;
+        _this.$nextTick(function () {
+          var _this$getValidatePara = _this.getValidateParams(),
+              model = _this$getValidatePara.model,
+              descriptor = _this$getValidatePara.descriptor;
 
-        console.log(model, descriptor);
-
-        Object(utils["e" /* validate */])(model, descriptor, {}, function (errors, invalidFields) {
-          _this.validateState = errors ? 'error' : 'success';
-          _this.validateMessage = errors && errors[0] && errors[0].message || '';
-          callback && callback(_this.validateMessage, invalidFields);
-          return resolve && resolve(!!errors);
+          Object(utils["e" /* validate */])(model, descriptor, {}, function (errors, invalidFields) {
+            _this.validateState = errors ? 'error' : 'success';
+            _this.validateMessage = errors && errors[0] && errors[0].message || '';
+            callback && callback(_this.validateMessage, invalidFields);
+            return resolve && resolve(!!errors);
+          });
         });
       };
 
@@ -827,6 +834,8 @@ var emitter = __webpack_require__("cb7e");
     }
   },
   mounted: function mounted() {
+    this.getValidateParams();
+
     if (this.currentProps.length) {
       this.dispatch('ZkForm', 'zk.form.addFieldInstance', [this]);
       this.$on('zk.form.blur', this.onFieldBlur);
@@ -858,7 +867,8 @@ var emitter = __webpack_require__("cb7e");
   },
   props: {
     value: {},
-    disabled: Boolean
+    disabled: Boolean,
+    disabledFormValidate: Boolean
   },
   data: function data() {
     return {
@@ -876,14 +886,17 @@ var emitter = __webpack_require__("cb7e");
     },
     currentValue: function currentValue() {
       this.$emit('input', this.currentValue);
+      if (this.disabledFormValidate) return;
       return this.dispatch('ZkFormItem', 'zk.form.change', [this.currentValue]);
     }
   },
   methods: {
     handleFormFocus: function handleFormFocus(event) {
+      if (this.disabledFormValidate) return;
       this.dispatch('ZkFormItem', 'zk.form.focus', [this.currentValue]);
     },
     handleFormBlur: function handleFormBlur(event) {
+      if (this.disabledFormValidate) return;
       this.dispatch('ZkFormItem', 'zk.form.blur', [this.currentValue]);
     }
   }

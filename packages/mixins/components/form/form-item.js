@@ -6,6 +6,8 @@
 import { get, set, validate } from '../../../utils'
 import emitter from '../../emitter'
 
+const defaultValue = Symbol('value')
+
 export default {
   componentName: 'ZkFormItem',
   mixins: [emitter],
@@ -22,8 +24,11 @@ export default {
     props: {
       type: Array
     },
+    value: {
+      default: defaultValue
+    },
     rules: {
-      type: Object
+      type: [Object, Array]
     },
     required: {
       type: Boolean,
@@ -38,11 +43,13 @@ export default {
   data () {
     return {
       validateState: '',
-      validateMessage: ''
+      validateMessage: '',
+      currentRequired: false
     }
   },
   computed: {
     currentProps () {
+      if (this.value !== defaultValue) return ['value']
       return this.props || (this.prop && [this.prop]) || []
     }
   },
@@ -52,14 +59,17 @@ export default {
     },
     // 获取校验参数
     getValidateParams () {
-      let formModel = (this.zkForm && this.zkForm.model) || {}
+      let formModel = this.value !== defaultValue ? { value: this.value } : ((this.zkForm && this.zkForm.model) || {})
       let formDescriptor = (this.zkForm && this.zkForm.rules) || {}
       let formRules = formDescriptor
       let selfRules = this.rules
       let requiredRule = this.required !== undefined ? { required: !!this.required } : []
       let descriptor = {}
-      let model = {}
       let props = this.currentProps
+      let model = {}
+
+      this.currentRequired = false
+
       for (const prop of props) {
         if (prop) {
           let propPathArray = this.pathToArray(prop)
@@ -72,7 +82,9 @@ export default {
               __descriptor[key] = { type: 'object', required: true, fields: {} }
               __descriptor = __descriptor[key].fields
             } else {
-              __descriptor[key] = [].concat(selfRules || __formRules || []).concat(requiredRule)
+              const rules = [].concat(selfRules || __formRules || []).concat(requiredRule)
+              if (rules.length) __descriptor[key] = rules
+              this.currentRequired = rules.some(rule => rule.required)
             }
           }
           set(model, prop, get(formModel, prop))
@@ -83,13 +95,14 @@ export default {
     // 校验
     validate (trigger, callback) {
       const fn = resolve => {
-        const { model, descriptor } = this.getValidateParams()
-        console.log(model, descriptor)
-        validate(model, descriptor, {}, (errors, invalidFields) => {
-          this.validateState = errors ? 'error' : 'success'
-          this.validateMessage = (errors && errors[0] && errors[0].message) || ''
-          callback && callback(this.validateMessage, invalidFields)
-          return resolve && resolve(!!errors)
+        this.$nextTick(() => {
+          const { model, descriptor } = this.getValidateParams()
+          validate(model, descriptor, {}, (errors, invalidFields) => {
+            this.validateState = errors ? 'error' : 'success'
+            this.validateMessage = (errors && errors[0] && errors[0].message) || ''
+            callback && callback(this.validateMessage, invalidFields)
+            return resolve && resolve(!!errors)
+          })
         })
       }
       if (callback) return fn()
@@ -112,6 +125,7 @@ export default {
     }
   },
   mounted () {
+    this.getValidateParams()
     if (this.currentProps.length) {
       this.dispatch('ZkForm', 'zk.form.addFieldInstance', [this])
       this.$on('zk.form.blur', this.onFieldBlur)

@@ -17,7 +17,8 @@ export default {
   },
   props: {
     value: {},
-    disabled: Boolean
+    disabled: Boolean,
+    disabledFormValidate: Boolean
   },
   data () {
     return {
@@ -35,14 +36,17 @@ export default {
     },
     currentValue () {
       this.$emit('input', this.currentValue)
+      if (this.disabledFormValidate) return
       return this.dispatch('ZkFormItem', 'zk.form.change', [this.currentValue])
     }
   },
   methods: {
     handleFormFocus (event) {
+      if (this.disabledFormValidate) return
       this.dispatch('ZkFormItem', 'zk.form.focus', [this.currentValue])
     },
     handleFormBlur (event) {
+      if (this.disabledFormValidate) return
       this.dispatch('ZkFormItem', 'zk.form.blur', [this.currentValue])
     }
   }

@@ -11,12 +11,13 @@
       v-if="!isNesting && label"
       class="zk-form-item__label"
       :style="!currentInline && !isNesting && currentLabelPosition !== 'top' && labelStyle">
+      <span v-if="currentRequired">*</span>
       <span>{{ label }}</span>
     </label>
     <div
       class="zk-form-item__content"
       :style="!currentInline && !isNesting && currentLabelPosition !== 'top' && contentStyle">
-      <slot></slot>
+      <slot :validate="validate" :clearValidate="clearValidate"></slot>
       <div
         v-if="!currentInline && currentShowMessage && (validateMessage || error)"
         class="zk-form-item__error">
