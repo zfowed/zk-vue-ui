@@ -62,11 +62,12 @@ export default {
   display: inline-block;
   width: 100%;
   vertical-align: bottom;
+  border-radius: 4px;
   .zk-input__prefix-icon,
   .zk-input__suffix-icon {
     position: absolute;
     top: 0;
-    z-index: 2;
+    z-index: 1;
     width: 40px;
     height: 100%;
     display: flex;
@@ -97,6 +98,7 @@ export default {
     box-sizing: border-box;
     border: solid 1px #EAEAEA;
     transition: all .2s;
+    border-radius: 4px;
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
       -webkit-appearance: none;

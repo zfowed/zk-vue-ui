@@ -166,6 +166,7 @@ export default {
     box-sizing: border-box;
     border: solid 1px #eaeaea;
     transition: color .2s, border-color .2s, background-color .2s;
+    border-radius: 4px;
     &.is-active {
       color: #FFFFFF;
       border-color: #0B7AFB;

@@ -63,6 +63,7 @@ export default {
 .zk-select {
   width: 100%;
   display: inline-block;
+  border-radius: 4px;
 }
 .zk-select-input {
   cursor: pointer;
@@ -79,6 +80,9 @@ export default {
   width: 100%;
   max-height: 184px;
   overflow: auto;
+  margin: 6px 0;
+  position: relative;
+  z-index: 1;
   &::-webkit-scrollbar {
     width: 6px;
     height: 6px;

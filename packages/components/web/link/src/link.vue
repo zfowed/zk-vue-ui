@@ -56,7 +56,7 @@ export default {
   text-decoration: none;
   cursor: pointer;
   &:hover {
-    color: #1E86FF;
+    color: #0B7AFB;
     &::after {
       content: "";
       position: absolute;
@@ -64,7 +64,7 @@ export default {
       right: 0;
       height: 0;
       bottom: 0;
-      border-bottom: 1px solid #409eff;
+      border-bottom: 1px solid #0B7AFB;
     }
     &.not-underline {
       &::after {
@@ -74,6 +74,9 @@ export default {
   }
   &:active {
     color: #0061D1;
+    &::after {
+      border-bottom-color: #0061D1;
+    }
   }
   & + .zk-link {
     margin-left: 8px;
@@ -81,17 +84,17 @@ export default {
 
   &.zk-link--primary {
     color: #0B7AFB;
-    &::after {
-      border-color: #1E86FF;
-    }
     &:hover {
-      color: #1E86FF;
+      color: #0B7AFB;
+      &::after {
+        border-bottom-color: #0B7AFB;
+      }
     }
     &:active {
       color: #0061D1;
-    }
-    &.is-disabled {
-      color: #0B7AFB;
+      &::after {
+        border-bottom-color: #0061D1;
+      }
     }
   }
   &[disabled],

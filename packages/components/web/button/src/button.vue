@@ -55,6 +55,7 @@ export default {
   color: #656565;
   border: solid 1px #EAEAEA;
   background: #FFFFFF;
+  border-radius: 4px;
   & + .zk-button {
     margin-left: 8px;
   }
@@ -71,22 +72,22 @@ export default {
 
   &.zk-button--primary {
     color: #FFFFFF;
-    border-color: #0B7AFB;
-    background: #0B7AFB;
+    border-color: #3084E1;
+    background: #3084E1;
     &.is-plain {
-      color: #0B7AFB;
-      border-color: #0B7AFB;
+      color: #3084E1;
+      border-color: #3084E1;
       background: #FFFFFF;
     }
     &:hover {
       color: #FFFFFF;
-      border-color: #1E86FF;
-      background: #1E86FF;
+      border-color: #006FF0;
+      background: #006FF0;
     }
     &:active {
       color: #FFFFFF;
-      border-color: #0061D1;
-      background: #0061D1;
+      border-color: #3084E1;
+      background: #3084E1;
     }
   }
   &.is-disabled {

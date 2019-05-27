@@ -12,21 +12,19 @@
       @mouseup="handleMouseup">
       <slot name="reference"></slot>
     </div>
-    <div v-show="currentValue">
-      <div v-transfer-dom>
-        <div
-          v-show="currentValue"
-          ref="popper"
-          :class="['zk-popover-popper', popperClass]"
-          :style="{ width: styleWidth }"
-          @mouseenter="handleMouseenter"
-          @mouseleave="handleMouseleave">
-          <slot>
-            <span>{{ content }}</span>
-          </slot>
-        </div>
+    <span v-transfer-dom>
+      <div
+        v-show="currentValue"
+        ref="popper"
+        :class="['zk-popover-popper', popperClass]"
+        :style="{ width: styleWidth }"
+        @mouseenter="handleMouseenter"
+        @mouseleave="handleMouseleave">
+        <slot>
+          <span>{{ content }}</span>
+        </slot>
       </div>
-    </div>
+    </span>
   </span>
 </template>
 
@@ -74,7 +72,13 @@ export default {
     popperOptions: {
       type: Object,
       default () {
-        return { boundariesElement: 'body', gpuAcceleration: false }
+        return {
+          modifiers: {
+            preventOverflow: { boundariesElement: 'body' },
+            // flip: { boundariesElement: 'body' },
+            computeStyle: { gpuAcceleration: false }
+          }
+        }
       }
     },
     popperClass: {
@@ -105,7 +109,7 @@ export default {
     },
     currentValue () {
       this.$emit('input', this.currentValue)
-      this.$nextTick(() => this.initPopper())
+      this.$nextTick(() => this.updatePopper())
     }
   },
   methods: {
@@ -148,6 +152,7 @@ export default {
       }
     },
     initPopper () {
+      this.destroyPopper()
       const { reference, popper } = this.$refs
       if (!reference || !popper) return
       this.popper = new Popper(reference, popper, Object.assign({}, this.popperOptions, {
@@ -155,6 +160,15 @@ export default {
         // offsets: this.offset,
         removeOnDestroy: true
       }))
+    },
+    updatePopper () {
+      if (!this.popper) return
+      this.popper.update()
+    },
+    destroyPopper () {
+      if (!this.popper) return
+      this.popper.destroy()
+      this.popper = null
     }
   },
   mounted () {
@@ -162,9 +176,7 @@ export default {
     setTimeout(() => window.addEventListener('click', this.handleHide, false), 0)
   },
   beforeDestroy () {
-    if (!this.popper) return
-    this.popper.destroy()
-    this.popper = null
+    this.destroyPopper()
     window.removeEventListener('click', this.handleHide)
   }
 }
@@ -188,5 +200,8 @@ export default {
       width: 100%;
     }
   }
+}
+.zk-popover-popper {
+  z-index: 3000;
 }
 </style>
