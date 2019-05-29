@@ -36,7 +36,9 @@ import { FileSelection } from '../../../../utils'
 import { FormItemSlot } from '../../../../mixins/components/form'
 
 import ImageView from '../../image-view'
-import { message } from '../../message'
+import { MessageBox } from '../../message-box'
+
+const msgbox = MessageBox.msgbox
 
 export default {
   name: 'ZkImageSelect',
@@ -112,7 +114,14 @@ export default {
             const exts = limitExt.split(',').map(item => {
               return item.substring(1)
             }).join('，')
-            message.warning(`仅支持上传 ${exts} 格式的图片！`)
+            msgbox.alert(`仅支持上传 ${exts} 格式的图片！`, '提示', {
+              closeOnClickModal: true,
+              confirmButtonText: '重新选择',
+              callback: action => {
+                if (action !== 'confirm') return
+                return this.selectImage()
+              }
+            })
           })(this.currentOptions.limitExt)
           break
         case 'maxSize':
@@ -122,7 +131,14 @@ export default {
             const kbstr = (kb % 1 === 0 && `${kb}KB`) || null
             const mb = kb / 1024
             const mbstr = (mb % 1 === 0 && `${mb}MB`) || null
-            message.warning(`图片大小必须小于 ${mbstr || kbstr || sizeStr} 以内！`)
+            msgbox.alert(`图片大小必须小于 ${mbstr || kbstr || sizeStr} 以内！`, '提示', {
+              closeOnClickModal: true,
+              confirmButtonText: '重新选择',
+              callback: action => {
+                if (action !== 'confirm') return
+                return this.selectImage()
+              }
+            })
           })(this.currentOptions.maxSize)
           break
         case 'minSize':
@@ -132,11 +148,25 @@ export default {
             const kbstr = (kb % 1 === 0 && `${kb}KB`) || null
             const mb = kb / 1024
             const mbstr = (mb % 1 === 0 && `${mb}MB`) || null
-            message.warning(`图片大小必须大于 ${mbstr || kbstr || sizeStr} 以内！`)
+            msgbox.alert(`图片大小必须大于 ${mbstr || kbstr || sizeStr} 以内！`, '提示', {
+              closeOnClickModal: true,
+              confirmButtonText: '重新选择',
+              callback: action => {
+                if (action !== 'confirm') return
+                return this.selectImage()
+              }
+            })
           })(this.currentOptions.maxSize)
           break
         default:
-          message.error('选择文件出错！')
+          msgbox.alert('选择文件出错！', '提示', {
+            closeOnClickModal: true,
+            confirmButtonText: '重新选择',
+            callback: action => {
+              if (action !== 'confirm') return
+              return this.selectImage()
+            }
+          })
       }
     },
     selectImage () {

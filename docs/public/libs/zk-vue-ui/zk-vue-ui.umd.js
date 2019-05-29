@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "css/" + ({"0":"zk-table","1":"vendors~zk-option~zk-popover~zk-select","2":"zk-input","3":"vendors~zk-swiper~zk-swiper-slide","4":"zk-form","5":"zk-image-select","6":"zk-swiper","7":"vendors~zk-date-picker","8":"vendors~zk-html-image","9":"zk-alert","10":"zk-button","11":"zk-checkbox","12":"zk-col","13":"zk-countdown","14":"zk-date-picker","15":"zk-form-item","16":"zk-html-image","17":"zk-image-container","18":"zk-image-upload","19":"zk-image-view","20":"zk-link","21":"zk-notice","22":"zk-notice-item","23":"zk-option","24":"zk-pagination","25":"zk-popover","26":"zk-radio","27":"zk-row","28":"zk-select","29":"zk-steps","30":"zk-steps-item","31":"zk-swiper-slide","32":"zk-table-body","33":"zk-table-head","34":"zk-table-td","35":"zk-table-th","36":"zk-table-tr","37":"zk-text-line"}[chunkId]||chunkId) + "." + {"0":"656b7c45","1":"31d6cfe0","2":"87727dd0","3":"31d6cfe0","4":"0ac74997","5":"47732488","6":"214a6afb","7":"31d6cfe0","8":"31d6cfe0","9":"ddda5cfe","10":"ed342ee9","11":"6803a4bd","12":"f91b254d","13":"31d6cfe0","14":"34cb151f","15":"31d6cfe0","16":"22717d1d","17":"970069b4","18":"428521f9","19":"6f2cbb30","20":"26d8599e","21":"883bce68","22":"883bce68","23":"69a2cb2c","24":"84208e72","25":"730dbe53","26":"7851b96c","27":"ca3b9ff0","28":"0ebd13f8","29":"49cbe64b","30":"49cbe64b","31":"31d6cfe0","32":"31d6cfe0","33":"31d6cfe0","34":"31d6cfe0","35":"31d6cfe0","36":"31d6cfe0","37":"a1a1ad39"}[chunkId] + ".css";
+/******/ 				var href = "css/" + ({"0":"zk-table","1":"vendors~zk-option~zk-popover~zk-select","2":"zk-input","3":"vendors~zk-swiper~zk-swiper-slide","4":"zk-form","5":"zk-image-select","6":"zk-swiper","7":"vendors~zk-date-picker","8":"vendors~zk-html-image","9":"zk-alert","10":"zk-button","11":"zk-checkbox","12":"zk-col","13":"zk-countdown","14":"zk-date-picker","15":"zk-form-item","16":"zk-html-image","17":"zk-image-container","18":"zk-image-upload","19":"zk-image-view","20":"zk-link","21":"zk-notice","22":"zk-notice-item","23":"zk-option","24":"zk-pagination","25":"zk-popover","26":"zk-radio","27":"zk-row","28":"zk-select","29":"zk-steps","30":"zk-steps-item","31":"zk-swiper-slide","32":"zk-table-body","33":"zk-table-head","34":"zk-table-td","35":"zk-table-th","36":"zk-table-tr","37":"zk-text-line"}[chunkId]||chunkId) + "." + {"0":"656b7c45","1":"31d6cfe0","2":"87727dd0","3":"31d6cfe0","4":"9dabd268","5":"061401db","6":"214a6afb","7":"31d6cfe0","8":"31d6cfe0","9":"ddda5cfe","10":"ed342ee9","11":"6803a4bd","12":"f91b254d","13":"31d6cfe0","14":"34cb151f","15":"31d6cfe0","16":"22717d1d","17":"970069b4","18":"428521f9","19":"6f2cbb30","20":"26d8599e","21":"883bce68","22":"883bce68","23":"69a2cb2c","24":"84208e72","25":"730dbe53","26":"7851b96c","27":"ca3b9ff0","28":"0ebd13f8","29":"49cbe64b","30":"49cbe64b","31":"31d6cfe0","32":"31d6cfe0","33":"31d6cfe0","34":"31d6cfe0","35":"31d6cfe0","36":"31d6cfe0","37":"a1a1ad39"}[chunkId] + ".css";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {
@@ -2168,7 +2168,7 @@ __webpack_require__.r(__webpack_exports__);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
 var es6_function_name = __webpack_require__("7f7f");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2c70534a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/global/popup-layer/src/popup-layer.vue?vue&type=template&id=65a8a1f1&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"26943976-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/global/popup-layer/src/popup-layer.vue?vue&type=template&id=65a8a1f1&scoped=true&
 var render = function () {
 var _obj;
 var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('span',[_c('div',{directives:[{name:"transfer-dom",rawName:"v-transfer-dom",value:(_vm.appendToBody),expression:"appendToBody"}],staticClass:"zk-popup"},[_c('transition',{attrs:{"name":"zk-popup-fade"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.currentVisible && _vm.modal),expression:"currentVisible && modal"}],staticClass:"zk-popup-mask",style:({ 'z-index': _vm.zIndex }),on:{"click":_vm.handleClickModal}})]),_c('transition',{attrs:{"name":("zk-popup-fade-" + _vm.placement)}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.currentVisible),expression:"currentVisible"}],ref:"slot",class:['zk-popup-slot', ( _obj = {
@@ -4776,7 +4776,7 @@ var es6_function_name = __webpack_require__("7f7f");
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_vue_commonjs2_vue_root_Vue_);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2c70534a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/global/toast/src/toast.vue?vue&type=template&id=0d37450c&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"26943976-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/global/toast/src/toast.vue?vue&type=template&id=0d37450c&scoped=true&
 var toastvue_type_template_id_0d37450c_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('zk-popup-layer',{attrs:{"placement":_vm.placement,"prop-up":true,"modal":false,"append-to-body":false,"visible":_vm.visible},on:{"transitionend":_vm.handleTransitionend}},[_c('div',{class:['zk-toast', ("zk-toast-" + _vm.placement), _vm.toastClass],style:(_vm.toastStyle)},[_c('span',{staticClass:"zk-toast-text"},[_vm._t("default",[_vm._v(_vm._s(_vm.message))])],2)])])}
 var staticRenderFns = []
 
@@ -5009,7 +5009,7 @@ __webpack_require__.r(__webpack_exports__);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
 var es6_function_name = __webpack_require__("7f7f");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2c70534a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/web/dialog/src/dialog.vue?vue&type=template&id=9adc546e&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"26943976-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/web/dialog/src/dialog.vue?vue&type=template&id=9adc546e&scoped=true&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('zk-popup-layer',{attrs:{"visible":_vm.currentVisible,"modal":_vm.modal,"close-on-click-modal":_vm.closeOnClickModal},on:{"update:visible":function($event){_vm.currentVisible=$event},"transitionend":_vm.handleTransitionend}},[_c('div',{class:['zk-dialog', { 'is-scrollbar': _vm.scrollbar }, _vm.customClass],style:({ width: _vm.width })},[_c('div',{staticClass:"zk-dialog-title"},[_c('div',{staticClass:"zk-dialog-title-text"},[_vm._t("title",[_vm._v(_vm._s(_vm.title))])],2),(_vm.showClose)?_c('div',{staticClass:"zk-dialog-title-close",on:{"click":_vm.handleClickClose}},[_c('span',{staticClass:"zk-dialog-title-close-icon"})]):_vm._e()]),_c('div',{staticClass:"zk-dialog-slot",style:(_vm.bodyStyle)},[_vm._t("default")],2),(_vm.$slots.footer)?_c('div',{staticClass:"zk-dialog-footer"},[_vm._t("footer")],2):_vm._e()])])}
 var staticRenderFns = []
 
@@ -8405,6 +8405,370 @@ module.exports = Object.keys || function keys(O) {
 
 /***/ }),
 
+/***/ "c440":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.promise.js
+var es6_promise = __webpack_require__("551c");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.object.assign.js
+var es6_object_assign = __webpack_require__("f751");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
+var es6_function_name = __webpack_require__("7f7f");
+
+// EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
+var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
+var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_vue_commonjs2_vue_root_Vue_);
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"26943976-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/web/message-box/src/message-box.vue?vue&type=template&id=8ce39532&scoped=true&
+var message_boxvue_type_template_id_8ce39532_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('zk-dialog',{attrs:{"visible":_vm.visible,"title":_vm.title,"width":"440px","body-style":"padding: 0","customClass":_vm.customClass,"modal":_vm.modal,"closeOnClickModal":_vm.closeOnClickModal,"showClose":_vm.showClose,"beforeClose":_vm.beforeClose},on:{"update:visible":_vm.updateVisible,"transitionend":_vm.handleTransitionend}},[_c('div',{class:['dialog-container', { 'is-center': _vm.center }]},[_vm._t("default",[(_vm.dangerouslyUseHTMLString)?_c('div',{domProps:{"innerHTML":_vm._s(_vm.message)}}):(_vm.message)?_c('div',[_vm._v(_vm._s(_vm.message))]):_vm._e()])],2),_c('div',{staticClass:"dialog-footer"},[(_vm.showCancelButton)?_c('button',{class:['dialog-footer-button', _vm.cancelButtonClass],attrs:{"type":"button"},on:{"click":_vm.onCancelButtonClick}},[_c('span',[_vm._v(_vm._s(_vm.cancelButtonText))])]):_vm._e(),(_vm.showConfirmButton)?_c('button',{class:['dialog-footer-button', _vm.confirmButtonClass],attrs:{"type":"button"},on:{"click":_vm.onConfirmButtonClick}},[_c('span',[_vm._v(_vm._s(_vm.confirmButtonText))])]):_vm._e()])])}
+var staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./packages/components/web/message-box/src/message-box.vue?vue&type=template&id=8ce39532&scoped=true&
+
+// EXTERNAL MODULE: ./packages/components/web/dialog/index.js + 5 modules
+var dialog = __webpack_require__("7c7e");
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/web/message-box/src/message-box.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var message_boxvue_type_script_lang_js_ = ({
+  name: 'ZkMessageBox',
+  components: {
+    'zk-dialog': dialog["default"]
+  },
+  props: {
+    // 是否显示 Dialog，支持 .sync 修饰符
+    visible: {
+      type: Boolean,
+      default: false
+    },
+    // Dialog 的标题，也可通过具名 slot
+    title: {
+      type: String,
+      default: '提示'
+    },
+    // MessageBox 消息正文内容
+    message: {
+      type: String
+    },
+    // 是否需要遮罩层
+    modal: {
+      type: Boolean,
+      default: true
+    },
+    // 是否将 message 属性作为 HTML 片段处理
+    dangerouslyUseHTMLString: {
+      type: Boolean,
+      default: false
+    },
+    // Dialog 的自定义类名
+    customClass: {
+      type: String
+    },
+    // 是否可以通过点击 modal 关闭 Dialog
+    closeOnClickModal: {
+      type: Boolean,
+      default: true
+    },
+    // 是否显示关闭按钮
+    showClose: {
+      type: Boolean,
+      default: true
+    },
+    // 关闭前的回调，会暂停 Dialog 的关闭
+    beforeClose: {
+      type: Function
+    },
+    // 是否显示取消按钮
+    showCancelButton: {
+      type: Boolean,
+      default: false
+    },
+    // 居中
+    center: {
+      type: Boolean,
+      default: true
+    },
+    // 是否显示确定按钮
+    showConfirmButton: {
+      type: Boolean,
+      default: true
+    },
+    // 取消按钮的文本内容
+    cancelButtonText: {
+      type: String,
+      default: '取消'
+    },
+    // 确定按钮的文本内容
+    confirmButtonText: {
+      type: String,
+      default: '确定'
+    },
+    // 取消按钮的自定义类名
+    cancelButtonClass: {
+      type: String,
+      default: 'dialog-footer-cancel'
+    },
+    // 确定按钮的自定义类名
+    confirmButtonClass: {
+      type: String,
+      default: 'dialog-footer-confirm'
+    }
+  },
+  methods: {
+    handleTransitionend: function handleTransitionend(event) {
+      this.$emit('transitionend', event);
+    },
+    updateVisible: function updateVisible(visible) {
+      this.$emit('update:visible', visible);
+      if (!visible) this.$emit('close');
+    },
+    onConfirmButtonClick: function onConfirmButtonClick() {
+      this.$emit('update:visible', false);
+      this.$emit('confirm');
+    },
+    onCancelButtonClick: function onCancelButtonClick() {
+      this.$emit('update:visible', false);
+      this.$emit('cancel');
+    }
+  }
+});
+// CONCATENATED MODULE: ./packages/components/web/message-box/src/message-box.vue?vue&type=script&lang=js&
+ /* harmony default export */ var src_message_boxvue_type_script_lang_js_ = (message_boxvue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./packages/components/web/message-box/src/message-box.vue?vue&type=style&index=0&id=8ce39532&lang=scss&scoped=true&
+var message_boxvue_type_style_index_0_id_8ce39532_lang_scss_scoped_true_ = __webpack_require__("4323");
+
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+var componentNormalizer = __webpack_require__("2877");
+
+// CONCATENATED MODULE: ./packages/components/web/message-box/src/message-box.vue
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(componentNormalizer["a" /* default */])(
+  src_message_boxvue_type_script_lang_js_,
+  message_boxvue_type_template_id_8ce39532_scoped_true_render,
+  staticRenderFns,
+  false,
+  null,
+  "8ce39532",
+  null
+  
+)
+
+/* harmony default export */ var message_box = (component.exports);
+// CONCATENATED MODULE: ./packages/components/web/message-box/index.js
+/* unused harmony export msgbox */
+/* concated harmony reexport MessageBox */__webpack_require__.d(__webpack_exports__, "a", function() { return message_box; });
+
+
+
+
+
+
+message_box.install = function (Vue) {
+  Vue.component(message_box.name, message_box);
+};
+
+var instances = [];
+var MessageBoxConstructor = external_commonjs_vue_commonjs2_vue_root_Vue_default.a.extend({
+  render: function render(h) {
+    return h(message_box, {
+      props: this.$data,
+      on: {
+        'update:visible': this.updateVisible,
+        'close': this.onClose,
+        'confirm': this.onConfirm,
+        'cancel': this.onCancel,
+        'transitionend': this.handleTransitionend
+      }
+    });
+  },
+  data: function data() {
+    return {
+      // 是否显示 Dialog，支持 .sync 修饰符
+      visible: false,
+      // Dialog 的标题，也可通过具名 slot
+      title: '标题',
+      // MessageBox 消息正文内容
+      message: '消息正文内容',
+      // 是否将 message 属性作为 HTML 片段处理
+      dangerouslyUseHTMLString: false,
+      // Dialog 的自定义类名
+      customClass: undefined,
+      // 是否显示 modal
+      modal: true,
+      // 是否可以通过点击 modal 关闭 Dialog
+      closeOnClickModal: true,
+      // 是否显示关闭按钮
+      showClose: true,
+      // 关闭前的回调，会暂停 Dialog 的关闭
+      beforeClose: this.beforeClose,
+      // 是否显示取消按钮
+      showCancelButton: false,
+      // 是否显示确定按钮
+      showConfirmButton: true,
+      // 居中
+      center: true,
+      // 取消按钮的文本内容
+      cancelButtonText: '取消',
+      // 确定按钮的文本内容
+      confirmButtonText: '确定',
+      // 取消按钮的自定义类名
+      cancelButtonClass: undefined,
+      // 确定按钮的自定义类名
+      confirmButtonClass: undefined,
+      // 回调
+      callback: undefined
+    };
+  },
+  methods: {
+    handleTransitionend: function handleTransitionend() {
+      if (!this.visible) {
+        this.destroyElement();
+      }
+    },
+    destroyElement: function destroyElement() {
+      this.$destroy(true);
+      this.$el.parentNode.removeChild(this.$el);
+    },
+    updateVisible: function updateVisible(visible) {
+      this.visible = visible;
+    },
+    onClose: function onClose() {
+      this.callback && this.callback('close', this);
+    },
+    onConfirm: function onConfirm() {
+      this.callback && this.callback('confirm', this);
+    },
+    onCancel: function onCancel() {
+      this.callback && this.callback('cancel', this);
+    }
+  },
+  mounted: function mounted() {
+    this.visible = true;
+  }
+});
+
+function msgbox(options) {
+  var p = function p(resolve, reject) {
+    if (typeof options === 'string') options = {
+      message: options
+    };
+    var instance = new MessageBoxConstructor({
+      data: Object.assign({}, options, {
+        callback: function callback(action, instance) {
+          options.callback && options.callback(action, instance);
+          var index = instances.indexOf(instance);
+          instances.splice(index, 1);
+          if (action === 'confirm') return resolve && resolve();
+          return reject && reject(action);
+        }
+      })
+    });
+    instance.$mount();
+    instances.push(instance);
+    document.body.appendChild(instance.$el);
+  };
+
+  return options.callback ? p() : new Promise(p);
+}
+
+msgbox.alert = function (message, title, options) {
+  if (typeof title !== 'string') {
+    options = title;
+    title = undefined;
+  }
+
+  return msgbox(Object.assign({
+    title: title,
+    message: message,
+    showConfirmButton: true,
+    showCancelButton: false,
+    confirmButtonText: '确定',
+    closeOnClickModal: false
+  }, options || {}));
+};
+
+msgbox.confirm = function (message, title, options) {
+  if (typeof title !== 'string') {
+    options = title;
+    title = undefined;
+  }
+
+  return msgbox(Object.assign({
+    title: title,
+    message: message,
+    showConfirmButton: true,
+    showCancelButton: true,
+    confirmButtonText: '确定',
+    cancelButtonText: '取消',
+    closeOnClickModal: true
+  }, options || {}));
+};
+
+msgbox.prompt = function () {};
+
+msgbox.close = function () {
+  for (var _i = 0, _arr = [].concat(instances); _i < _arr.length; _i++) {
+    var instance = _arr[_i];
+    instance.visible = false;
+  }
+};
+
+message_box.msgbox = msgbox;
+
+/* harmony default export */ var web_message_box = __webpack_exports__["b"] = (message_box);
+
+/***/ }),
+
 /***/ "c554":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -8789,7 +9153,7 @@ var es6_function_name = __webpack_require__("7f7f");
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_vue_commonjs2_vue_root_Vue_);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2c70534a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/web/message/src/message.vue?vue&type=template&id=9193bbb8&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"26943976-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/web/message/src/message.vue?vue&type=template&id=9193bbb8&scoped=true&
 var messagevue_type_template_id_9193bbb8_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('zk-popup-layer',{attrs:{"visible":_vm.visible,"modal":false,"append-to-body":_vm.appendToBody},on:{"transitionend":_vm.handleTransitionend}},[_c('div',{class:['zk-message', ("zk-message-" + _vm.type)]},[_c('div',{staticClass:"zk-message-box"},[_c('div',{staticClass:"zk-message-icon"}),(_vm.dangerouslyUseHTMLString)?_c('div',{staticClass:"zk-message-text",domProps:{"innerHTML":_vm._s(_vm.message)}}):_c('div',{staticClass:"zk-message-text"},[_vm._t("default",[_vm._v(_vm._s(_vm.message))])],2)])])])}
 var staticRenderFns = []
 
@@ -10305,360 +10669,9 @@ if (typeof window !== 'undefined' && window.Vue) {
 // EXTERNAL MODULE: ./packages/components/web/message/index.js + 5 modules
 var message = __webpack_require__("d92a");
 
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.promise.js
-var es6_promise = __webpack_require__("551c");
+// EXTERNAL MODULE: ./packages/components/web/message-box/index.js + 5 modules
+var message_box = __webpack_require__("c440");
 
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.object.assign.js
-var es6_object_assign = __webpack_require__("f751");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
-var es6_function_name = __webpack_require__("7f7f");
-
-// EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
-var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
-var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_vue_commonjs2_vue_root_Vue_);
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2c70534a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/web/message-box/src/message-box.vue?vue&type=template&id=8ce39532&scoped=true&
-var message_boxvue_type_template_id_8ce39532_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('zk-dialog',{attrs:{"visible":_vm.visible,"title":_vm.title,"width":"440px","body-style":"padding: 0","customClass":_vm.customClass,"modal":_vm.modal,"closeOnClickModal":_vm.closeOnClickModal,"showClose":_vm.showClose,"beforeClose":_vm.beforeClose},on:{"update:visible":_vm.updateVisible,"transitionend":_vm.handleTransitionend}},[_c('div',{class:['dialog-container', { 'is-center': _vm.center }]},[_vm._t("default",[(_vm.dangerouslyUseHTMLString)?_c('div',{domProps:{"innerHTML":_vm._s(_vm.message)}}):(_vm.message)?_c('div',[_vm._v(_vm._s(_vm.message))]):_vm._e()])],2),_c('div',{staticClass:"dialog-footer"},[(_vm.showCancelButton)?_c('button',{class:['dialog-footer-button', _vm.cancelButtonClass],attrs:{"type":"button"},on:{"click":_vm.onCancelButtonClick}},[_c('span',[_vm._v(_vm._s(_vm.cancelButtonText))])]):_vm._e(),(_vm.showConfirmButton)?_c('button',{class:['dialog-footer-button', _vm.confirmButtonClass],attrs:{"type":"button"},on:{"click":_vm.onConfirmButtonClick}},[_c('span',[_vm._v(_vm._s(_vm.confirmButtonText))])]):_vm._e()])])}
-var staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./packages/components/web/message-box/src/message-box.vue?vue&type=template&id=8ce39532&scoped=true&
-
-// EXTERNAL MODULE: ./packages/components/web/dialog/index.js + 5 modules
-var dialog = __webpack_require__("7c7e");
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/web/message-box/src/message-box.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ var message_boxvue_type_script_lang_js_ = ({
-  name: 'ZkMessageBox',
-  components: {
-    'zk-dialog': dialog["default"]
-  },
-  props: {
-    // 是否显示 Dialog，支持 .sync 修饰符
-    visible: {
-      type: Boolean,
-      default: false
-    },
-    // Dialog 的标题，也可通过具名 slot
-    title: {
-      type: String,
-      default: '提示'
-    },
-    // MessageBox 消息正文内容
-    message: {
-      type: String
-    },
-    // 是否需要遮罩层
-    modal: {
-      type: Boolean,
-      default: true
-    },
-    // 是否将 message 属性作为 HTML 片段处理
-    dangerouslyUseHTMLString: {
-      type: Boolean,
-      default: false
-    },
-    // Dialog 的自定义类名
-    customClass: {
-      type: String
-    },
-    // 是否可以通过点击 modal 关闭 Dialog
-    closeOnClickModal: {
-      type: Boolean,
-      default: true
-    },
-    // 是否显示关闭按钮
-    showClose: {
-      type: Boolean,
-      default: true
-    },
-    // 关闭前的回调，会暂停 Dialog 的关闭
-    beforeClose: {
-      type: Function
-    },
-    // 是否显示取消按钮
-    showCancelButton: {
-      type: Boolean,
-      default: false
-    },
-    // 居中
-    center: {
-      type: Boolean,
-      default: true
-    },
-    // 是否显示确定按钮
-    showConfirmButton: {
-      type: Boolean,
-      default: true
-    },
-    // 取消按钮的文本内容
-    cancelButtonText: {
-      type: String,
-      default: '取消'
-    },
-    // 确定按钮的文本内容
-    confirmButtonText: {
-      type: String,
-      default: '确定'
-    },
-    // 取消按钮的自定义类名
-    cancelButtonClass: {
-      type: String,
-      default: 'dialog-footer-cancel'
-    },
-    // 确定按钮的自定义类名
-    confirmButtonClass: {
-      type: String,
-      default: 'dialog-footer-confirm'
-    }
-  },
-  methods: {
-    handleTransitionend: function handleTransitionend(event) {
-      this.$emit('transitionend', event);
-    },
-    updateVisible: function updateVisible(visible) {
-      this.$emit('update:visible', visible);
-      if (!visible) this.$emit('close');
-    },
-    onConfirmButtonClick: function onConfirmButtonClick() {
-      this.$emit('update:visible', false);
-      this.$emit('confirm');
-    },
-    onCancelButtonClick: function onCancelButtonClick() {
-      this.$emit('update:visible', false);
-      this.$emit('cancel');
-    }
-  }
-});
-// CONCATENATED MODULE: ./packages/components/web/message-box/src/message-box.vue?vue&type=script&lang=js&
- /* harmony default export */ var src_message_boxvue_type_script_lang_js_ = (message_boxvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./packages/components/web/message-box/src/message-box.vue?vue&type=style&index=0&id=8ce39532&lang=scss&scoped=true&
-var message_boxvue_type_style_index_0_id_8ce39532_lang_scss_scoped_true_ = __webpack_require__("4323");
-
-// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__("2877");
-
-// CONCATENATED MODULE: ./packages/components/web/message-box/src/message-box.vue
-
-
-
-
-
-
-/* normalize component */
-
-var component = Object(componentNormalizer["a" /* default */])(
-  src_message_boxvue_type_script_lang_js_,
-  message_boxvue_type_template_id_8ce39532_scoped_true_render,
-  staticRenderFns,
-  false,
-  null,
-  "8ce39532",
-  null
-  
-)
-
-/* harmony default export */ var message_box = (component.exports);
-// CONCATENATED MODULE: ./packages/components/web/message-box/index.js
-
-
-
-
-
-
-message_box.install = function (Vue) {
-  Vue.component(message_box.name, message_box);
-};
-
-var instances = [];
-var MessageBoxConstructor = external_commonjs_vue_commonjs2_vue_root_Vue_default.a.extend({
-  render: function render(h) {
-    return h(message_box, {
-      props: this.$data,
-      on: {
-        'update:visible': this.updateVisible,
-        'close': this.onClose,
-        'confirm': this.onConfirm,
-        'cancel': this.onCancel,
-        'transitionend': this.handleTransitionend
-      }
-    });
-  },
-  data: function data() {
-    return {
-      // 是否显示 Dialog，支持 .sync 修饰符
-      visible: false,
-      // Dialog 的标题，也可通过具名 slot
-      title: '标题',
-      // MessageBox 消息正文内容
-      message: '消息正文内容',
-      // 是否将 message 属性作为 HTML 片段处理
-      dangerouslyUseHTMLString: false,
-      // Dialog 的自定义类名
-      customClass: undefined,
-      // 是否显示 modal
-      modal: true,
-      // 是否可以通过点击 modal 关闭 Dialog
-      closeOnClickModal: true,
-      // 是否显示关闭按钮
-      showClose: true,
-      // 关闭前的回调，会暂停 Dialog 的关闭
-      beforeClose: this.beforeClose,
-      // 是否显示取消按钮
-      showCancelButton: false,
-      // 是否显示确定按钮
-      showConfirmButton: true,
-      // 居中
-      center: true,
-      // 取消按钮的文本内容
-      cancelButtonText: '取消',
-      // 确定按钮的文本内容
-      confirmButtonText: '确定',
-      // 取消按钮的自定义类名
-      cancelButtonClass: undefined,
-      // 确定按钮的自定义类名
-      confirmButtonClass: undefined,
-      // 回调
-      callback: undefined
-    };
-  },
-  methods: {
-    handleTransitionend: function handleTransitionend() {
-      if (!this.visible) {
-        this.destroyElement();
-      }
-    },
-    destroyElement: function destroyElement() {
-      this.$destroy(true);
-      this.$el.parentNode.removeChild(this.$el);
-    },
-    updateVisible: function updateVisible(visible) {
-      this.visible = visible;
-    },
-    onClose: function onClose() {
-      this.callback && this.callback('close', this);
-    },
-    onConfirm: function onConfirm() {
-      this.callback && this.callback('confirm', this);
-    },
-    onCancel: function onCancel() {
-      this.callback && this.callback('cancel', this);
-    }
-  },
-  mounted: function mounted() {
-    this.visible = true;
-  }
-});
-
-function msgbox(options) {
-  var p = function p(resolve, reject) {
-    if (typeof options === 'string') options = {
-      message: options
-    };
-    var instance = new MessageBoxConstructor({
-      data: Object.assign({}, options, {
-        callback: function callback(action, instance) {
-          options.callback && options.callback(action, instance);
-          var index = instances.indexOf(instance);
-          instances.splice(index, 1);
-          if (action === 'confirm') return resolve && resolve();
-          return reject && reject(action);
-        }
-      })
-    });
-    instance.$mount();
-    instances.push(instance);
-    document.body.appendChild(instance.$el);
-  };
-
-  return options.callback ? p() : new Promise(p);
-}
-
-msgbox.alert = function (message, title, options) {
-  if (typeof title !== 'string') {
-    options = title;
-    title = undefined;
-  }
-
-  return msgbox(Object.assign({
-    title: title,
-    message: message,
-    showConfirmButton: true,
-    showCancelButton: false,
-    confirmButtonText: '确定',
-    closeOnClickModal: false
-  }, options || {}));
-};
-
-msgbox.confirm = function (message, title, options) {
-  if (typeof title !== 'string') {
-    options = title;
-    title = undefined;
-  }
-
-  return msgbox(Object.assign({
-    title: title,
-    message: message,
-    showConfirmButton: true,
-    showCancelButton: true,
-    confirmButtonText: '确定',
-    cancelButtonText: '取消',
-    closeOnClickModal: true
-  }, options || {}));
-};
-
-msgbox.prompt = function () {};
-
-msgbox.close = function () {
-  for (var _i = 0, _arr = [].concat(instances); _i < _arr.length; _i++) {
-    var instance = _arr[_i];
-    instance.visible = false;
-  }
-};
-
-message_box.msgbox = msgbox;
-
-/* harmony default export */ var web_message_box = (message_box);
 // CONCATENATED MODULE: ./packages/components/web/async.js
 
 
@@ -10738,7 +10751,7 @@ var async_Components = {
   Pagination: Pagination,
   Message: message["a" /* default */],
   Dialog: Dialog,
-  MessageBox: web_message_box,
+  MessageBox: message_box["b" /* default */],
   ImageView: ImageView,
   ImageSelect: ImageSelect,
   ImageUpload: ImageUpload,
@@ -10758,10 +10771,10 @@ var web_async_install = function install(Vue) {
   }
 
   Vue.prototype.$message = message["a" /* default */].message;
-  Vue.prototype.$msgbox = web_message_box.msgbox;
-  Vue.prototype.$alert = web_message_box.msgbox.alert;
-  Vue.prototype.$confirm = web_message_box.msgbox.confirm;
-  Vue.prototype.$prompt = web_message_box.msgbox.prompt;
+  Vue.prototype.$msgbox = message_box["b" /* default */].msgbox;
+  Vue.prototype.$alert = message_box["b" /* default */].msgbox.alert;
+  Vue.prototype.$confirm = message_box["b" /* default */].msgbox.confirm;
+  Vue.prototype.$prompt = message_box["b" /* default */].msgbox.prompt;
 };
 
 /* harmony default export */ var web_async = (_objectSpread({
@@ -10840,7 +10853,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 /* concated harmony reexport Pagination */__webpack_require__.d(__webpack_exports__, "Pagination", function() { return Pagination; });
 /* concated harmony reexport Message */__webpack_require__.d(__webpack_exports__, "Message", function() { return message["a" /* default */]; });
 /* concated harmony reexport Dialog */__webpack_require__.d(__webpack_exports__, "Dialog", function() { return Dialog; });
-/* concated harmony reexport MessageBox */__webpack_require__.d(__webpack_exports__, "MessageBox", function() { return web_message_box; });
+/* concated harmony reexport MessageBox */__webpack_require__.d(__webpack_exports__, "MessageBox", function() { return message_box["b" /* default */]; });
 /* concated harmony reexport ImageView */__webpack_require__.d(__webpack_exports__, "ImageView", function() { return ImageView; });
 /* concated harmony reexport ImageSelect */__webpack_require__.d(__webpack_exports__, "ImageSelect", function() { return ImageSelect; });
 /* concated harmony reexport ImageUpload */__webpack_require__.d(__webpack_exports__, "ImageUpload", function() { return ImageUpload; });

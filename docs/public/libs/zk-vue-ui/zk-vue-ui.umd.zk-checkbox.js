@@ -77,7 +77,7 @@ __webpack_require__.r(__webpack_exports__);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
 var es6_function_name = __webpack_require__("7f7f");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2c70534a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/global/checkbox/src/checkbox.vue?vue&type=template&id=30f166f2&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"26943976-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/global/checkbox/src/checkbox.vue?vue&type=template&id=30f166f2&scoped=true&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('label',{class:['zk-checkbox', {
     'is-checked': _vm.currentChecked
   }]},[_c('span',{staticClass:"zk-checkbox-inner"},[_c('input',_vm._b({directives:[{name:"model",rawName:"v-model",value:(_vm.currentChecked),expression:"currentChecked"}],staticClass:"zk-checkbox-input",attrs:{"type":"checkbox","disabled":_vm.currentDisabled},domProps:{"checked":Array.isArray(_vm.currentChecked)?_vm._i(_vm.currentChecked,null)>-1:(_vm.currentChecked)},on:{"change":function($event){var $$a=_vm.currentChecked,$$el=$event.target,$$c=$$el.checked?(true):(false);if(Array.isArray($$a)){var $$v=null,$$i=_vm._i($$a,$$v);if($$el.checked){$$i<0&&(_vm.currentChecked=$$a.concat([$$v]))}else{$$i>-1&&(_vm.currentChecked=$$a.slice(0,$$i).concat($$a.slice($$i+1)))}}else{_vm.currentChecked=$$c}}}},'input',_vm.$attrs,false))]),(_vm.$slots.default)?_c('span',{staticClass:"zk-checkbox-label"},[_vm._t("default")],2):_vm._e()])}
@@ -731,7 +731,7 @@ var defaultValue = Symbol('value');
     return {
       validateState: '',
       validateMessage: '',
-      currentRequired: false
+      currentRequired: this.required
     };
   },
   computed: {
@@ -758,7 +758,7 @@ var defaultValue = Symbol('value');
       var descriptor = {};
       var props = this.currentProps;
       var model = {};
-      this.currentRequired = false;
+      this.currentRequired = this.required;
       var _iteratorNormalCompletion = true;
       var _didIteratorError = false;
       var _iteratorError = undefined;

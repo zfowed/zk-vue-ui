@@ -44,7 +44,7 @@ export default {
     return {
       validateState: '',
       validateMessage: '',
-      currentRequired: false
+      currentRequired: this.required
     }
   },
   computed: {
@@ -68,7 +68,7 @@ export default {
       let props = this.currentProps
       let model = {}
 
-      this.currentRequired = false
+      this.currentRequired = this.required
 
       for (const prop of props) {
         if (prop) {

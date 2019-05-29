@@ -206,7 +206,7 @@ var defaultValue = Symbol('value');
     return {
       validateState: '',
       validateMessage: '',
-      currentRequired: false
+      currentRequired: this.required
     };
   },
   computed: {
@@ -233,7 +233,7 @@ var defaultValue = Symbol('value');
       var descriptor = {};
       var props = this.currentProps;
       var model = {};
-      this.currentRequired = false;
+      this.currentRequired = this.required;
       var _iteratorNormalCompletion = true;
       var _didIteratorError = false;
       var _iteratorError = undefined;
@@ -416,7 +416,7 @@ __webpack_require__.r(__webpack_exports__);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
 var es6_function_name = __webpack_require__("7f7f");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2c70534a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/web/date-picker/src/date-picker.vue?vue&type=template&id=3782644f&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"26943976-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/web/date-picker/src/date-picker.vue?vue&type=template&id=3782644f&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('el-date-picker',_vm._b({staticClass:"zk-date-picker",attrs:{"placeholder":_vm.placeholder,"value-format":_vm.valueFormat,"disabled":_vm.currentDisabled},on:{"change":function($event){return _vm.emit.bind(this, 'change')},"blur":function($event){return _vm.emit.bind(this, 'blur')},"focus":function($event){return _vm.emit.bind(this, 'focus')}},model:{value:(_vm.currentValue),callback:function ($$v) {_vm.currentValue=$$v},expression:"currentValue"}},'el-date-picker',_vm.$attrs,false),[_vm._l((_vm.$slots),function($slot,key){return _vm._t(key,null,{"slot":key})})],2)}
 var staticRenderFns = []
 
