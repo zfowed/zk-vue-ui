@@ -112,6 +112,9 @@ export default {
 .zk-form-item {
   margin-bottom: 22px;
   clear: both;
+  &:last-child {
+    margin-bottom: 0;
+  }
   &::after,
   &::before {
     display: table;
