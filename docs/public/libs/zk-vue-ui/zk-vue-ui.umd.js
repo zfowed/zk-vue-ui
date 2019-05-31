@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "css/" + ({"0":"zk-table","1":"vendors~zk-option~zk-popover~zk-select","2":"zk-input","3":"vendors~zk-swiper~zk-swiper-slide","4":"zk-form","5":"zk-image-select","6":"zk-swiper","7":"vendors~zk-date-picker","8":"vendors~zk-html-image","9":"zk-alert","10":"zk-button","11":"zk-checkbox","12":"zk-col","13":"zk-countdown","14":"zk-date-picker","15":"zk-form-item","16":"zk-html-image","17":"zk-image-container","18":"zk-image-upload","19":"zk-image-view","20":"zk-link","21":"zk-notice","22":"zk-notice-item","23":"zk-option","24":"zk-pagination","25":"zk-popover","26":"zk-radio","27":"zk-row","28":"zk-select","29":"zk-steps","30":"zk-steps-item","31":"zk-swiper-slide","32":"zk-table-body","33":"zk-table-head","34":"zk-table-td","35":"zk-table-th","36":"zk-table-tr","37":"zk-text-line"}[chunkId]||chunkId) + "." + {"0":"656b7c45","1":"31d6cfe0","2":"87727dd0","3":"31d6cfe0","4":"9dabd268","5":"061401db","6":"214a6afb","7":"31d6cfe0","8":"31d6cfe0","9":"ddda5cfe","10":"ed342ee9","11":"6803a4bd","12":"f91b254d","13":"31d6cfe0","14":"34cb151f","15":"31d6cfe0","16":"22717d1d","17":"970069b4","18":"428521f9","19":"6f2cbb30","20":"26d8599e","21":"883bce68","22":"883bce68","23":"69a2cb2c","24":"84208e72","25":"730dbe53","26":"7851b96c","27":"ca3b9ff0","28":"0ebd13f8","29":"49cbe64b","30":"49cbe64b","31":"31d6cfe0","32":"31d6cfe0","33":"31d6cfe0","34":"31d6cfe0","35":"31d6cfe0","36":"31d6cfe0","37":"a1a1ad39"}[chunkId] + ".css";
+/******/ 				var href = "css/" + ({"0":"zk-table","1":"vendors~zk-option~zk-popover~zk-select","2":"zk-input","3":"vendors~zk-swiper~zk-swiper-slide","4":"zk-form","5":"zk-image-select","6":"zk-swiper","7":"vendors~zk-date-picker","8":"vendors~zk-html-image","9":"zk-alert","10":"zk-button","11":"zk-checkbox","12":"zk-col","13":"zk-countdown","14":"zk-date-picker","15":"zk-form-item","16":"zk-html-image","17":"zk-image-container","18":"zk-image-upload","19":"zk-image-view","20":"zk-link","21":"zk-notice","22":"zk-notice-item","23":"zk-option","24":"zk-pagination","25":"zk-popover","26":"zk-radio","27":"zk-row","28":"zk-select","29":"zk-steps","30":"zk-steps-item","31":"zk-swiper-slide","32":"zk-table-body","33":"zk-table-head","34":"zk-table-td","35":"zk-table-th","36":"zk-table-tr","37":"zk-text-line"}[chunkId]||chunkId) + "." + {"0":"4c244a58","1":"31d6cfe0","2":"87727dd0","3":"31d6cfe0","4":"9dabd268","5":"061401db","6":"214a6afb","7":"31d6cfe0","8":"31d6cfe0","9":"ddda5cfe","10":"ed342ee9","11":"4d76d125","12":"f91b254d","13":"31d6cfe0","14":"34cb151f","15":"31d6cfe0","16":"22717d1d","17":"970069b4","18":"33b97fc5","19":"6f2cbb30","20":"26d8599e","21":"883bce68","22":"883bce68","23":"69a2cb2c","24":"84208e72","25":"730dbe53","26":"7851b96c","27":"ca3b9ff0","28":"0ebd13f8","29":"49cbe64b","30":"49cbe64b","31":"31d6cfe0","32":"31d6cfe0","33":"31d6cfe0","34":"31d6cfe0","35":"31d6cfe0","36":"31d6cfe0","37":"a1a1ad39"}[chunkId] + ".css";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {
@@ -9138,256 +9138,6 @@ module.exports = function (it) {
 
 /***/ }),
 
-/***/ "d92a":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.object.assign.js
-var es6_object_assign = __webpack_require__("f751");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
-var es6_function_name = __webpack_require__("7f7f");
-
-// EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
-var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
-var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_vue_commonjs2_vue_root_Vue_);
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"26943976-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/web/message/src/message.vue?vue&type=template&id=9193bbb8&scoped=true&
-var messagevue_type_template_id_9193bbb8_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('zk-popup-layer',{attrs:{"visible":_vm.visible,"modal":false,"append-to-body":_vm.appendToBody},on:{"transitionend":_vm.handleTransitionend}},[_c('div',{class:['zk-message', ("zk-message-" + _vm.type)]},[_c('div',{staticClass:"zk-message-box"},[_c('div',{staticClass:"zk-message-icon"}),(_vm.dangerouslyUseHTMLString)?_c('div',{staticClass:"zk-message-text",domProps:{"innerHTML":_vm._s(_vm.message)}}):_c('div',{staticClass:"zk-message-text"},[_vm._t("default",[_vm._v(_vm._s(_vm.message))])],2)])])])}
-var staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./packages/components/web/message/src/message.vue?vue&type=template&id=9193bbb8&scoped=true&
-
-// EXTERNAL MODULE: ./packages/components/global/popup-layer/index.js + 5 modules
-var popup_layer = __webpack_require__("2bf3");
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/web/message/src/message.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ var messagevue_type_script_lang_js_ = ({
-  name: 'ZkMessage',
-  components: {
-    'zk-popup-layer': popup_layer["default"]
-  },
-  props: {
-    // 是否显示 Message，支持 .sync 修饰符
-    visible: {
-      type: Boolean,
-      default: false
-    },
-    // 消息正文内容
-    message: {
-      type: String
-    },
-    // 主题 success/warning/error
-    type: {
-      type: String,
-      default: 'success'
-    },
-    // 是否将 message 属性作为 HTML 片段处理
-    dangerouslyUseHTMLString: {
-      type: Boolean,
-      default: false
-    },
-    // 是否插入到 body
-    appendToBody: {
-      type: Boolean,
-      default: true
-    },
-    // Message 的自定义类名
-    customClass: {
-      type: String
-    }
-  },
-  methods: {
-    handleTransitionend: function handleTransitionend(event) {
-      this.$emit('transitionend', event);
-    }
-  }
-});
-// CONCATENATED MODULE: ./packages/components/web/message/src/message.vue?vue&type=script&lang=js&
- /* harmony default export */ var src_messagevue_type_script_lang_js_ = (messagevue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./packages/components/web/message/src/message.vue?vue&type=style&index=0&id=9193bbb8&lang=scss&scoped=true&
-var messagevue_type_style_index_0_id_9193bbb8_lang_scss_scoped_true_ = __webpack_require__("8f2e");
-
-// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__("2877");
-
-// CONCATENATED MODULE: ./packages/components/web/message/src/message.vue
-
-
-
-
-
-
-/* normalize component */
-
-var component = Object(componentNormalizer["a" /* default */])(
-  src_messagevue_type_script_lang_js_,
-  messagevue_type_template_id_9193bbb8_scoped_true_render,
-  staticRenderFns,
-  false,
-  null,
-  "9193bbb8",
-  null
-  
-)
-
-/* harmony default export */ var message = (component.exports);
-// CONCATENATED MODULE: ./packages/components/web/message/index.js
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return message_message; });
-/* unused concated harmony import Message */
-
-
-
-
-
-message.install = function (Vue) {
-  Vue.component(message.name, message);
-};
-
-var instances = [];
-var MessageConstructor = external_commonjs_vue_commonjs2_vue_root_Vue_default.a.extend({
-  render: function render(h) {
-    return h(message, {
-      props: Object.assign({}, this.$data, {
-        appendToBody: false
-      }),
-      on: {
-        transitionend: this.handleTransitionend
-      }
-    });
-  },
-  data: function data() {
-    return {
-      // 是否显示 Message，支持 .sync 修饰符
-      visible: false,
-      // 消息正文内容
-      message: '消息正文内容',
-      // 主题 success/warning/error
-      type: 'success',
-      // 是否将 message 属性作为 HTML 片段处理
-      dangerouslyUseHTMLString: false,
-      // Message 的自定义类名
-      customClass: undefined,
-      // Message 的自定义类名
-      duration: 3000,
-      // 关闭时的回调函数, 参数为被关闭的 message 实例
-      onClose: null
-    };
-  },
-  methods: {
-    handleTransitionend: function handleTransitionend() {
-      if (!this.visible) {
-        this.destroyElement();
-      }
-    },
-    handleClose: function handleClose() {
-      this.visible = false;
-    },
-    destroyElement: function destroyElement() {
-      this.$destroy(true);
-      this.$el.parentNode.removeChild(this.$el);
-    }
-  },
-  mounted: function mounted() {
-    var _this = this;
-
-    this.visible = true;
-
-    if (this.duration > 0) {
-      this.timer = setTimeout(this.handleClose, this.duration);
-    }
-
-    setTimeout(function () {
-      return window.addEventListener('click', _this.handleClose, false);
-    }, 0);
-  },
-  destroyed: function destroyed() {
-    this.onClose && this.onClose(this);
-    clearTimeout(this.timer);
-    window.removeEventListener('click', this.handleClose);
-  }
-});
-
-function message_message(options) {
-  if (typeof options === 'string') options = {
-    message: options
-  };
-  var instance = new MessageConstructor({
-    data: Object.assign({}, options, {
-      onClose: function onClose(instance) {
-        options.onClose && options.onClose(instance);
-        var index = instances.indexOf(instance);
-        instances.splice(index, 1);
-      }
-    })
-  });
-  instance.$mount();
-  instances.push(instance);
-  document.body.appendChild(instance.$el);
-}
-
-message_message.success = function (options) {
-  if (typeof options === 'string') options = {
-    message: options
-  };
-  return message_message(Object.assign({}, options || {}, {
-    type: 'success'
-  }));
-};
-
-message_message.warning = function (options) {
-  if (typeof options === 'string') options = {
-    message: options
-  };
-  return message_message(Object.assign({}, options || {}, {
-    type: 'warning'
-  }));
-};
-
-message_message.error = function (options) {
-  if (typeof options === 'string') options = {
-    message: options
-  };
-  return message_message(Object.assign({}, options || {}, {
-    type: 'error'
-  }));
-};
-
-message_message.close = function () {
-  for (var _i = 0, _arr = [].concat(instances); _i < _arr.length; _i++) {
-    var instance = _arr[_i];
-    instance.visible = false;
-  }
-};
-
-message.message = message_message;
-
-/* harmony default export */ var web_message = __webpack_exports__["a"] = (message);
-
-/***/ }),
-
 /***/ "d9f6":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10666,9 +10416,246 @@ if (typeof window !== 'undefined' && window.Vue) {
 /* harmony default export */ var global_async = (_objectSpread({
   install: async_install
 }, Components));
-// EXTERNAL MODULE: ./packages/components/web/message/index.js + 5 modules
-var message = __webpack_require__("d92a");
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.object.assign.js
+var es6_object_assign = __webpack_require__("f751");
 
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
+var es6_function_name = __webpack_require__("7f7f");
+
+// EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
+var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
+var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_vue_commonjs2_vue_root_Vue_);
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"26943976-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/web/message/src/message.vue?vue&type=template&id=9193bbb8&scoped=true&
+var messagevue_type_template_id_9193bbb8_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('zk-popup-layer',{attrs:{"visible":_vm.visible,"modal":false,"append-to-body":_vm.appendToBody},on:{"transitionend":_vm.handleTransitionend}},[_c('div',{class:['zk-message', ("zk-message-" + _vm.type)]},[_c('div',{staticClass:"zk-message-box"},[_c('div',{staticClass:"zk-message-icon"}),(_vm.dangerouslyUseHTMLString)?_c('div',{staticClass:"zk-message-text",domProps:{"innerHTML":_vm._s(_vm.message)}}):_c('div',{staticClass:"zk-message-text"},[_vm._t("default",[_vm._v(_vm._s(_vm.message))])],2)])])])}
+var staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./packages/components/web/message/src/message.vue?vue&type=template&id=9193bbb8&scoped=true&
+
+// EXTERNAL MODULE: ./packages/components/global/popup-layer/index.js + 5 modules
+var popup_layer = __webpack_require__("2bf3");
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/web/message/src/message.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var messagevue_type_script_lang_js_ = ({
+  name: 'ZkMessage',
+  components: {
+    'zk-popup-layer': popup_layer["default"]
+  },
+  props: {
+    // 是否显示 Message，支持 .sync 修饰符
+    visible: {
+      type: Boolean,
+      default: false
+    },
+    // 消息正文内容
+    message: {
+      type: String
+    },
+    // 主题 success/warning/error
+    type: {
+      type: String,
+      default: 'success'
+    },
+    // 是否将 message 属性作为 HTML 片段处理
+    dangerouslyUseHTMLString: {
+      type: Boolean,
+      default: false
+    },
+    // 是否插入到 body
+    appendToBody: {
+      type: Boolean,
+      default: true
+    },
+    // Message 的自定义类名
+    customClass: {
+      type: String
+    }
+  },
+  methods: {
+    handleTransitionend: function handleTransitionend(event) {
+      this.$emit('transitionend', event);
+    }
+  }
+});
+// CONCATENATED MODULE: ./packages/components/web/message/src/message.vue?vue&type=script&lang=js&
+ /* harmony default export */ var src_messagevue_type_script_lang_js_ = (messagevue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./packages/components/web/message/src/message.vue?vue&type=style&index=0&id=9193bbb8&lang=scss&scoped=true&
+var messagevue_type_style_index_0_id_9193bbb8_lang_scss_scoped_true_ = __webpack_require__("8f2e");
+
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+var componentNormalizer = __webpack_require__("2877");
+
+// CONCATENATED MODULE: ./packages/components/web/message/src/message.vue
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(componentNormalizer["a" /* default */])(
+  src_messagevue_type_script_lang_js_,
+  messagevue_type_template_id_9193bbb8_scoped_true_render,
+  staticRenderFns,
+  false,
+  null,
+  "9193bbb8",
+  null
+  
+)
+
+/* harmony default export */ var message = (component.exports);
+// CONCATENATED MODULE: ./packages/components/web/message/index.js
+
+
+
+
+
+message.install = function (Vue) {
+  Vue.component(message.name, message);
+};
+
+var instances = [];
+var MessageConstructor = external_commonjs_vue_commonjs2_vue_root_Vue_default.a.extend({
+  render: function render(h) {
+    return h(message, {
+      props: Object.assign({}, this.$data, {
+        appendToBody: false
+      }),
+      on: {
+        transitionend: this.handleTransitionend
+      }
+    });
+  },
+  data: function data() {
+    return {
+      // 是否显示 Message，支持 .sync 修饰符
+      visible: false,
+      // 消息正文内容
+      message: '消息正文内容',
+      // 主题 success/warning/error
+      type: 'success',
+      // 是否将 message 属性作为 HTML 片段处理
+      dangerouslyUseHTMLString: false,
+      // Message 的自定义类名
+      customClass: undefined,
+      // Message 的自定义类名
+      duration: 3000,
+      // 关闭时的回调函数, 参数为被关闭的 message 实例
+      onClose: null
+    };
+  },
+  methods: {
+    handleTransitionend: function handleTransitionend() {
+      if (!this.visible) {
+        this.destroyElement();
+      }
+    },
+    handleClose: function handleClose() {
+      this.visible = false;
+    },
+    destroyElement: function destroyElement() {
+      this.$destroy(true);
+      this.$el.parentNode.removeChild(this.$el);
+    }
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    this.visible = true;
+
+    if (this.duration > 0) {
+      this.timer = setTimeout(this.handleClose, this.duration);
+    }
+
+    setTimeout(function () {
+      return window.addEventListener('click', _this.handleClose, false);
+    }, 0);
+  },
+  destroyed: function destroyed() {
+    this.onClose && this.onClose(this);
+    clearTimeout(this.timer);
+    window.removeEventListener('click', this.handleClose);
+  }
+});
+
+function message_message(options) {
+  if (typeof options === 'string') options = {
+    message: options
+  };
+  var instance = new MessageConstructor({
+    data: Object.assign({}, options, {
+      onClose: function onClose(instance) {
+        options.onClose && options.onClose(instance);
+        var index = instances.indexOf(instance);
+        instances.splice(index, 1);
+      }
+    })
+  });
+  instance.$mount();
+  instances.push(instance);
+  document.body.appendChild(instance.$el);
+}
+
+message_message.success = function (options) {
+  if (typeof options === 'string') options = {
+    message: options
+  };
+  return message_message(Object.assign({}, options || {}, {
+    type: 'success'
+  }));
+};
+
+message_message.warning = function (options) {
+  if (typeof options === 'string') options = {
+    message: options
+  };
+  return message_message(Object.assign({}, options || {}, {
+    type: 'warning'
+  }));
+};
+
+message_message.error = function (options) {
+  if (typeof options === 'string') options = {
+    message: options
+  };
+  return message_message(Object.assign({}, options || {}, {
+    type: 'error'
+  }));
+};
+
+message_message.close = function () {
+  for (var _i = 0, _arr = [].concat(instances); _i < _arr.length; _i++) {
+    var instance = _arr[_i];
+    instance.visible = false;
+  }
+};
+
+message.message = message_message;
+
+/* harmony default export */ var web_message = (message);
 // EXTERNAL MODULE: ./packages/components/web/message-box/index.js + 5 modules
 var message_box = __webpack_require__("c440");
 
@@ -10749,7 +10736,7 @@ var async_Components = {
   Button: Button,
   Link: Link,
   Pagination: Pagination,
-  Message: message["a" /* default */],
+  Message: web_message,
   Dialog: Dialog,
   MessageBox: message_box["b" /* default */],
   ImageView: ImageView,
@@ -10770,7 +10757,7 @@ var web_async_install = function install(Vue) {
     Vue.component("Zk".concat(key), ComponentAsync);
   }
 
-  Vue.prototype.$message = message["a" /* default */].message;
+  Vue.prototype.$message = web_message.message;
   Vue.prototype.$msgbox = message_box["b" /* default */].msgbox;
   Vue.prototype.$alert = message_box["b" /* default */].msgbox.alert;
   Vue.prototype.$confirm = message_box["b" /* default */].msgbox.confirm;
@@ -10851,7 +10838,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 /* concated harmony reexport Button */__webpack_require__.d(__webpack_exports__, "Button", function() { return Button; });
 /* concated harmony reexport Link */__webpack_require__.d(__webpack_exports__, "Link", function() { return Link; });
 /* concated harmony reexport Pagination */__webpack_require__.d(__webpack_exports__, "Pagination", function() { return Pagination; });
-/* concated harmony reexport Message */__webpack_require__.d(__webpack_exports__, "Message", function() { return message["a" /* default */]; });
+/* concated harmony reexport Message */__webpack_require__.d(__webpack_exports__, "Message", function() { return web_message; });
 /* concated harmony reexport Dialog */__webpack_require__.d(__webpack_exports__, "Dialog", function() { return Dialog; });
 /* concated harmony reexport MessageBox */__webpack_require__.d(__webpack_exports__, "MessageBox", function() { return message_box["b" /* default */]; });
 /* concated harmony reexport ImageView */__webpack_require__.d(__webpack_exports__, "ImageView", function() { return ImageView; });

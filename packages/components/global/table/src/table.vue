@@ -38,12 +38,32 @@ export default {
     }
   },
   computed: {
+    isSelectAll: {
+      get () {
+        if (!this.selectionInstanceList.length) return false
+        return this.selectionInstanceList.every(instance => {
+          return instance.selectionValue
+        })
+      },
+      set (value) {
+        for (const instance of [...this.selectionInstanceList, ...this.selectionAllInstanceList]) {
+          if (instance.selectionValue === value) continue
+          instance.selectionValue = value
+        }
+        this.$emit('selection-change', this.selectionDataList)
+      }
+    },
     selectionDataList () {
       return this.selectionInstanceList.filter(instance => {
         return instance.selectionValue
       }).map(instance => {
         return instance.selectionData
       })
+    }
+  },
+  watch: {
+    selectionInstanceList () {
+      this.isSelectAll = this.isSelectAll
     }
   },
   methods: {
@@ -83,23 +103,14 @@ export default {
         this.__allSelectionValueIsChange = false
         return
       }
-      const all = instance.selectionValue
-      for (const _instance of [...this.selectionInstanceList, ...this.selectionAllInstanceList]) {
-        if (instance === _instance) continue
-        if (_instance.selectionValue === all) continue
-        _instance.selectionValue = all
-      }
-      this.$emit('selection-change', this.selectionDataList)
+      this.isSelectAll = instance.selectionValue
     },
     // 单选
     onSelectionChange (instance) {
-      const all = this.selectionInstanceList.every(_instance => {
-        return _instance.selectionValue
-      })
       for (const _instance of this.selectionAllInstanceList) {
-        if (_instance.selectionValue === all) continue
+        if (_instance.selectionValue === this.isSelectAll) continue
         this.__allSelectionValueIsChange = true
-        _instance.selectionValue = all
+        _instance.selectionValue = this.isSelectAll
       }
       this.$emit('selection-change', this.selectionDataList)
     },

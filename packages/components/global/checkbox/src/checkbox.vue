@@ -43,7 +43,7 @@ export default {
   width: 16px;
   height: 16px;
   background-color: #fff;
-  z-index: 1;
+  // z-index: 1;
   cursor: pointer;
   vertical-align: middle;
   transition: border-color .25s cubic-bezier(.71,-.46,.29,1.46),background-color .25s cubic-bezier(.71,-.46,.29,1.46);

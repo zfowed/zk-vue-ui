@@ -8,7 +8,14 @@
         </div>
       </div>
     </div>
-    <zk-image-select v-model="src" :view-src-list="viewSrcList" :options="currentOptions" :readonly="readonly" :cover="cover" @change-file="changeFile">
+    <zk-image-select
+      v-model="src"
+      ref="imageSelect"
+      :view-src-list="viewSrcList"
+      :options="currentOptions"
+      :readonly="readonly"
+      :cover="cover"
+      @change-file="changeFile">
       <slot name="label" slot="label"></slot>
       <slot v-if="!$slots['upload-label']" slot="select-label">重新上传</slot>
       <slot v-else name="upload-label" slot="select-label"></slot>
@@ -18,7 +25,9 @@
 
 <script>
 import ImageSelect from '../../image-select'
-import { message } from '../../message'
+import { MessageBox } from '../../message-box'
+
+const msgbox = MessageBox.msgbox
 
 export default {
   name: 'ZkImageUpload',
@@ -70,14 +79,6 @@ export default {
   },
   methods: {
     changeFile (file) {
-      function a (f, d, c) {
-        return () => setTimeout(() => f(c), d)
-      }
-
-      function b () {}
-
-      a(b, 200, {})
-
       if (!file) {
         this.currentValue = ''
         return
@@ -98,7 +99,15 @@ export default {
           this.currentValue = ''
           this.src = ''
           this.isUpload = false
-          message.error(String(error) || '图片上传失败，请重试。')
+          msgbox.alert(String(error) || '上传失败，请检查网络是否再正常，再重新上传。', '上传失败', {
+            closeOnClickModal: true,
+            confirmButtonText: '重新上传',
+            callback: action => {
+              if (!this.$refs.imageSelect) return
+              if (action !== 'confirm') return
+              return this.$refs.imageSelect.selectImage()
+            }
+          })
         }
       })
     }
