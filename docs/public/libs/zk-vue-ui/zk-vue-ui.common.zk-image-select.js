@@ -28,7 +28,7 @@ var staticRenderFns = []
 
 // CONCATENATED MODULE: ./packages/components/web/image-view/src/image-view.vue?vue&type=template&id=5b79d62b&scoped=true&
 
-// EXTERNAL MODULE: ./packages/components/global/popup-layer/index.js + 5 modules
+// EXTERNAL MODULE: ./packages/components/global/popup-layer/index.js + 6 modules
 var popup_layer = __webpack_require__("2bf3");
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/web/image-view/src/image-view.vue?vue&type=script&lang=js&
