@@ -91,7 +91,7 @@ export default {
     this.initBindTable(this.type)
   },
   beforeDestroy () {
-    this.destroyBindTable()
+    this.destroyBindTable(this.type)
   }
 }
 </script>

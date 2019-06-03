@@ -27,9 +27,8 @@
 </template>
 
 <script>
+import store from '../../../../store'
 import transferDom from '../../../../directives/transfer-dom'
-
-let zIndex = 2000
 
 export default {
   name: 'ZkPopupLayer',
@@ -75,7 +74,7 @@ export default {
   },
   data () {
     return {
-      zIndex: zIndex++
+      zIndex: store.zIndex++
     }
   },
   computed: {

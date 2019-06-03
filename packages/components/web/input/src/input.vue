@@ -6,9 +6,6 @@
       'is-disabled': disabled
     }]">
     <template v-if="type !== 'textarea'">
-      <span v-if="$slots['prefix-icon']" class="zk-input__prefix-icon" @click="handleIconClick">
-        <slot name="prefix-icon"></slot>
-      </span>
       <input
         ref="input"
         class="zk-input__inner"
@@ -24,6 +21,9 @@
         @focus="handleFocus"
         @blur="handleBlur"
         @change="handleChange">
+      <span v-if="$slots['prefix-icon']" class="zk-input__prefix-icon" @click="handleIconClick">
+        <slot name="prefix-icon"></slot>
+      </span>
       <span v-if="$slots['suffix-icon']" class="zk-input__suffix-icon" @click="handleIconClick">
         <slot name="suffix-icon"></slot>
       </span>
@@ -67,7 +67,7 @@ export default {
   .zk-input__suffix-icon {
     position: absolute;
     top: 0;
-    z-index: 1;
+    // z-index: 1;
     width: 40px;
     height: 100%;
     display: flex;

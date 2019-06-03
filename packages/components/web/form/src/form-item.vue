@@ -11,7 +11,7 @@
       v-if="!isNesting && label"
       class="zk-form-item__label"
       :style="!currentInline && !isNesting && currentLabelPosition !== 'top' && labelStyle">
-      <span v-if="currentRequired">*</span>
+      <span class="zk-form--item__required-star" v-if="currentRequired">*</span>
       <span>{{ label }}</span>
     </label>
     <div
@@ -112,6 +112,9 @@ export default {
 .zk-form-item {
   margin-bottom: 22px;
   clear: both;
+  &:last-child {
+    margin-bottom: 0;
+  }
   &::after,
   &::before {
     display: table;
@@ -154,6 +157,9 @@ export default {
   position: absolute;
   top: 100%;
   left: 0;
+}
+.zk-form--item__required-star {
+  color: #FF5A00;
 }
 
 .zk-form-item--label-right {

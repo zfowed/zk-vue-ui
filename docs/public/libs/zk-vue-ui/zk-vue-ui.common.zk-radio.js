@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
 var es6_function_name = __webpack_require__("7f7f");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2c70534a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/global/radio/src/radio.vue?vue&type=template&id=9aefade6&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"26943976-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/global/radio/src/radio.vue?vue&type=template&id=9aefade6&scoped=true&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('label',{class:['zk-radio', {
     'is-active': _vm.currentChecked
   }]},[_c('span',{staticClass:"zk-radio-inner"},[_c('input',_vm._b({directives:[{name:"model",rawName:"v-model",value:(_vm.currentValue),expression:"currentValue"}],staticClass:"radio-input",attrs:{"type":"radio","disabled":_vm.currentDisabled},domProps:{"value":_vm.label,"checked":_vm._q(_vm.currentValue,_vm.label)},on:{"change":function($event){_vm.currentValue=_vm.label}}},'input',_vm.$attrs,false))]),(_vm.$slots.default)?_c('span',{staticClass:"zk-radio-label"},[_vm._t("default")],2):_vm._e()])}
@@ -712,7 +712,7 @@ var defaultValue = Symbol('value');
     return {
       validateState: '',
       validateMessage: '',
-      currentRequired: false
+      currentRequired: this.required
     };
   },
   computed: {
@@ -739,7 +739,7 @@ var defaultValue = Symbol('value');
       var descriptor = {};
       var props = this.currentProps;
       var model = {};
-      this.currentRequired = false;
+      this.currentRequired = this.required;
       var _iteratorNormalCompletion = true;
       var _didIteratorError = false;
       var _iteratorError = undefined;
