@@ -2,31 +2,50 @@
   <zk-popup-layer
     :visible.sync="currentVisible"
     :custom-style="{ width: '100%', height: '100%' }">
-    <div class="image-view-stage">
+    <div class="image-view">
       <div class="image-view-close" @click="currentVisible = false"></div>
-      <div class="image-view-left" v-if="currentIndex > 0" @click="toLeft"></div>
-      <img class="image-view-img" :src="currentSrcList[currentIndex]">
-      <div class="image-view-right" v-if="currentIndex < currentSrcList.length - 1" @click="toRight"></div>
+      <zk-swiper
+        class="image-swiper"
+        :options="swiperOptions"
+        @ready="handleReady"
+        @slideChange="handleSlideChange">
+        <zk-swiper-slide
+          class="image-swiper-slide"
+          v-for="(src, index) in currentSrcList"
+          :key="index">
+          <div class="image-flex">
+            <img :src="src" />
+          </div>
+        </zk-swiper-slide>
+      </zk-swiper>
+      <div class="swiper-pagination"></div>
+      <div class="image-button-prev"></div>
+      <div class="image-button-next"></div>
     </div>
   </zk-popup-layer>
 </template>
 
 <script>
 import PopupLayer from '../../../global/popup-layer'
+import { Swiper, SwiperSlide } from '../../../global/swiper'
 
 export default {
   name: 'ZkImageView',
   components: {
-    'zk-popup-layer': PopupLayer
+    'zk-popup-layer': PopupLayer,
+    'zk-swiper': Swiper,
+    'zk-swiper-slide': SwiperSlide
   },
   props: {
     visible: {
       type: Boolean,
       default: false
     },
+    index: {
+      type: Number
+    },
     src: {
-      type: String,
-      required: true
+      type: String
     },
     srcList: {
       type: Array
@@ -34,7 +53,25 @@ export default {
   },
   data () {
     return {
-      currentIndex: Array.isArray(this.srcList) ? this.srcList.indexOf(this.src) : 0
+      currentIndex: 0,
+      swiperOptions: {
+        loop: true, // 无缝轮播
+        grabCursor: true, // 开启鼠标的抓手形状
+        // autoplay: {
+        //   delay: 8000,
+        //   disableOnInteraction: false
+        // },
+        freeModeSticky: true, // 使得freeMode也能自动贴合。
+        autoHeight: true, // 自动高度
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'fraction'
+        },
+        navigation: {
+          prevEl: '.image-button-prev',
+          nextEl: '.image-button-next'
+        }
+      }
     }
   },
   computed: {
@@ -51,32 +88,38 @@ export default {
     }
   },
   watch: {
-    currentVisible () {
-      if (this.currentVisible) {
-        this.currentIndex = Array.isArray(this.srcList) ? this.srcList.indexOf(this.src) : 0
+    index: {
+      immediate: true,
+      handler (index) {
+        if (this.swiper) return this.swiper.slideTo(index)
+
+        if (typeof index === 'number' && this.currentSrcList[index]) {
+          this.currentIndex = index
+        } else {
+          this.currentIndex = this.currentSrcList.indexOf(this.src) || 0
+        }
       }
-    },
-    srcList () {
-      this.currentIndex = Array.isArray(this.srcList) ? this.srcList.indexOf(this.src) : 0
     }
   },
   methods: {
-    toLeft () {
-      if (this.currentSrcList[this.currentIndex - 1]) {
-        this.currentIndex -= 1
-      }
+    handleReady (swiper) {
+      this.swiper = swiper
+      this.$emit('ready', this.swiper)
     },
-    toRight () {
-      if (this.currentSrcList[this.currentIndex + 1]) {
-        this.currentIndex += 1
-      }
+    handleSlideChange () {
+      if (!this.swiper) return
+      this.currentIndex = this.swiper.activeIndexx
+      this.$emit('update:index', this.currentIndex)
     }
+  },
+  beforeDestroy () {
+    this.swiper = null
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.image-view-stage {
+.image-view {
   position: relative;
   width: 100%;
   height: 100%;
@@ -86,64 +129,76 @@ export default {
   align-items: center;
   justify-content: center;
   user-select: none;
-  .image-view-close {
-    position: absolute;
-    top: 74px;
-    right: 74px;
-    width: 74px;
-    height: 74px;
-    line-height: 74px;
-    text-align: center;
-    border-radius: 50%;
-    overflow: hidden;
-    z-index: 5;
-    background-color: #656565;
-    background-repeat: no-repeat;
-    background-position: center center;
-    cursor: pointer;
-    background-image: url('~../assets/c1.png');
-    &:hover {
-      background-image: url('~../assets/c2.png');
+}
+
+.image-view-close {
+  position: absolute;
+  top: 74px;
+  right: 74px;
+  width: 74px;
+  height: 74px;
+  line-height: 74px;
+  text-align: center;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 5;
+  background-color: #656565;
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+  background-image: url('~../assets/c1.png');
+  &:hover {
+    background-image: url('~../assets/c2.png');
+  }
+}
+
+.image-swiper {
+  width: 100%;
+  max-height: 100%;
+  .image-swiper-slide {
+    .image-flex {
+      img {
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+        margin: auto;
+      }
     }
   }
-  .image-view-img {
-    max-width: 100%;
-    max-height: 100%;
-    display: block;
-    margin: auto;
+}
+
+.image-button-prev,
+.image-button-next {
+  position: absolute;
+  top: 50%;
+  width: 74px;
+  height: 74px;
+  line-height: 74px;
+  text-align: center;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: -37px;
+  z-index: 4;
+  background-color: #656565;
+  background-repeat: no-repeat;
+  background-position: center center;
+  outline: none;
+  cursor: pointer;
+}
+.image-button-prev {
+  // left: -(74px + 86px);
+  left: 74px;
+  background-image: url('~../assets/l1.png');
+  &:hover {
+    background-image: url('~../assets/l2.png');
   }
-  .image-view-left,
-  .image-view-right {
-    position: absolute;
-    top: 50%;
-    width: 74px;
-    height: 74px;
-    line-height: 74px;
-    text-align: center;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-top: -37px;
-    z-index: 4;
-    background-color: #656565;
-    background-repeat: no-repeat;
-    background-position: center center;
-    cursor: pointer;
-  }
-  .image-view-left {
-    // left: -(74px + 86px);
-    left: 74px;
-    background-image: url('~../assets/l1.png');
-    &:hover {
-      background-image: url('~../assets/l2.png');
-    }
-  }
-  .image-view-right {
-    // right: -(74px + 86px);
-    right: 74px;
-    background-image: url('~../assets/r1.png');
-    &:hover {
-      background-image: url('~../assets/r2.png');
-    }
+}
+.image-button-next {
+  // right: -(74px + 86px);s
+  right: 74px;
+  background-image: url('~../assets/r1.png');
+  &:hover {
+    background-image: url('~../assets/r2.png');
   }
 }
 </style>

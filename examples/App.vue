@@ -45,6 +45,15 @@
         <zk-button>返回</zk-button>
       </zk-form-item>
     </zk-form>
+    <zk-image-view
+      :visible="true"
+      :src-list="[
+        'https://uploadbeta.com/api/pictures/random/?t=1',
+        'https://uploadbeta.com/api/pictures/random/?t=2',
+        'https://uploadbeta.com/api/pictures/random/?t=3',
+        'https://uploadbeta.com/api/pictures/random/?t=4'
+      ]">
+    </zk-image-view>
   </div>
 </template>
 
