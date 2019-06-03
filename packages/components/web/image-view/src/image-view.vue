@@ -2,7 +2,7 @@
   <zk-popup-layer
     :visible.sync="currentVisible"
     :custom-style="{ width: '100%', height: '100%' }">
-    <div class="image-view">
+    <div class="image-view" v-if="visible">
       <div class="image-view-close" @click="currentVisible = false"></div>
       <zk-swiper
         v-if="!isRestart"
@@ -61,10 +61,7 @@ export default {
       swiperOptions: {
         loop: true, // 无缝轮播
         grabCursor: true, // 开启鼠标的抓手形状
-        // autoplay: {
-        //   delay: 8000,
-        //   disableOnInteraction: false
-        // },
+        initialSlide: 0, // 初始 index
         freeModeSticky: true, // 使得freeMode也能自动贴合。
         autoHeight: true, // 自动高度
         pagination: {
@@ -92,28 +89,41 @@ export default {
     }
   },
   watch: {
-    index: {
-      immediate: true,
-      handler (index) {
-        if (this.swiper) return this.swiper.slideTo(index)
-
-        if (typeof index === 'number' && this.currentSrcList[index]) {
-          this.currentIndex = index
-        } else {
-          this.currentIndex = this.currentSrcList.indexOf(this.src || this.currentSrcList[0])
-        }
+    currentVisible (visible) {
+      if (visible) {
+        this.currentIndex = this.getInitIndex()
+        this.swiperOptions.initialSlide = this.currentIndex
       }
+    },
+    index: 'updateInitIndex',
+    currentIndex (index) {
+      this.$emit('update:index', this.currentIndex)
     }
   },
   methods: {
+    getInitIndex () {
+      if (typeof this.index === 'number' && this.currentSrcList[this.index]) {
+        return this.index
+      } else if (this.src) {
+        return this.currentSrcList.indexOf(this.src)
+      }
+      return 0
+    },
+    updateInitIndex () {
+      this.currentIndex = this.getInitIndex()
+      this.swiperOptions.initialSlide = this.currentIndex
+    },
+    slideTo (index) {
+      if (this.swiper && this.currentIndex !== index) return this.swiper.slideToLoop(index)
+      this.currentIndex = index
+    },
     handleReady (swiper) {
       this.swiper = swiper
       this.$emit('ready', this.swiper)
     },
     handleSlideChange () {
       if (!this.swiper) return
-      this.currentIndex = this.swiper.activeIndex
-      this.$emit('update:index', this.currentIndex)
+      this.currentIndex = this.swiper.realIndex
     }
   },
   beforeDestroy () {
@@ -208,5 +218,8 @@ export default {
   &:hover {
     background-image: url('~../assets/r2.png');
   }
+}
+.swiper-pagination {
+  color: #fff;
 }
 </style>

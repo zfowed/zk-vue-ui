@@ -61,11 +61,12 @@ export default {
 
 <style lang="scss" scoped>
 .zk-select {
-  width: 100%;
+  width: auto;
   display: inline-block;
   border-radius: 4px;
 }
 .zk-select-input {
+  width: 100%;
   cursor: pointer;
   /deep/ input {
     cursor: pointer;

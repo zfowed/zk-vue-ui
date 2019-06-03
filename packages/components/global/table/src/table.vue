@@ -4,7 +4,8 @@
       border="0"
       :class="['zk-table', {
         'zk-table--stripe': stripe,
-        'zk-table--border': border
+        'zk-table--border': border,
+        'zk-table--fixed': fixed
       }]">
       <slot></slot>
     </table>
@@ -21,6 +22,10 @@ export default {
       default: false
     },
     border: {
+      type: Boolean,
+      default: false
+    },
+    fixed: {
       type: Boolean,
       default: false
     }
@@ -210,5 +215,8 @@ export default {
       background-color: #fafafa;
     }
   }
+}
+.zk-table--fixed {
+  table-layout: fixed;
 }
 </style>
