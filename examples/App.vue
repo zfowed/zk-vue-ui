@@ -47,12 +47,7 @@
     </zk-form>
     <zk-image-view
       :visible="true"
-      :src-list="[
-        'https://uploadbeta.com/api/pictures/random/?t=1',
-        'https://uploadbeta.com/api/pictures/random/?t=2',
-        'https://uploadbeta.com/api/pictures/random/?t=3',
-        'https://uploadbeta.com/api/pictures/random/?t=4'
-      ]">
+      :src-list="a">
     </zk-image-view>
   </div>
 </template>
@@ -61,6 +56,12 @@
 export default {
   data () {
     return {
+      a: [
+        'https://uploadbeta.com/api/pictures/random/?t=1',
+        'https://uploadbeta.com/api/pictures/random/?t=2',
+        'https://uploadbeta.com/api/pictures/random/?t=3',
+        'https://uploadbeta.com/api/pictures/random/?t=4'
+      ],
       form: {
         value1: '',
         value2: '',
@@ -111,6 +112,21 @@ export default {
         }
       }
     }
+  },
+  created () {
+    setTimeout(() => {
+      this.a = [
+        'https://uploadbeta.com/api/pictures/random/?t=1'
+      ]
+      setTimeout(() => {
+        this.a = [
+          'https://uploadbeta.com/api/pictures/random/?t=1',
+          'https://uploadbeta.com/api/pictures/random/?t=2',
+          'https://uploadbeta.com/api/pictures/random/?t=3',
+          'https://uploadbeta.com/api/pictures/random/?t=4'
+        ]
+      }, 5000)
+    }, 5000)
   }
 }
 </script>

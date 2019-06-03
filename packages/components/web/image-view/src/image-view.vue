@@ -5,6 +5,7 @@
     <div class="image-view">
       <div class="image-view-close" @click="currentVisible = false"></div>
       <zk-swiper
+        v-if="!isRestart"
         class="image-swiper"
         :options="swiperOptions"
         @ready="handleReady"
@@ -18,9 +19,11 @@
           </div>
         </zk-swiper-slide>
       </zk-swiper>
-      <div class="swiper-pagination"></div>
-      <div class="image-button-prev"></div>
-      <div class="image-button-next"></div>
+      <div v-show="currentSrcList.length > 1">
+        <div class="swiper-pagination"></div>
+        <div class="image-button-prev"></div>
+        <div class="image-button-next"></div>
+      </div>
     </div>
   </zk-popup-layer>
 </template>
@@ -53,6 +56,7 @@ export default {
   },
   data () {
     return {
+      isRestart: false,
       currentIndex: 0,
       swiperOptions: {
         loop: true, // 无缝轮播
@@ -84,7 +88,7 @@ export default {
       }
     },
     currentSrcList () {
-      return Array.isArray(this.srcList) ? this.srcList : [this.src]
+      return Array.isArray(this.srcList) ? [...this.srcList] : [this.src]
     }
   },
   watch: {
@@ -96,7 +100,7 @@ export default {
         if (typeof index === 'number' && this.currentSrcList[index]) {
           this.currentIndex = index
         } else {
-          this.currentIndex = this.currentSrcList.indexOf(this.src) || 0
+          this.currentIndex = this.currentSrcList.indexOf(this.src || this.currentSrcList[0])
         }
       }
     }
@@ -108,12 +112,16 @@ export default {
     },
     handleSlideChange () {
       if (!this.swiper) return
-      this.currentIndex = this.swiper.activeIndexx
+      this.currentIndex = this.swiper.activeIndex
       this.$emit('update:index', this.currentIndex)
     }
   },
   beforeDestroy () {
-    this.swiper = null
+    this.$nextTick(function () {
+      if (this.swiper) {
+        delete this.swiper
+      }
+    })
   }
 }
 </script>
