@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://zkm-vue-ui/./packages/components/web/form-item/index.js"],"names":["FormItem"],"mappings":";;;;;;AAAA;AAAA;AAAA;AAEeA,6GAAf,E","file":"zkm-vue-ui.common.zk-form-item.js","sourcesContent":["import { FormItem } from '../form'\r\n\r\nexport default FormItem\r\n"],"sourceRoot":""}

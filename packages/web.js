@@ -8,11 +8,11 @@ export * from './components/global/async'
 export * from './components/web/async'
 
 const install = function (Vue, opts = {}) {
-  Vue.GlobalComponents = GlobalComponents
   Vue.WebComponents = WebComponents
+  Vue.GlobalComponents = GlobalComponents
 
-  Vue.use(GlobalComponents)
   Vue.use(WebComponents)
+  Vue.use(GlobalComponents)
 
   Vue.prototype.$utils = utils
 
@@ -24,7 +24,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  ...GlobalComponents,
   ...WebComponents,
+  ...GlobalComponents,
   install
 }

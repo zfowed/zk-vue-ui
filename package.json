@@ -4,9 +4,13 @@
   "scripts": {
     "serve": "vue-cli-service serve --port 9000",
     "docsify": "docsify serve docs",
-    "build": "npm run build:docs && npm run build:dist",
-    "build:docs": "vue-cli-service build --target lib --name zk-vue-ui packages/index.js --dest docs/public/libs/zk-vue-ui",
-    "build:dist": "vue-cli-service build --target lib --name zk-vue-ui packages/index.js --dest dist",
+    "build:web:dist": "vue-cli-service build --target lib --name zkm-vue-ui packages/web.js --dest dist/zk-vue-ui",
+    "build:mobile:dist": "vue-cli-service build --target lib --name zkm-vue-ui packages/mobile.js --dest dist/zkm-vue-ui",
+    "build:web:docs": "vue-cli-service build --target lib --name zkm-vue-ui packages/web.js --dest docs/public/libs/zk-vue-ui",
+    "build:mobile:docs": "vue-cli-service build --target lib --name zkm-vue-ui packages/mobile.js --dest docs/public/libs/zkm-vue-ui",
+    "build:web": "npm run build:web:dist && npm run build:web:docs",
+    "build:mobile": "npm run build:mobile:dist && npm run build:mobile:docs",
+    "build": "npm run build:web && npm run build:mobile",
     "pub": "npm run build && npm publish",
     "lint": "vue-cli-service lint"
   },

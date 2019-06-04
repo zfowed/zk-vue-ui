@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://zk-vue-ui/./packages/components/global/table-tr/index.js"],"names":["TableTr"],"mappings":";;;;;;AAAA;AAAA;AAAA;AAEeA,6GAAf,E","file":"zk-vue-ui.common.zk-table-tr.js","sourcesContent":["import { TableTr } from '../table'\r\n\r\nexport default TableTr\r\n"],"sourceRoot":""}
