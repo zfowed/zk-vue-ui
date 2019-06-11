@@ -10,12 +10,13 @@
         ref="input"
         slot="reference"
         class="zk-select-input"
-        readonly
+        :readonly="!filterable"
         :value="label"
         :disabled-form-validate="true"
         :placeholder="placeholder"
         :disabled="currentDisabled"
-        v-bind="$attrs">
+        v-bind="$attrs"
+        @input="handleFilterMethod">
         <img :class="['zk-select-icon', { 'is-reverse': visible }]" slot="suffix-icon" src="../assets/icon.png">
       </zk-input>
       <div class="zk-select-ul" :style="{ 'min-width': `${currentWidth}px` }">

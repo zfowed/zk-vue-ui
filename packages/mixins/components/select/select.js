@@ -16,6 +16,14 @@ export default {
     placeholder: {
       type: String,
       default: '请选择'
+    },
+    filterable: {
+      type: Boolean,
+      default: false
+    },
+    loading: {
+      type: Boolean,
+      default: false
     }
   },
   provide () {
@@ -26,6 +34,7 @@ export default {
   data () {
     return {
       visible: false,
+      label: '',
       isFocus: false,
       optionInstance: []
     }
@@ -42,15 +51,16 @@ export default {
     },
     option () {
       return this.options.find(option => option.value === this.currentValue)
-    },
-    label () {
-      if (!this.option) return ''
-      return this.option.label
     }
   },
   watch: {
     currentValue () {
       this.$emit('change', this.currentValue)
+    },
+    option () {
+      if (!this.option) return
+      if (this.filterable) return
+      this.label = this.option.label
     }
   },
   methods: {
@@ -62,8 +72,14 @@ export default {
       if (index < 0) return
       this.optionInstance.splice(index, 1)
     },
+    handleFilterMethod (value) {
+      this.label = value
+      if (this.loading) return
+      this.$emit('filter-method', value)
+    },
     onChange (value) {
       this.currentValue = value
+      this.label = this.option.label
       this.visible = false
     }
   },
