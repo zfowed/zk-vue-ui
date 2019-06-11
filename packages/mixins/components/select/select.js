@@ -35,6 +35,7 @@ export default {
     return {
       visible: false,
       label: '',
+      olbLabel: '',
       isFocus: false,
       optionInstance: []
     }
@@ -54,6 +55,11 @@ export default {
     }
   },
   watch: {
+    visible () {
+      if (!this.visible) {
+        this.label = this.olbLabel
+      }
+    },
     currentValue () {
       this.$emit('change', this.currentValue)
     },
@@ -79,7 +85,10 @@ export default {
     },
     onChange (value) {
       this.currentValue = value
-      this.label = this.option.label
+      if (this.option) {
+        this.label = this.option.label
+        this.olbLabel = this.label
+      }
       this.visible = false
     }
   },

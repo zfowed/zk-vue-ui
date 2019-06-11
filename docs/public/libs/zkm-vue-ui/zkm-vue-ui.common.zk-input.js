@@ -860,7 +860,7 @@ var es6_regexp_replace = __webpack_require__("a481");
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.regexp.split.js
 var es6_regexp_split = __webpack_require__("28a5");
 
-// EXTERNAL MODULE: ./packages/utils/index.js + 12 modules
+// EXTERNAL MODULE: ./packages/utils/index.js + 13 modules
 var utils = __webpack_require__("e74d");
 
 // EXTERNAL MODULE: ./packages/mixins/emitter.js
