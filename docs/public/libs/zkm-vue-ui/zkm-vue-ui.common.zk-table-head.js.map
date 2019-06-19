@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://zkm-vue-ui/./packages/components/global/table-head/index.js"],"names":["TableHead"],"mappings":";;;;;;AAAA;AAAA;AAAA;AAEeA,+GAAf,E","file":"zkm-vue-ui.common.zk-table-head.js","sourcesContent":["import { TableHead } from '../table'\r\n\r\nexport default TableHead\r\n"],"sourceRoot":""}

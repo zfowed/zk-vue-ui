@@ -27,7 +27,7 @@ __webpack_require__.r(__webpack_exports__);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
 var es6_function_name = __webpack_require__("7f7f");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"26943976-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/web/pagination/src/pagination.vue?vue&type=template&id=7b61850e&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e52a029c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/web/pagination/src/pagination.vue?vue&type=template&id=7b61850e&scoped=true&
 var render = function () {
 var _obj;
 var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.total)?_c('div',{class:['zk-pagination', ( _obj = {}, _obj[("zk-pagination--" + _vm.align)] = _vm.align, _obj )]},[_c('span',{staticClass:"zk-pagination-total"},[_vm._v("共 "+_vm._s(_vm.total)+" 条")]),(_vm.viewPage > 1)?_c('span',{staticClass:"zk-pagination-prev",on:{"click":function($event){return _vm.goto(_vm.viewPage - 1)}}},[_vm._v("上一页")]):_vm._e(),(_vm.pageNumList[0] !== 1)?[_c('span',{staticClass:"zk-pagination-item",on:{"click":function($event){return _vm.goto(1)}}},[_vm._v("1")]),(_vm.pageNumList[0] !== 2)?_c('span',{staticClass:"zk-pagination-omit"},[_vm._v("...")]):_vm._e()]:_vm._e(),_vm._l((_vm.pageNumList),function(num){return _c('span',{key:num,class:['zk-pagination-item', { 'is-active': _vm.viewPage === num }],on:{"click":function($event){return _vm.goto(num)}}},[_c('span',[_vm._v(_vm._s(num))])])}),(_vm.pageNumList[_vm.pageNumList.length-1] !== _vm.pageCount)?[(_vm.pageNumList[_vm.pageNumList.length-1] !== _vm.pageCount - 1)?_c('span',{staticClass:"zk-pagination-omit"},[_vm._v("...")]):_vm._e(),_c('span',{staticClass:"zk-pagination-item",on:{"click":function($event){return _vm.goto(_vm.pageCount)}}},[_vm._v(_vm._s(_vm.pageCount))])]:_vm._e(),(_vm.viewPage < _vm.pageCount)?_c('span',{staticClass:"zk-pagination-next",on:{"click":function($event){return _vm.goto(_vm.viewPage + 1)}}},[_vm._v("下一页")]):_vm._e()],2):_vm._e()}
@@ -222,4 +222,3 @@ pagination.install = function (Vue) {
 /***/ })
 
 }]);
-//# sourceMappingURL=zkm-vue-ui.umd.zk-pagination.js.map

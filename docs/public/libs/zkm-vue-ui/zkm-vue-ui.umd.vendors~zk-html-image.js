@@ -1783,4 +1783,3 @@ exports[DATA_VIEW] = $DataView;
 /***/ })
 
 }]);
-//# sourceMappingURL=zkm-vue-ui.umd.vendors~zk-html-image.js.map

@@ -72,7 +72,7 @@ __webpack_require__.r(__webpack_exports__);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
 var es6_function_name = __webpack_require__("7f7f");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"26943976-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/web/form/src/form.vue?vue&type=template&id=1e99f43a&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e52a029c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/web/form/src/form.vue?vue&type=template&id=1e99f43a&scoped=true&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"zk-form"},[_vm._t("default")],2)}
 var staticRenderFns = []
 
@@ -146,7 +146,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 )
 
 /* harmony default export */ var src_form = (component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"26943976-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/web/form/src/form-item.vue?vue&type=template&id=1b6c9b1f&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e52a029c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/web/form/src/form-item.vue?vue&type=template&id=1b6c9b1f&scoped=true&
 var form_itemvue_type_template_id_1b6c9b1f_scoped_true_render = function () {
 var _obj;
 var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:['zk-form-item', ( _obj = {}, _obj['zk-form-item--nesting'] = _vm.isNesting, _obj['zk-form-item--inline'] = _vm.currentInline, _obj['zk-form-item--error-hide'] = !_vm.currentShowMessage, _obj["zk-form-item--error-inline"] = _vm.currentInlineMessage, _obj[("zk-form-item--label-" + _vm.currentLabelPosition)] = _vm.currentLabelPosition, _obj['is-error'] = _vm.isError, _obj )]},[(!_vm.isNesting && _vm.label)?_c('label',{staticClass:"zk-form-item__label",style:(!_vm.currentInline && !_vm.isNesting && _vm.currentLabelPosition !== 'top' && _vm.labelStyle)},[(_vm.currentRequired)?_c('span',{staticClass:"zk-form--item__required-star"},[_vm._v("*")]):_vm._e(),_c('span',[_vm._v(_vm._s(_vm.label))])]):_vm._e(),_c('div',{staticClass:"zk-form-item__content",style:(!_vm.currentInline && !_vm.isNesting && _vm.currentLabelPosition !== 'top' && _vm.contentStyle)},[_vm._t("default",null,{"validate":_vm.validate,"clearValidate":_vm.clearValidate}),(!_vm.currentInline && _vm.currentShowMessage && _vm.isError)?_c('div',{staticClass:"zk-form-item__error"},[_c('span',[_vm._v(_vm._s(_vm.validateMessage))])]):_vm._e()],2)])}
@@ -940,6 +940,9 @@ var defaultValue = Symbol('value');
   inject: {
     zkForm: {
       default: undefined
+    },
+    zkFormItem: {
+      default: undefined
     }
   },
   props: {
@@ -983,7 +986,7 @@ var defaultValue = Symbol('value');
       return this.props || this.prop && [this.prop] || [];
     },
     isError: function isError() {
-      return this.validateState === 'error';
+      return this.validateState === 'error' || !!this.zkFormItem && this.zkFormItem.validateState === 'error';
     }
   },
   watch: {
@@ -1313,4 +1316,3 @@ module.exports = function (original) {
 /***/ })
 
 }]);
-//# sourceMappingURL=zkm-vue-ui.umd.zk-form.js.map

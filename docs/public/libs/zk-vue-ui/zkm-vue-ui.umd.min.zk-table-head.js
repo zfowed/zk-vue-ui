@@ -1,2 +1,1 @@
 (("undefined"!==typeof self?self:this)["webpackJsonpzkm_vue_ui"]=("undefined"!==typeof self?self:this)["webpackJsonpzkm_vue_ui"]||[]).push([[33],{dd3c:function(e,s,f){"use strict";f.r(s);var u=f("0a9c");s["default"]=u["TableHead"]}}]);
-//# sourceMappingURL=zkm-vue-ui.umd.min.zk-table-head.js.map

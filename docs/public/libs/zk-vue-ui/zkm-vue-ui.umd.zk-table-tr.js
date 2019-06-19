@@ -12,4 +12,3 @@ __webpack_require__.r(__webpack_exports__);
 /***/ })
 
 }]);
-//# sourceMappingURL=zkm-vue-ui.umd.zk-table-tr.js.map

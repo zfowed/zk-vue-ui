@@ -72,7 +72,7 @@ __webpack_require__.r(__webpack_exports__);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
 var es6_function_name = __webpack_require__("7f7f");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"26943976-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/web/image-view/src/image-view.vue?vue&type=template&id=286a3c30&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e52a029c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/web/image-view/src/image-view.vue?vue&type=template&id=286a3c30&scoped=true&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('zk-popup-layer',{attrs:{"visible":_vm.currentVisible,"custom-style":{ width: '100%', height: '100%' }},on:{"update:visible":function($event){_vm.currentVisible=$event}}},[(_vm.visible)?_c('div',{staticClass:"image-view"},[_c('div',{staticClass:"image-view-close",on:{"click":function($event){_vm.currentVisible = false}}}),(!_vm.isRestart)?_c('zk-swiper',{staticClass:"image-swiper",attrs:{"options":_vm.swiperOptions},on:{"ready":_vm.handleReady,"slideChange":_vm.handleSlideChange}},_vm._l((_vm.currentSrcList),function(src,index){return _c('zk-swiper-slide',{key:index,staticClass:"image-swiper-slide"},[_c('div',{staticClass:"image-flex"},[_c('img',{attrs:{"src":src}})])])}),1):_vm._e(),_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.currentSrcList.length > 1),expression:"currentSrcList.length > 1"}]},[_c('div',{staticClass:"swiper-pagination"}),_c('div',{staticClass:"image-button-prev"}),_c('div',{staticClass:"image-button-next"})])],1):_vm._e()])}
 var staticRenderFns = []
 
@@ -404,7 +404,7 @@ __webpack_require__.r(__webpack_exports__);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
 var es6_function_name = __webpack_require__("7f7f");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"26943976-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/web/image-select/src/image-select.vue?vue&type=template&id=e17dbbf2&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e52a029c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/components/web/image-select/src/image-select.vue?vue&type=template&id=e17dbbf2&scoped=true&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:['zk-image-item', {
     'zk-image-item-add': !_vm.currentValue,
     'zk-image-item-readonly': _vm.readonly,
@@ -1190,6 +1190,9 @@ var defaultValue = Symbol('value');
   inject: {
     zkForm: {
       default: undefined
+    },
+    zkFormItem: {
+      default: undefined
     }
   },
   props: {
@@ -1233,7 +1236,7 @@ var defaultValue = Symbol('value');
       return this.props || this.prop && [this.prop] || [];
     },
     isError: function isError() {
-      return this.validateState === 'error';
+      return this.validateState === 'error' || !!this.zkFormItem && this.zkFormItem.validateState === 'error';
     }
   },
   watch: {
@@ -1581,4 +1584,3 @@ module.exports = function (original) {
 /***/ })
 
 }]);
-//# sourceMappingURL=zkm-vue-ui.umd.zk-image-select.js.map

@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://zkm-vue-ui/./packages/components/global/table-th/index.js"],"names":["TableTh"],"mappings":";;;;;;AAAA;AAAA;AAAA;AAEeA,6GAAf,E","file":"zkm-vue-ui.umd.zk-table-th.js","sourcesContent":["import { TableTh } from '../table'\r\n\r\nexport default TableTh\r\n"],"sourceRoot":""}

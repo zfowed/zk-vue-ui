@@ -10,25 +10,15 @@ module.exports = {
       filename: 'index.html'
     }
   },
+  // 关闭文件名哈希
+  filenameHashing: false,
+  // 不需要生产环境的 source map
+  productionSourceMap: false,
   // 扩展 webpack 配置，使 packages 加入编译
   chainWebpack: config => {
     config.resolve.alias
       .set('@', path.resolve('examples'))
-      .set('@$', path.resolve('packages'))
       .set('zk-vue-ui', path.resolve(''))
-    // console.log(config.module
-    //   .rule('js').include.add('packages'))
-    // config.module
-    //   .rule('js')
-    //   .include
-    //   .add('packages')
-    //   .end()
-    //   .use('babel')
-    //   .loader('babel-loader')
-    //   .tap(options => {
-    //     // 修改它的选项...
-    //     return options
-    //   })
   },
   configureWebpack (config) {
     if (process.env.NODE_ENV === 'production') {
