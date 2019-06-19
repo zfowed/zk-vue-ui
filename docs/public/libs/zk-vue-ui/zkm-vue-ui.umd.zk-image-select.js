@@ -1,5 +1,56 @@
 ((typeof self !== 'undefined' ? self : this)["webpackJsonpzkm_vue_ui"] = (typeof self !== 'undefined' ? self : this)["webpackJsonpzkm_vue_ui"] || []).push([[6,19],{
 
+/***/ "0a49":
+/***/ (function(module, exports, __webpack_require__) {
+
+// 0 -> Array#forEach
+// 1 -> Array#map
+// 2 -> Array#filter
+// 3 -> Array#some
+// 4 -> Array#every
+// 5 -> Array#find
+// 6 -> Array#findIndex
+var ctx = __webpack_require__("9b43");
+var IObject = __webpack_require__("626a");
+var toObject = __webpack_require__("4bf8");
+var toLength = __webpack_require__("9def");
+var asc = __webpack_require__("cd1c");
+module.exports = function (TYPE, $create) {
+  var IS_MAP = TYPE == 1;
+  var IS_FILTER = TYPE == 2;
+  var IS_SOME = TYPE == 3;
+  var IS_EVERY = TYPE == 4;
+  var IS_FIND_INDEX = TYPE == 6;
+  var NO_HOLES = TYPE == 5 || IS_FIND_INDEX;
+  var create = $create || asc;
+  return function ($this, callbackfn, that) {
+    var O = toObject($this);
+    var self = IObject(O);
+    var f = ctx(callbackfn, that, 3);
+    var length = toLength(self.length);
+    var index = 0;
+    var result = IS_MAP ? create($this, length) : IS_FILTER ? create($this, 0) : undefined;
+    var val, res;
+    for (;length > index; index++) if (NO_HOLES || index in self) {
+      val = self[index];
+      res = f(val, index, O);
+      if (TYPE) {
+        if (IS_MAP) result[index] = res;   // map
+        else if (res) switch (TYPE) {
+          case 3: return true;             // some
+          case 5: return val;              // find
+          case 6: return index;            // findIndex
+          case 2: result.push(val);        // filter
+        } else if (IS_EVERY) return false; // every
+      }
+    }
+    return IS_FIND_INDEX ? -1 : IS_SOME || IS_EVERY ? IS_EVERY : result;
+  };
+};
+
+
+/***/ }),
+
 /***/ "1169":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -635,6 +686,28 @@ image_select.install = function (Vue) {
 
 /***/ }),
 
+/***/ "7514":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+// 22.1.3.8 Array.prototype.find(predicate, thisArg = undefined)
+var $export = __webpack_require__("5ca1");
+var $find = __webpack_require__("0a49")(5);
+var KEY = 'find';
+var forced = true;
+// Shouldn't skip holes
+if (KEY in []) Array(1)[KEY](function () { forced = false; });
+$export($export.P + $export.F * forced, 'Array', {
+  find: function find(callbackfn /* , that = undefined */) {
+    return $find(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
+  }
+});
+__webpack_require__("9c6c")(KEY);
+
+
+/***/ }),
+
 /***/ "7bbc":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -930,6 +1003,9 @@ var es7_symbol_async_iterator = __webpack_require__("ac4d");
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.symbol.js
 var es6_symbol = __webpack_require__("8a81");
 
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.find.js
+var es6_array_find = __webpack_require__("7514");
+
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.string.iterator.js
 var es6_string_iterator = __webpack_require__("5df3");
 
@@ -949,6 +1025,7 @@ var toConsumableArray = __webpack_require__("75fc");
 var es6_promise = __webpack_require__("551c");
 
 // CONCATENATED MODULE: ./packages/mixins/components/form/form.js
+
 
 
 
@@ -1019,6 +1096,31 @@ var es6_promise = __webpack_require__("551c");
           callback && callback(error, errors);
           if (error) return reject && reject(error);
           return resolve && resolve(error);
+        });
+      };
+
+      if (callback) return fn();
+      return new Promise(fn);
+    },
+    validateAndScroll: function validateAndScroll(callback) {
+      var _this2 = this;
+
+      var fn = function fn(resolve, reject) {
+        return _this2.validate(function (error, errors) {
+          return _this2.$nextTick(function () {
+            var errorInstance = _this2.fieldInstanceList.find(function (instance) {
+              return instance.isError;
+            });
+
+            if (errorInstance) {
+              var $el = errorInstance.$el;
+              if ($el.scrollIntoView && $el.scrollIntoView) $el.scrollIntoView(true);
+            }
+
+            callback && callback(error, errors);
+            if (error) return reject && reject(error);
+            return resolve && resolve(error);
+          });
         });
       };
 
@@ -1104,6 +1206,10 @@ var defaultValue = Symbol('value');
     rules: {
       type: [Object, Array]
     },
+    error: {
+      type: String,
+      default: ''
+    },
     required: {
       type: Boolean,
       default: undefined
@@ -1125,6 +1231,18 @@ var defaultValue = Symbol('value');
     currentProps: function currentProps() {
       if (this.value !== defaultValue) return ['value'];
       return this.props || this.prop && [this.prop] || [];
+    },
+    isError: function isError() {
+      return this.validateState === 'error';
+    }
+  },
+  watch: {
+    error: {
+      deep: true,
+      handler: function handler() {
+        this.validateState = this.error ? 'error' : 'success';
+        this.validateMessage = this.error || '';
+      }
     }
   },
   methods: {
@@ -1207,6 +1325,12 @@ var defaultValue = Symbol('value');
       var _this = this;
 
       var fn = function fn(resolve) {
+        if (_this.error) {
+          _this.validateState = 'error';
+          _this.validateMessage = _this.error;
+          return resolve(true);
+        }
+
         _this.$nextTick(function () {
           var _this$getValidatePara = _this.getValidateParams(),
               model = _this$getValidatePara.model,
@@ -1391,6 +1515,19 @@ function _broadcast(componentName, eventName, params) {
 
 /***/ }),
 
+/***/ "cd1c":
+/***/ (function(module, exports, __webpack_require__) {
+
+// 9.4.2.3 ArraySpeciesCreate(originalArray, length)
+var speciesConstructor = __webpack_require__("e853");
+
+module.exports = function (original, length) {
+  return new (speciesConstructor(original))(length);
+};
+
+
+/***/ }),
+
 /***/ "d4c0":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1408,6 +1545,29 @@ module.exports = function (it) {
     var key;
     while (symbols.length > i) if (isEnum.call(it, key = symbols[i++])) result.push(key);
   } return result;
+};
+
+
+/***/ }),
+
+/***/ "e853":
+/***/ (function(module, exports, __webpack_require__) {
+
+var isObject = __webpack_require__("d3f4");
+var isArray = __webpack_require__("1169");
+var SPECIES = __webpack_require__("2b4c")('species');
+
+module.exports = function (original) {
+  var C;
+  if (isArray(original)) {
+    C = original.constructor;
+    // cross-realm fallback
+    if (typeof C == 'function' && (C === Array || isArray(C.prototype))) C = undefined;
+    if (isObject(C)) {
+      C = C[SPECIES];
+      if (C === null) C = undefined;
+    }
+  } return C === undefined ? Array : C;
 };
 
 

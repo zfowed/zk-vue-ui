@@ -18,6 +18,9 @@ var es7_symbol_async_iterator = __webpack_require__("ac4d");
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.symbol.js
 var es6_symbol = __webpack_require__("8a81");
 
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.find.js
+var es6_array_find = __webpack_require__("7514");
+
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.string.iterator.js
 var es6_string_iterator = __webpack_require__("5df3");
 
@@ -37,6 +40,7 @@ var toConsumableArray = __webpack_require__("75fc");
 var es6_promise = __webpack_require__("551c");
 
 // CONCATENATED MODULE: ./packages/mixins/components/form/form.js
+
 
 
 
@@ -107,6 +111,31 @@ var es6_promise = __webpack_require__("551c");
           callback && callback(error, errors);
           if (error) return reject && reject(error);
           return resolve && resolve(error);
+        });
+      };
+
+      if (callback) return fn();
+      return new Promise(fn);
+    },
+    validateAndScroll: function validateAndScroll(callback) {
+      var _this2 = this;
+
+      var fn = function fn(resolve, reject) {
+        return _this2.validate(function (error, errors) {
+          return _this2.$nextTick(function () {
+            var errorInstance = _this2.fieldInstanceList.find(function (instance) {
+              return instance.isError;
+            });
+
+            if (errorInstance) {
+              var $el = errorInstance.$el;
+              if ($el.scrollIntoView && $el.scrollIntoView) $el.scrollIntoView(true);
+            }
+
+            callback && callback(error, errors);
+            if (error) return reject && reject(error);
+            return resolve && resolve(error);
+          });
         });
       };
 
@@ -192,6 +221,10 @@ var defaultValue = Symbol('value');
     rules: {
       type: [Object, Array]
     },
+    error: {
+      type: String,
+      default: ''
+    },
     required: {
       type: Boolean,
       default: undefined
@@ -213,6 +246,18 @@ var defaultValue = Symbol('value');
     currentProps: function currentProps() {
       if (this.value !== defaultValue) return ['value'];
       return this.props || this.prop && [this.prop] || [];
+    },
+    isError: function isError() {
+      return this.validateState === 'error';
+    }
+  },
+  watch: {
+    error: {
+      deep: true,
+      handler: function handler() {
+        this.validateState = this.error ? 'error' : 'success';
+        this.validateMessage = this.error || '';
+      }
     }
   },
   methods: {
@@ -295,6 +340,12 @@ var defaultValue = Symbol('value');
       var _this = this;
 
       var fn = function fn(resolve) {
+        if (_this.error) {
+          _this.validateState = 'error';
+          _this.validateMessage = _this.error;
+          return resolve(true);
+        }
+
         _this.$nextTick(function () {
           var _this$getValidatePara = _this.getValidateParams(),
               model = _this$getValidatePara.model,

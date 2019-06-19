@@ -5,7 +5,8 @@
       ['zk-form-item--inline']: currentInline,
       ['zk-form-item--error-hide']: !currentShowMessage,
       [`zk-form-item--error-inline`]: currentInlineMessage,
-      [`zk-form-item--label-${currentLabelPosition}`]: currentLabelPosition
+      [`zk-form-item--label-${currentLabelPosition}`]: currentLabelPosition,
+      ['is-error']: isError
     }]">
     <label
       v-if="!isNesting && label"
@@ -19,9 +20,9 @@
       :style="!currentInline && !isNesting && currentLabelPosition !== 'top' && contentStyle">
       <slot :validate="validate" :clearValidate="clearValidate"></slot>
       <div
-        v-if="!currentInline && currentShowMessage && (validateMessage || error)"
+        v-if="!currentInline && currentShowMessage && isError"
         class="zk-form-item__error">
-        <span>{{ validateMessage || error }}</span>
+        <span>{{ validateMessage }}</span>
       </div>
     </div>
   </div>
@@ -43,10 +44,6 @@ export default {
   },
   props: {
     label: {
-      type: String,
-      default: ''
-    },
-    error: {
       type: String,
       default: ''
     },
@@ -213,6 +210,19 @@ export default {
       margin-right: 10px;
       &:last-child {
         margin-right: 0;
+      }
+    }
+  }
+}
+.is-error {
+  .zk-form-item__label {
+    color: #FF5733;
+  }
+  /deep/ {
+    .zk-select,
+    .zk-input {
+      .zk-input__inner {
+        border-color: #FF5733;
       }
     }
   }

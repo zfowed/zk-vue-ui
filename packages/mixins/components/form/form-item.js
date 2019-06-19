@@ -30,6 +30,10 @@ export default {
     rules: {
       type: [Object, Array]
     },
+    error: {
+      type: String,
+      default: ''
+    },
     required: {
       type: Boolean,
       default: undefined
@@ -51,6 +55,18 @@ export default {
     currentProps () {
       if (this.value !== defaultValue) return ['value']
       return this.props || (this.prop && [this.prop]) || []
+    },
+    isError () {
+      return this.validateState === 'error'
+    }
+  },
+  watch: {
+    error: {
+      deep: true,
+      handler () {
+        this.validateState = this.error ? 'error' : 'success'
+        this.validateMessage = this.error || ''
+      }
     }
   },
   methods: {
@@ -95,6 +111,11 @@ export default {
     // 校验
     validate (trigger, callback) {
       const fn = resolve => {
+        if (this.error) {
+          this.validateState = 'error'
+          this.validateMessage = this.error
+          return resolve(true)
+        }
         this.$nextTick(() => {
           const { model, descriptor } = this.getValidateParams()
           validate(model, descriptor, {}, (errors, invalidFields) => {

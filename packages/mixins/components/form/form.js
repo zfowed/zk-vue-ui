@@ -58,6 +58,24 @@ export default {
       if (callback) return fn()
       return new Promise(fn)
     },
+    validateAndScroll (callback) {
+      const fn = (resolve, reject) => {
+        return this.validate((error, errors) => {
+          return this.$nextTick(() => {
+            const errorInstance = this.fieldInstanceList.find(instance => instance.isError)
+            if (errorInstance) {
+              const $el = errorInstance.$el
+              if ($el.scrollIntoView && $el.scrollIntoView) $el.scrollIntoView(true)
+            }
+            callback && callback(error, errors)
+            if (error) return reject && reject(error)
+            return resolve && resolve(error)
+          })
+        })
+      }
+      if (callback) return fn()
+      return new Promise(fn)
+    },
     clearValidate () {
       for (const instance of this.fieldInstanceList) {
         instance.clearValidate()

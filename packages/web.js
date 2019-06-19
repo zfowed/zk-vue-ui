@@ -1,3 +1,5 @@
+// import 'es6-promise/auto'
+
 import GlobalComponents from './components/global/async'
 import WebComponents from './components/web/async'
 
