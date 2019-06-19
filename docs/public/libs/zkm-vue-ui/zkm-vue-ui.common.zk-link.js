@@ -683,9 +683,6 @@ var defaultValue = Symbol('value');
   inject: {
     zkForm: {
       default: undefined
-    },
-    zkFormItem: {
-      default: undefined
     }
   },
   props: {
@@ -729,7 +726,7 @@ var defaultValue = Symbol('value');
       return this.props || this.prop && [this.prop] || [];
     },
     isError: function isError() {
-      return this.validateState === 'error' || !!this.zkFormItem && this.zkFormItem.validateState === 'error';
+      return this.validateState === 'error';
     }
   },
   watch: {

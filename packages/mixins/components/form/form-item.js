@@ -14,9 +14,6 @@ export default {
   inject: {
     zkForm: {
       default: undefined
-    },
-    zkFormItem: {
-      default: undefined
     }
   },
   props: {
@@ -60,7 +57,7 @@ export default {
       return this.props || (this.prop && [this.prop]) || []
     },
     isError () {
-      return this.validateState === 'error' || (!!this.zkFormItem && this.zkFormItem.validateState === 'error')
+      return this.validateState === 'error'
     }
   },
   watch: {
