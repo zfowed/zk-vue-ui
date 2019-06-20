@@ -4,7 +4,7 @@
   "scripts": {
     "serve": "vue-cli-service serve --port 9000",
     "docsify": "docsify serve docs",
-    "build:web:docs": "vue-cli-service build --target lib --name zkm-vue-ui packages/web.js --dest docs/public/libs/zk-vue-ui",
+    "build:web:docs": "vue-cli-service build --target lib --name zk-vue-ui packages/web.js --dest docs/public/libs/zk-vue-ui",
     "build:mobile:docs": "vue-cli-service build --target lib --name zkm-vue-ui packages/mobile.js --dest docs/public/libs/zkm-vue-ui",
     "build:web": "npm run build:web:docs",
     "build:mobile": "npm run build:mobile:docs",

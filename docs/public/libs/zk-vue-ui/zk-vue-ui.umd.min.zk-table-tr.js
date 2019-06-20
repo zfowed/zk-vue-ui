@@ -1,0 +1,1 @@
+(("undefined"!==typeof self?self:this)["webpackJsonpzk_vue_ui"]=("undefined"!==typeof self?self:this)["webpackJsonpzk_vue_ui"]||[]).push([[36],{"06fb":function(e,f,s){"use strict";s.r(f);var u=s("0a9c");f["default"]=u["TableTr"]}}]);

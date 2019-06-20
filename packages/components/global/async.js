@@ -1,4 +1,3 @@
-import Toast from './toast'
 
 const Row = () => import(/* webpackChunkName: "zk-row" */ './row')
 const Col = () => import(/* webpackChunkName: "zk-col" */ './col')
@@ -13,7 +12,7 @@ const Checkbox = () => import(/* webpackChunkName: "zk-checkbox" */ './checkbox'
 const Radio = () => import(/* webpackChunkName: "zk-radio" */ './radio')
 const Popover = () => import(/* webpackChunkName: "zk-popover" */ './popover')
 const PopupLayer = () => import(/* webpackChunkName: "zk-popup-layer" */ './popup-layer')
-// const Toast = () => import(/* webpackChunkName: "zk-toast" */ './toast')
+const Toast = () => import(/* webpackChunkName: "zk-toast" */ './toast')
 const Swiper = () => import(/* webpackChunkName: "zk-swiper" */ './swiper')
 const SwiperSlide = () => import(/* webpackChunkName: "zk-swiper-slide" */ './swiper-slide')
 const Countdown = () => import(/* webpackChunkName: "zk-countdown" */ './countdown')
@@ -80,7 +79,6 @@ const install = function (Vue, opts = {}) {
   for (const [key, ComponentAsync] of Object.entries(Components)) {
     Vue.component(`Zk${key}`, ComponentAsync)
   }
-  Vue.$toast = Toast.toast
 }
 
 if (typeof window !== 'undefined' && window.Vue) {

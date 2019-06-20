@@ -78,7 +78,6 @@ const install = function (Vue, opts = {}) {
   for (const Component of Components) {
     Vue.use(Component)
   }
-  Vue.$toast = Toast.toast
 }
 
 if (typeof window !== 'undefined' && window.Vue) {

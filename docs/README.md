@@ -7,56 +7,32 @@
 npm i zk-vue-ui -S
 ```
 
-## 模块化使用
-
-不推荐全局加载，包太大了！！！
-
-<!-- 
-### 编辑 `vue.config.js` 文件
+## 编辑 `vue.config.js` 文件
 
 扩展 webpack 配置，使 zk-vue-ul 可以编译
 
 ```javascript
 module.exports = {
-  chainWebpack: config => {
-    config.module
-      .rule('js')
-      .include
-      .add('zk-vue-ul')
-      .end()
-      .use('babel')
-      .loader('babel-loader')
-      .tap(options => {
-        return options
-      })
-  }
+  transpileDependencies: ['zk-vue-ui/packages']
 }
-``` -->
-
-### 使用组件
-
-```javascript
-import { Notice, NoticeItem } from 'zk-vue-ul/packages/components/global/notice'
-
-Vue.use(Notice)
-Vue.use(NoticeItem)
-// OR
-Vue.component(Notice.name, Notice)
-Vue.component(NoticeItem.name, NoticeItem)
 ```
 
-> 点击获取全部 [组件](component/) 列表
+## 引入 zk-vue-ui
 
-### 使用工具方法
+在 main.js 中写入以下内容：
+
+web:
 
 ```javascript
-import copyText from 'zk-vue-ul/packages/utils/copyText'
+import ZkVueUI from 'zk-vue-ui/web'
 
-copyText('我是复制的文本...').then(() => {
-  console.log('复制成功')
-}, () => {
-  console.log('复制失败')
-})
+Vue.use(ZkVueUI)
 ```
 
-> 点击获取全部 [工具方法](utils/) 列表
+mobile:
+
+```javascript
+import ZkVueUI from 'zk-vue-ui/mobile'
+
+Vue.use(ZkVueUI)
+```

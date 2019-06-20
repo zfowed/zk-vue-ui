@@ -3,6 +3,8 @@
 import GlobalComponents from './components/global/async'
 import WebComponents from './components/web/async'
 
+import Toast from './components/global/toast'
+
 import { TransferDom } from './directives'
 import utils from './utils'
 
@@ -17,6 +19,8 @@ const install = function (Vue, opts = {}) {
   Vue.use(GlobalComponents)
 
   Vue.prototype.$utils = utils
+
+  Vue.prototype.$toast = Toast.toast
 
   Vue.directive('transfer-dom', TransferDom)
 }

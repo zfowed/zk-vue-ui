@@ -6,15 +6,6 @@
 import MessageBox from 'zk-vue-ul/packages/components/global/message-box'
 ```
 
-服务模式
-
-```javascript
-const { msgbox } = MessageBox
-
-msgbox.alert('弹出一个 Alert')
-msgbox.confirm('弹出一个 Confirm')
-```
-
 ### 组件模式
 
 ```html
@@ -42,28 +33,18 @@ msgbox.confirm('弹出一个 Confirm')
 
 ### 服务模式（使用 JS 调用）
 
-```html
-/*vue*/
+```javascript
+const { msgbox } = MessageBox
 
-<template>
-  <div>
-    <zk-button type="primary" @click="alert">alert</zk-button>
-    <zk-button type="primary" @click="confirm">confirm</zk-button>
-  </div>
-</template>
+msgbox.alert('弹出一个 Alert')
+msgbox.confirm('弹出一个 Confirm')
+```
 
-<script>
-  export default {
-    methods: {
-      alert () {
-        this.$alert('这是一段内容,这是一段内容,这是一段内容,这是一段内容。')
-      },
-      confirm () {
-        this.$confirm('这是一段内容,这是一段内容,这是一段内容,这是一段内容。')
-      }
-    }
-  }
-</script>
+组件内部使用：
+
+```javascript
+this.$alert('弹出一个 Alert', { title: '标题' })
+this.$confirm('弹出一个 Confirm', { title: '标题' })
 ```
 
 ### 参数
